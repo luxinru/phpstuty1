@@ -1,0 +1,99 @@
+{extend name='main'}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+
+
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">用户名称</label>
+                <div class="layui-input-inline">
+                    <input name="username" value="{$Think.get.username|default=''}" placeholder="请输入用户名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">发起时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择发起时间" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <select name="type" id="selectList">
+                        <option value="">所有类型</option>
+                        <option value="1">利息宝转入</option>
+                        <option value="2">利息宝转出</option>
+                        <option value="3">每日收益</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+    </fieldset>
+    
+    <script>form.render()</script>
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>编号</th>
+            <th class='text-left nowrap'>用户</th>
+            <th class='text-left nowrap'>金额</th>
+            <th class='text-left nowrap'>提交时间</th>
+            <th class='text-left nowrap'>类型</th>
+            <th class='text-left nowrap'>状态</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.username}</td>
+            <td class='text-left nowrap'>¥{$vo.num}</td>
+            <td class='text-left nowrap'>{$vo.addtime|format_datetime}</td>
+            <td class='text-left nowrap'>
+                {switch $vo.type}
+                {case 1}转入利息宝{/case}
+                {case 2}利息宝转出{/case}
+                {case 3}每日收益{/case}
+                {/switch}
+            </td>
+
+            <td class='text-left nowrap'>
+                {switch $vo.status}
+                {case 1}已完成{/case}
+                {case 0}冻结中{/case}
+                {/switch}
+            </td>
+
+
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+    <script>
+        var test = "{$Think.get.type|default='0'}";
+        $("#selectList").find("option[value="+test+"]").prop("selected",true);
+
+        form.render()
+    </script>
+</div>
+{/block}

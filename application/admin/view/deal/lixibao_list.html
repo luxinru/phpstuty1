@@ -1,0 +1,122 @@
+{extend name='main'}
+{block name="button"}
+
+{if auth("add_lixibao")}
+<button data-open='{:url("add_lixibao")}' data-title="添加选项" class='layui-btn'>添加选项</button>
+{/if}
+
+{/block}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+
+
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">发起时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择发起时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+    </fieldset>
+    
+    <script>form.render()</script>
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>编号</th>
+            <th class='text-left nowrap'>产品名称</th>
+            <th class='text-left nowrap'>期限</th>
+            <th class='text-left nowrap'>利率</th>
+            <th class='text-left nowrap'>手续费</th>
+            <th class='text-left nowrap'>最低限制金额</th>
+            <th class='text-left nowrap'>最高限制金额</th>
+            <th class='text-left nowrap'>状态</th>
+            <th class='text-left nowrap'>提交时间</th>
+            <th class='text-left nowrap'>操作</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.name}</td>
+            <td class='text-left nowrap'>{$vo.day}</td>
+            <td class='text-left nowrap'>{$vo.bili}</td>
+            <td class='text-left nowrap'>{$vo.shouxu}</td>
+            <td class='text-left nowrap'>{$vo.min_num}</td>
+            <td class='text-left nowrap'>{$vo.max_num}</td>
+
+            <td class='text-left nowrap'>
+                {switch $vo.status}
+                {case 1}启用{/case}
+                {case 0}未启用{/case}
+                {/switch}
+            </td>
+            <td class='text-left nowrap'>{$vo.addtime|format_datetime}</td>
+            <td class='text-left nowrap'>
+                {if $vo.status eq 1}
+                <a class="layui-btn layui-btn-warm layui-btn-xs" data-action="{:url('lxb_forbid')}" data-value="id#{$vo.id};status#0" data-csrf="{:systoken('admin/deal/lxb_forbid')}">禁 用</a>
+                {elseif $vo.status eq 0}
+                <a class="layui-btn layui-btn-warm layui-btn-xs" data-action="{:url('lxb_resume')}" data-value="id#{$vo.id};status#1" data-csrf="{:systoken('admin/deal/lxb_resume')}">启 用</a>
+                {/if}
+                {if auth("edit_lixibao")}
+                <a class="layui-btn layui-btn-xs layui-btn" data-open="{:url('edit_lixibao',['id'=>$vo.id])}" data-value="id#{$vo.id}" style='background:green;'>编辑</a>
+                {/if}
+                {if auth("del_lixibao")}
+                <a class="layui-btn layui-btn-xs layui-btn" style='background:red;' onClick="del_goods({$vo.id})">删除</a>
+                {/if}
+            </td>
+
+
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+    <script>
+        var test = "{$Think.get.type|default='0'}";
+        $("#selectList").find("option[value="+test+"]").prop("selected",true);
+
+        form.render()
+
+
+
+    </script>
+    <script>
+        function del_goods(id){
+            layer.confirm("确认要删除吗，删除后不能恢复",{ title: "删除确认" },function(index){
+                $.ajax({
+                    type: 'POST',
+                    url: "{:url('del_lixibao')}",
+                    data: {
+                        'id': id,
+                        '_csrf_': "{:systoken('admin/deal/del_lixibao')}"
+                    },
+                    success:function (res) {
+                        layer.msg(res.info,{time:2500});
+                        location.reload();
+                    }
+                });
+            },function(){});
+        }
+    </script>
+</div>
+{/block}

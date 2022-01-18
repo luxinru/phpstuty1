@@ -1,0 +1,74 @@
+{extend name='main'}
+
+{block name="button"}
+
+    {if auth("add_goods")}
+    <button data-open='{:url("add_cate")}' data-title="添加分类" class='layui-btn'>添加分类</button>
+    {/if}
+
+{/block}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='text-left nowrap'>分类ID</th>
+            <th class='text-left nowrap'>分类名称</th>
+            <th class='text-left nowrap'>分类logo</th>
+            <th class='text-left nowrap'>简介</th>
+            <th class='text-left nowrap'>添加时间</th>
+            <th class='text-left nowrap'>状态</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.name}</td>
+            <td class='text-left nowrap'>
+                <img src="{$vo.cate_pic}" alt="" style="width: 80px">
+            </td>
+            <td class='text-left nowrap'>{$vo.cate_info}</td>
+            <td class='text-left nowrap'>
+                {$vo.addtime|format_datetime}
+            </td>
+            <td class='text-left nowrap'>
+            {if auth("edit_goods")}
+                <a class="layui-btn layui-btn-xs layui-btn" data-open="{:url('edit_cate',['id'=>$vo.id])}" data-value="id#{$vo.id}" style='background:green;'>编辑</a>
+            {/if}
+            {if auth("del_goods")}
+                <a class="layui-btn layui-btn-xs layui-btn" style='background:red;' onClick="del_goods({$vo.id})">删除</a>
+            {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+</div>
+<script>
+    function del_goods(id){
+         layer.confirm("确认要删除吗，删除后不能恢复",{ title: "删除确认" },function(index){
+            $.ajax({
+                type: 'POST',
+                url: "{:url('del_cate')}",
+                data: {
+                    'id': id,
+                    '_csrf_': "{:systoken('admin/shop/del_cate')}"
+                },
+                success:function (res) {
+                    layer.msg(res.info,{time:2500});
+                    location.reload();
+                }
+            });
+        },function(){});
+    }
+</script>
+{/block}

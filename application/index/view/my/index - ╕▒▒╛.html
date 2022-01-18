@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+
+
+    <script src="__ROOT__/static/plugs/layui/layui.all.js"></script>
+    <script src="__ROOT__/static/plugs/require/require.js"></script>
+    <script src="__ROOT__/static/admin.js"></script>
+    <style>
+        .my_info {
+            border-radius: 8px;
+            background: #8BC34A;
+            padding: 1.2rem 1rem;
+            display: flex;
+            width: 90%;
+            margin: 1rem auto;
+            background-image: linear-gradient(135deg, rgb(67, 203, 255) 10%, rgb(151, 8, 204) 100%);
+        }
+
+        .head {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            /* border: 1px solid white; */
+        }
+
+        .head>input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            top: 0;
+            left: 0;
+        }
+
+        .my_data {
+            margin-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            color: white;
+            font-size: .5rem;
+            padding:  0;
+            height: 50px;
+        }
+
+        .list li {
+            display: flex;
+            height: 2.1rem;
+            line-height: 2.1rem;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .list li div {
+            margin: auto 0;
+        }
+
+        .list li .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: auto 1rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .list li .right {
+            width: 1.2rem;
+            height: 1.5rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(__ROOT__/public/img/right.png);
+            margin: auto 1rem auto auto;
+        }
+
+        .list li:nth-child(1) .icon {
+            background-image: url(__ROOT__/public/img/qb.png);
+        }
+
+        .list li:nth-child(2) .icon {
+            background-image: url(__ROOT__/public/img/gr.png);
+        }
+
+        .list li:nth-child(3) .icon {
+            background-image: url(__ROOT__/public/img/cz.png);
+        }
+
+        .list li:nth-child(4) .icon {
+            background-image: url(__ROOT__/public/img/tx.png);
+        }
+
+        .list li:nth-child(5) .icon {
+            background-image: url(__ROOT__/public/img/zs.png);
+        }
+
+        .list li:nth-child(6) .icon {
+            background-image: url(__ROOT__/public/img/yq.png);
+        }
+
+        .list li:nth-child(7) .icon {
+            background-image: url(__ROOT__/public/img/yq.png);
+        }
+        .list li:nth-child(8) .icon {
+            background-image: url(__ROOT__/public/img/dz.png);
+        }
+
+        .list li:nth-child(9) .icon {
+            background-image: url(__ROOT__/public/img/set.png);
+        }
+
+        .list li:nth-child(10) .icon {
+            background-image: url(__ROOT__/public/img/tc.png);
+        }
+        .level{
+            position: relative;
+            top: -45px;;
+            display: inline-block;
+            right: -120px;;
+            background-image: linear-gradient(135deg, #f761a1 10%, #8c1bab 100%);
+            color: #fff;
+            line-height: 1em;
+            border-radius: 20px;
+            border: 0px solid;
+            width: max-content;
+            padding:5px 8px;
+        }
+
+        .level2{
+            top:-35px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>我的</span>
+    </header>
+    <div class="container">
+        <div class="my_info">
+            <div>
+                <div class="head">
+                    <img src="{$info.headpic}" alt="" id="head" onerror="this.src='__ROOT__/public/img/head.png'">
+                    <!-- <input type="file" name="" id="file"> -->
+                </div>
+            </div>
+            <div class="my_data">
+                <p>账　户 : {$info.username}<span id="user_name"></span></p>
+                <p style="margin-top:10px">邀请码 : {$info.invite_code}<span id="invite_code"></span></p>
+                <span class="level">{between name="info.balance" value="$lv3" }
+                                {between name="info.balance" value="$lv2"}普通会员{else/}中级会员{/between}
+                            {else/}
+                                高级会员
+                            {/between}
+                </span>
+
+                <span data-copy="123" class="level level2">复制</span>
+            </div>
+        </div>
+        <div>
+            <ul class="list">
+                <li onclick="location.href=`{:url('ctrl/wallet')}`">
+                    <div class="icon"></div>
+                    <div>钱包</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/my_data')}`">
+                    <div class="icon"></div>
+                    <div>个人资料</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/recharge_admin')}`">
+                    <div class="icon"></div>
+                    <div>充值管理</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/deposit_admin')}`">
+                    <div class="icon"></div>
+                    <div>提现管理</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/junior')}`">
+                    <div class="icon"></div>
+                    <div>直属下线</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/team_bgk')}`">
+                    <div class="icon"></div>
+                    <div>团队佣金</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('my/invite')}`">
+                    <div class="icon"></div>
+                    <div>邀请好友</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/receive_site')}`">
+                    <div class="icon"></div>
+                    <div>地址管理</div>
+                    <div class="right"></div>
+                </li>
+                <li onclick="location.href=`{:url('ctrl/set')}`">
+                    <div class="icon"></div>
+                    <div>设置</div>
+                    <div class="right"></div>
+                </li>
+                <li id="exit">
+                    <div class="icon"></div>
+                    <div>退出登录</div>
+                    <div class="right"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {include file="public/floor" /}
+    <script>
+        $(function() {
+            $('.floor li').eq(4).addClass("floor-active")
+        })
+
+        // 修改头像
+        // $('#file').change(function () {
+        //     var file = $("#file").get(0).files[0];
+        //     var reader = new FileReader();
+        //     reader.readAsDataURL(file);
+        //     reader.onloadend = function () {
+        //         $.ajax({
+        //             url: urlPost(),
+        //             type: "POST",
+        //             dataType: "JSON",
+        //             data: { head: reader.result },
+        //             success: (res => {
+        //                 console.log(res)
+        //                 if (res.code == 0) {
+        //                     $("#head").attr("src", reader.result);
+        //                 } else {
+        //                     QS_toast.show(res.info, true)
+        //                 }
+        //             }),
+        //             error: (err => { console.log(err) })
+        //         })
+        //     }
+        // })
+        $("#exit").click(function(){
+            layer.open({
+                    content: '确定退出登录吗？'
+                    , btn: ['确定','取消'],
+                    shadeClose: false
+                    , yes: function (index) {
+                        location.href="{:url('user/logout')}"
+                    },
+                    no:function(){
+                        layer.close();
+                    }
+                });
+        })
+    </script>
+</body>
+
+</html>

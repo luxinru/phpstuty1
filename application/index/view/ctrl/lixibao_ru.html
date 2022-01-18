@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://bdd99.cdn111111d12.best/Home/Run/deposit.html -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>存一笔</title>
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/icon-font.css">
+    <link rel="stylesheet" href="/static_new/css/mobileSelect.css">
+    <script src="/static_new/js/pack.js"></script>
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/dialog.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/mobileSelect.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            margin-bottom: 65px;
+        }
+
+        .header {
+            width: 100%;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            position: relative;
+        }
+
+        .header > p {
+            width: 96%;
+            margin: 0 2%;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+        }
+
+        .my-meun {
+            overflow: hidden;
+            margin-right: 15px;
+            margin-left: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .my-meun > .meun-item {
+            font-size: 15px;
+            padding-right: 45px;
+            position: relative;
+            padding: 0 15px;
+            height: 50px;
+            background-color: #fff;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .my-meun > .meun-item > .item-line {
+            border-bottom: 1px solid rgba(0, 0, 0, .2)
+        }
+
+        .my-meun > .meun-item > .item-line > span {
+            font-size: 15px;
+            line-height: 50px;
+            margin-left: 5px;
+            color: #8799a3;
+        }
+
+        .my-meun > .meun-item > .item-line > icon {
+            color: #000;
+            position: absolute;
+            right: 15px;
+            top: 17px;
+        }
+
+        .item-line > input {
+            border: none;
+            position: absolute;
+            right: 15px;
+            top: 14px;
+            margin-top: 2px;
+            text-align: right;
+            font-size: 15px;
+        }
+
+        .item-line > input:-moz-placeholder {
+            color: grey;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .item-line > input::-moz-placeholder {
+            color: grey;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .item-line > input:-ms-input-placeholder {
+            color: grey;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .item-line > input::-webkit-input-placeholder {
+            color: grey;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .save-btn {
+            margin: 20px 15px;
+            padding: 10px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 2500px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .select-area {
+            float: right;
+            font-size: 15px !important;
+            color: #000 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head>
+<body id="app">
+<div class="header">
+    <div class="goback">
+        <span class="icon iconfont icon-fanhui"></span> <a href="javascript:history.go(-1)">返回</a>
+    </div>
+    <p>存一笔</p>
+</div>
+<form id="login-form">
+    <div class="my-meun">
+        <div class="meun-item">
+            <div class="item-line">
+                <span>可用余额</span> ￥ {$yue}
+            </div>
+        </div>
+
+        <div class="meun-item">
+            <div class="item-line">
+                <span>选择理财产品</span>
+                <span class="select-area" id="default" style="cursor: pointer;font-size: 12px!important;"></span>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="meun-item">
+            <div class="item-line">
+                <span>存入金额</span> <input type="number" placeholder="输入存入金额" name="price" id="price" autocomplete="off">
+                <input type="hidden" id="lcid" name="lcid" value="1">
+            </div>
+        </div>
+
+        <div class="meun-item">
+            <div class="item-line">
+                <span>购买收益</span> <input type="text" id="yjsy" value="￥  0" readonly="">
+            </div>
+        </div>
+    </div>
+    <p style="font-size: 12px"><br>　　* 购买理财产品,恶意购买不计算收益,且收取手续费</p>
+</form>
+<div class="save-btn">提交</div>
+<script type="application/javascript">
+    var data3 = "";
+
+    $(function () {
+
+        $.ajax({
+            type:"GET",
+            url:"{:url('lixibao_ru')}"+'?isajax=1',
+            data :{isajax:1},
+            dataType:"json",
+            async : false,
+            success:function(coordinates){
+                result = coordinates;
+                data3 = result.data;
+                $('#default').html(result.data0)
+                console.log(data3)
+            },
+            error:function(data){
+                console.log('error'+data.status)
+            }
+        });
+
+
+
+        var mobileSelect3 = new MobileSelect({
+            trigger: '.select-area',
+            title: '选择理财产品',
+            wheels: [
+                {
+//                    data: [
+//                        {id: '1', value: '存1天/0.0700%'},
+//                        {id: '2', value: '存7天/0.0800%'},
+//                        {id: '3', value: '存30天/0.0900%'},
+//                        {id: '4', value: '存60天/0.1000%'},
+//                    ]
+                    data:data3
+                }
+            ],
+            position: [0, 1],
+            callback: function (indexArr, data) {
+                $('.select-area').val(data[0]['value']);
+                $('#lcid').val(data[0]['id']);
+                yjsy();
+            }
+        });
+
+        function check() {
+            if ($("input[name=price]").val() == '') {
+                $(document).dialog({infoText: '存入金额不符合系统要求'});
+                return false;
+            }
+            return true;
+        }
+
+
+        function yjsy() {
+            var price = $("#price").val();
+            if(price<=0) return false;
+            var lcid = $("#lcid").val();
+            $.ajax({
+                url: '/index/ctrl/deposityj',
+                data: {price: price, lcid: lcid},
+                type: 'POST',
+                success: function (data) {
+                    $("#yjsy").val(data.data);
+                }
+            });
+        }
+
+
+        $("#price").keyup(function () {
+            yjsy();
+        })
+
+        $(".save-btn").on('click', function () {
+            if (check()) {
+                var loading = null;
+                $.ajax({
+                    url: "{:url('lixibao_ru')}",
+                    data: $("#login-form").serialize(),
+                    type: 'POST',
+                    beforeSend: function () {
+                        loading = $(document).dialog({
+                            type: 'notice',
+                            infoIcon: '/static_new/img/loading.gif',
+                            infoText: '正在加载中',
+                            autoClose: 0
+                        });
+                    },
+                    success: function (data) {
+                        if (data.code == 0) {
+                            $(document).dialog({infoText: data.info});
+                            setTimeout(function () {
+                                loading.close();
+                                window.location.href = '/index/ctrl/lixibao';
+                            }, 2000);
+
+                        } else {
+                            $(document).dialog({infoText: data.info});
+                            loading.close();
+                        }
+                    }
+                });
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>

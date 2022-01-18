@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>提交订单</title>
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/icon-font.css">
+    <script src="/static_new/js/pack.js"></script>
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/dialog.min.js"></script>
+
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            margin-bottom: 65px;
+        }
+
+        .header {
+            width: 100%;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            position: relative;
+        }
+
+        .header > p {
+            width: 96%;
+            margin: 0 2%;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+        }
+
+        .help-main {
+            margin: 10px 15px;
+        }
+
+        .title {
+            padding-bottom: 10px;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .time {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .help-detile {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .help-detile img {
+            max-width: 99%;
+        }
+        .my-meun > .meun-item {
+            font-size: 15px;
+            padding-right: 45px;
+            position: relative;
+            padding: 0 15px;
+            height: 50px;
+            background-color: #fff;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .my-meun > .meun-item > .item-line > span {
+            font-size: 15px;
+            line-height: 50px;
+            margin-left: 5px;
+            color: #8799a3;
+        }
+
+        .my-meun > .meun-item > .item-line > icon {
+            color: #000;
+            position: absolute;
+            right: 15px;
+            top: 17px;
+        }
+
+        .save-btn,.save-btn2 {
+            margin: 20px 15px;
+            padding: 10px;
+            background: #7669fd;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 2500px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .right {
+            float: right;
+            color: #000 !important;
+        }
+
+        .orange {
+            color: #ff9c36 !important;
+        }
+
+        .purple {
+            font-weight: bold;
+            color: #7669fd !important;
+        }
+
+        .goods-info {
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .goods-info > .goods-img {
+            float: left;
+            width: 27%;
+        }
+
+        .goods-info > .goods-img > img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .goods-name {
+            float: left;
+            width: 73%;
+        }
+
+        .goods-name > p {
+            font-size: 14px;
+        }
+
+        .goods-name > .price {
+            margin-top: 10px;
+        }
+
+        .address {
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .address > .local-img {
+            float: left;
+            width: 18px;
+            padding: 10px;
+        }
+
+        .address > .local-img > img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .address-info {
+            font-size: 14px;
+        }
+
+        .click-img {
+            float: right;
+            width: 18px;
+            padding: 10px 0;
+            position: relative;
+            top:-30px;
+        }
+
+        .click-img > img {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head>
+<body id="app">
+<div class="header">
+    <div class="goback">
+        <span class="icon iconfont icon-fanhui"></span> <a href="javascript:history.go(-1)">返回</a>
+    </div>
+    <p>提交订单</p>
+</div>
+<form id="login-form">
+    <div style="padding: .5rem 1rem;;background-image: linear-gradient(450deg,#8a6eff,#936dff);"><div style="margin-top: 5px;font-weight: 500;color: white;font-size: 18px">等待买家确认</div><div id="chaoshi" style="color: white;font-size: 14px;margin-top: 10px;margin-bottom: 10px">
+        您的订单将于<span id="timer">0分0秒</span>后进入超时状态
+    </div></div>
+
+    <div class="my-meun" >
+        <div class="address">
+            <div class="local-img">
+                <img src="/static_new/img/local.png">
+            </div>
+            <div class="address-info" onclick="window.location.href='/index/my/edit_address'">
+                <p>
+                    收件人: <span class="user" style="display: inline-block">-</span>
+                    <span class="tel" style="display: inline-block;float: right">-</span>
+                </p>
+                <p class="location"> - </p>
+            </div>
+            <div class="click-img">
+                <a href="/index/my/edit_address">
+                    <img src="/static_new/img/right.png">
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="my-meun" style="margin-top: -60px">
+        <div class="meun-item">
+            <div class="item-line">
+                <span>订单号</span>
+                <span class="right order_num" id="num">-</span>
+            </div>
+        </div>
+        <div class="goods-info">
+            <div class="goods-img">
+                <img src="" class="goods_pic">
+            </div>
+            <div class="goods-name">
+                <p class="info_name"></p><div style="color: white;font-size: 11px;padding-top:2px;border-radius: 4px;width: 60px;height: 20px;text-align: center;background-color: #00B83F">官方担保</div>
+                <p class="price">价格：<span class="orange money">¥ --.--</span> * <span class="info_num"></span></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="my-meun">
+        <div class="meun-item">
+            <div class="item-line">
+                <span>您的余额</span>
+                <span class="right usable_num">¥ --.--</span>
+            </div>
+        </div>
+        <div class="meun-item">
+            <div class="item-line">
+                <span>订单总金额</span>
+                <span class="right data_money">¥ --.--</span>
+            </div>
+        </div>
+        <div class="meun-item">
+            <div class="item-line">
+                <span>佣金</span>
+                <span class="right orange brokerage">¥ --.--</span>
+            </div>
+        </div>
+        <div class="meun-item">
+            <div class="item-line">
+                <span>预计返还</span>
+                <span class="right purple return">¥ --.--</span>
+            </div>
+        </div>
+    </div>
+
+</form>
+<input type="hidden" id="endtime" value="1">
+<div class="save-btn">提交订单</div>
+
+
+
+<script type="application/javascript">
+    var btnflag = true;
+    var oid = "{$Think.get.oid|default=''}";//sessionStorage.getItem('oid'),//订单ID
+        add_id = "", submit = true;
+    var url3 = '1';
+    var issub = 1;var countdown = 5;
+    var timer='';
+    var isdj = 0;
+
+    var zhujiTime = "{:config('deal_zhuji_time')}";
+    var shopTime = "{:config('deal_shop_time')}";
+
+    zhujiTime = zhujiTime *1000;
+    shopTime = shopTime *1000;
+
+    $(function () {
+        $(function() {
+            $.ajax({
+                url: "/index/order/order_info",
+                type: "POST",
+                dataType: "JSON",
+                data: { id: oid },
+                success: function(res) {
+                    console.log(res)
+                    var data = res.data,
+                        total = ((Number(data.num) * 100 + Number(data.commission) * 100) / 100).toFixed(2)
+                    if (res.code == 0) {
+                        $('.user').html(data.name);//收件人
+                        $('.tel').html(data.tel);//电话
+                        $('.location').html(data.address);//收件地址
+                        $('.goods_pic').attr('src', data.goods_pic);//商品图片
+                        $(".order_num").html(data.oid);//订单编号
+
+                        $(".info_name").html(data.goods_name);//商品名
+                        $(".info_store").html(data.shop_name);//店铺名
+                        $('.money').html("￥" + data.goods_price);//商品单价
+                        $('.info_num').html(data.goods_count);//商品数量
+                        $(".data_money").html("￥" + data.num);//商品总价
+                        $('.usable_num').html(data.balance);//可用余额
+                        $('#endtime').val(data.endtime);//佣金
+                        $('.brokerage').html("￥" + data.commission);//佣金
+                        $('.return').html("￥" + total)//返还金额
+
+                        if (data.status==5) {
+                            isdj=1;
+                            $('#chaoshi').html("您的订单已冻结,请耐心等候!");
+                            $('.save-btn').html('<div class="save-btn2">订单已冻结,解冻时间为:'+data.endtime+'</div>');
+                            $('.save-btn').removeClass('save-btn');
+                        }
+
+                        url3 = data.cid;
+                        add_id = data.add_id;
+
+                        timer = setInterval(leftTimer,1000);
+                    }
+                },
+                error: function(err) { console.log(err) }
+            })
+        });
+
+
+        $(".save-btn").on('click', function () {
+            if (!issub) {
+                $(document).dialog({
+                    infoText: "订单已超时!",
+                    autoClose: 2000
+                });
+                return false;
+            }
+
+            //--------------------------------
+            var i = 0;
+            layer.open({
+                type: 2
+                , content: '订单提交中',
+                time: zhujiTime,
+                shadeClose: false,
+            });
+            var timer = setInterval(function() {
+                i++;
+                if (i == 1) {
+                    layer.open({
+                        type: 2
+                        , content: '远程主机正在分配',
+                        time: zhujiTime,
+                        shadeClose: false,
+                    })
+                } else if (i == 2) {
+                    layer.open({
+                        type: 2
+                        , content: '等待商家系统响应',
+                        time: shopTime,
+                        shadeClose: false,
+                    })
+                    var ajaxT = setTimeout(function(){
+                        $.ajax({
+                            url: "/index/order/do_order",
+                            type: "POST",
+                            dataType: "JSON",
+                            data: { oid:oid, add_id:add_id },
+                            success: function(res) {
+                                console.log(res)
+                                if (res.code == 0) {
+                                    $(document).dialog({
+                                        infoText: "订单提交成功!,",
+                                        autoClose: 2000
+                                    });
+                                    clearInterval(timer);
+                                    var linkTime = setTimeout(function() {
+                                        location.href = "{:url('rot_order/index')}"+'?type='+url3
+                                    }, 1800);
+                                }else {
+                                    $(document).dialog({
+                                        infoText: res.info,
+                                        autoClose: 2000
+                                    });
+                                }
+                                sumbit = true;
+                            },
+                            error: function(err) { console.log(err); sumbit = true; }
+                        })
+                    },shopTime)
+                }
+            }, zhujiTime)
+
+        })
+
+    });
+
+
+    var o=document.getElementById('timer');
+    //在文档中根据id查找元素 并显示在页面
+    function leftTimer(){
+        console.log(123)
+        var now=new Date();
+        //创建一个新日期
+        var endDate=new Date($("#endtime").val());
+        //创建一个指定日期
+        var leftTime = (endDate.getTime()-now.getTime())/1000;
+        console.log(leftTime)
+        if(leftTime > 0){
+            // var days = parseInt(leftTime/60/60/24);
+            //计算剩余的天数
+//        var hours = parseInt(leftTime/60/60);
+            //计算剩余的小时
+            var minutes = parseInt(leftTime/60%60);
+            //计算剩余的分钟
+            var seconds = parseInt(leftTime%60);
+            //计算剩余的秒数
+            //拼接
+            time =minutes+"分"+seconds+"秒";
+            o.innerHTML=time;//将时间显示到div中
+        }else {
+            time ="0分0秒";
+            clearInterval(timer);
+            o.innerHTML=time;//将时间显示到div中
+            if (isdj==0) {
+                $('#chaoshi').html('<font color="red">* 您的订单已超时,无法进行操作</font>');
+                $('.save-btn').html('<div class="save-btn2">订单已超时</div>');
+                $('.save-btn').removeClass('save-btn');
+            }
+            issub = 0;
+        }
+        //使两个日期都转换成毫秒 再让指定日期减去当前日期
+        //计算出来的毫秒数除以1000 计算剩余秒数
+    }
+
+
+</script>
+
+</body>
+</html>

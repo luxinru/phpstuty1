@@ -1,0 +1,36 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+
+    <title>{:lang($info.title)}</title>
+
+    <style>
+        html, body {
+            color: #333;
+            margin: 0;
+            height: 100%;
+            font-family: "Myriad Set Pro","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+
+<body>
+<header><div class="back" onclick="window.history.back(-1)"></div><span>{:lang($info.title)}</span></header>
+
+<section class="container" style="width:96%;margin-left: 2%;">
+
+    <div style="font-size: 1rem;font-weight: 600;text-align: center;margin-top: 0.8rem;margin-bottom: 0.8rem;">{:lang($info.title)}</div>
+    <div>
+        {$info.content|raw}
+    </div>
+</section>
+<script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+<script src="__ROOT__/public/js/common.js"></script>
+
+</body></html>

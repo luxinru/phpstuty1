@@ -1,0 +1,104 @@
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+    <div class="layui-card-body">
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">真实姓名</label>
+            <div class="layui-input-block">
+                <input name="user_name" required placeholder="请输入真实姓名" value="{$info.username}" class="layui-input">
+                <input type="hidden" name="_csrf_" value="{:systoken('admin/users/edit_users')}">
+
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">手机号码</label>
+            <div class="layui-input-block">
+                <input name="tel" required placeholder="请输入手机号码" value="{$info.tel}" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">账号余额</label>
+            <div class="layui-input-block">
+                <input name="balance" type="number" min="0" required placeholder="请输入账号余额" value="{$info.balance}" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">冻结金额</label>
+            <div class="layui-input-block">
+                <input name="freeze_balance" type="number" min="0" required placeholder="冻结金额" value="{$info.freeze_balance}" class="layui-input">
+            </div>
+        </div>
+        
+        
+        <div class="layui-form-item">
+                     <label class="layui-form-label label-required">匹配区间(%)</label>
+                       <div class="layui-input-block">
+                    
+                                               
+                            <input name="pipei_min" style="width:100px;display: inline-block" required placeholder="" value="{$info.pipei_min}" class="layui-input">% - 
+                             <input name="pipei_max" style="width:100px;display: inline-block" required placeholder="" value="{$info.pipei_max}" class="layui-input">%
+                        </div>
+           
+        </div>
+        
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">会员等级</label>
+            <div class="layui-input-block">
+                <select name="level" id="selectList">
+                    {foreach $level as $key=>$vo}
+                    <option value="{$vo.level}" <?php echo $info['level']==$vo['level'] ? 'selected': ''; ?> >{$vo.name}</option>
+                    {/foreach}
+                </select>
+                <!--<input name="freeze_balance" type="number" min="0" required placeholder="冻结金额" value="{$info.freeze_balance}" class="layui-input">-->
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">交易状态</label>
+            <div class="layui-input-block">
+                <select name="deal_status" id="selectList">
+
+                    <option value="1" <?php echo $info['deal_status']==1 ? 'selected': ''; ?> >正常</option>
+                    <option value="3" <?php echo $info['deal_status']==3 ? 'selected': ''; ?> >冻结</option>
+
+                </select>
+                <!--<input name="freeze_balance" type="number" min="0" required placeholder="冻结金额" value="{$info.freeze_balance}" class="layui-input">-->
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">登录密码</label>
+            <div class="layui-input-block">
+                <input name="pwd" placeholder="留空不修改密码" class="layui-input">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">交易密码</label>
+            <div class="layui-input-block">
+                <input name="pwd2" placeholder="留空不修改交易密码" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级ID</label>
+            <div class="layui-input-block">
+                <input name="parent_id" placeholder="请输入上级ID" value="{$info.parent_id}" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+    <input name="id" type="hidden" value="{$info.id}">
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>提交</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-close>取消</button>
+    </div>
+
+    <script>window.form.render();</script>
+
+</form>

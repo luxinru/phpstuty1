@@ -1,0 +1,1002 @@
+---------------------------------------------------------------
+
+[2022-01-18T09:52:31+09:00] 127.0.0.1 GET localhost/
+[运行时间：0.059699s] [吞吐率：16.75req/s] [内存消耗：2,321.16kb] [文件加载：72]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\jp-jp.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'none',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2022-01-18T09:54:33+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.081820s] [吞吐率：12.22req/s] [内存消耗：2,552.41kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\jp-jp.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; lang=jp-jp; s3cb7ec40=scj9i211lnkdf463432fp7h2tg',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'none',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T09:54:36+09:00] 127.0.0.1 POST localhost/index/cutLangss/cutlangs
+[运行时间：0.024662s] [吞吐率：40.55req/s] [内存消耗：2,221.30kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\jp-jp.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; lang=jp-jp; s3cb7ec40=scj9i211lnkdf463432fp7h2tg',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '10',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'zh-cn',
+)
+---------------------------------------------------------------
+
+[2022-01-18T09:54:36+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.049076s] [吞吐率：20.38req/s] [内存消耗：2,513.27kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:23:34+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.266703s] [吞吐率：3.75req/s] [内存消耗：3,260.97kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '30',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => 'admin',
+  'pwd' => 'admin123',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:23:53+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.035122s] [吞吐率：28.47req/s] [内存消耗：3,261.23kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '6664101972',
+  'pwd' => '123456',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:23:59+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.034647s] [吞吐率：28.86req/s] [内存消耗：3,261.23kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '6664101972',
+  'pwd' => '123456',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:24:03+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.034809s] [吞吐率：28.73req/s] [内存消耗：3,261.23kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '6664101972',
+  'pwd' => '123456',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:24:06+09:00] 127.0.0.1 GET localhost/index/user/register
+[运行时间：0.074196s] [吞吐率：13.48req/s] [内存消耗：2,521.76kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\register.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'invite_code',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:24:24+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[运行时间：0.036153s] [吞吐率：27.66req/s] [内存消耗：3,260.77kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/register',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '75',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '6664101972',
+  'pwd' => '123456',
+  'deposit_pwd' => '123456',
+  'pwd2' => '123456',
+  'invite_code' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:24:28+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.057696s] [吞吐率：17.33req/s] [内存消耗：2,513.19kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:30:58+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.049556s] [吞吐率：20.18req/s] [内存消耗：2,513.27kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:31:12+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.050862s] [吞吐率：19.66req/s] [内存消耗：3,261.23kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '6664101972',
+  'pwd' => '123456',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:33:24+09:00] 127.0.0.1 GET localhost/index/user/register
+[运行时间：0.052264s] [吞吐率：19.13req/s] [内存消耗：2,522.39kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\register.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'invite_code',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:33:34+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[运行时间：0.044510s] [吞吐率：22.47req/s] [内存消耗：3,260.74kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/register',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '73',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18778183012',
+  'pwd' => '123456',
+  'deposit_pwd' => '123456',
+  'pwd2' => '123456',
+  'invite_code' => '123',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:33:39+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[运行时间：0.037213s] [吞吐率：26.87req/s] [内存消耗：3,260.77kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/register',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '76',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18778183012',
+  'pwd' => '123456',
+  'deposit_pwd' => '123456',
+  'pwd2' => '123456',
+  'invite_code' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:34:18+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[运行时间：0.063632s] [吞吐率：15.72req/s] [内存消耗：4,006.68kb] [文件加载：88]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/register',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '76',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18778183012',
+  'pwd' => '123456',
+  'deposit_pwd' => '123456',
+  'pwd2' => '123456',
+  'invite_code' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T10:34:43+09:00] 127.0.0.1 GET localhost/index/user/register
+[运行时间：0.047198s] [吞吐率：21.19req/s] [内存消耗：2,518.27kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\register.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'invite_code',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T10:35:00+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[运行时间：0.043899s] [吞吐率：22.78req/s] [内存消耗：3,987.36kb] [文件加载：85]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/register',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '76',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18778183012',
+  'pwd' => '123456',
+  'deposit_pwd' => '123456',
+  'pwd2' => '123456',
+  'invite_code' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T11:08:04+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.053668s] [吞吐率：18.63req/s] [内存消耗：2,513.19kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T11:08:16+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.087974s] [吞吐率：11.37req/s] [内存消耗：3,231.71kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '68',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18888888888',
+  'pwd' => '22e9821b28bfcf34d89ee8245a748743438196a8',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T11:08:32+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.078669s] [吞吐率：12.71req/s] [内存消耗：3,231.60kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18888888888',
+  'pwd' => '34317',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T11:08:59+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.075968s] [吞吐率：13.16req/s] [内存消耗：3,231.71kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '68',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18888888888',
+  'pwd' => '81d388d6b63a04f073cd8cdf3b72a3fd534ffa4f',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T11:13:06+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.035959s] [吞吐率：27.81req/s] [内存消耗：2,215.17kb] [文件加载：70]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2022-01-18T11:13:32+09:00] 127.0.0.1 GET localhost/index/user/login.html
+[运行时间：0.048264s] [吞吐率：20.72req/s] [内存消耗：2,513.30kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\user\login.html [ array (
+  0 => 'table',
+  1 => 'request',
+  2 => 'csrf_state',
+  3 => 'csrf_message',
+  4 => 'lang',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:46+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[运行时间：0.100114s] [吞吐率：9.99req/s] [内存消耗：3,235.44kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'http://localhost',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '34',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'tel' => '18888888888',
+  'pwd' => '123456',
+  'jizhu' => '1',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2022-01-18T11:13:48+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[运行时间：0.269176s] [吞吐率：3.72req/s] [内存消耗：6,041.70kb] [文件加载：83]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn; user_id=175; tel=18888888888; pwd=123456',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\index\home.html [ array (
+  0 => 'rule',
+  1 => 'msg',
+  2 => 'request',
+  3 => 'csrf_state',
+  4 => 'csrf_message',
+  5 => 'console',
+  6 => 'info',
+  7 => 'balance',
+  8 => 'banner',
+  9 => 'level',
+  10 => 'notice',
+  11 => 'hezuo',
+  12 => 'jianjie',
+  13 => 'guize',
+  14 => 'gundong',
+  15 => 'tanchunag',
+  16 => 'list',
+  17 => 'pic',
+  18 => 'cate',
+  19 => 'lixibao',
+  20 => 'tod_user_yongjin',
+  21 => 'yes_user_yongjin',
+  22 => 'user_yongjin',
+  23 => 'news',
+  24 => 'xy_message2',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:49+09:00] 127.0.0.1 GET localhost/static_new6/css/app.3227f3b635185d55fe635aae11c7880e.css.map
+[运行时间：0.025916s] [吞吐率：38.59req/s] [内存消耗：1,647.89kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2022-01-18T11:13:49+09:00] 127.0.0.1 GET localhost/static_new/js/swiper.min.js.map
+[运行时间：0.021352s] [吞吐率：46.83req/s] [内存消耗：1,647.85kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2022-01-18T11:13:58+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[运行时间：0.192665s] [吞吐率：5.19req/s] [内存消耗：6,037.33kb] [文件加载：83]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\application\index\\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'MEIQIA_TRACK_ID=21aNoeI6D1MJHOQq1h0l0Fc79Vs; MEIQIA_VISIT_ID=22Gbq8ajncjwtONZzl0UJHTCbpg; username=admin; password=UtJHZ2FutrTjYgqS3bcq9i4+bJ8hY5E+jJHJAsVYaovH6rahxF5ZHBe5w/tRySs6NFJzOPaPmmN9FETIwQ4bAg==; s3cb7ec40=scj9i211lnkdf463432fp7h2tg; lang=zh-cn; user_id=175; tel=18888888888; pwd=123456',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/index/user/login.html',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\application\index\view\index\home.html [ array (
+  0 => 'rule',
+  1 => 'msg',
+  2 => 'request',
+  3 => 'csrf_state',
+  4 => 'csrf_message',
+  5 => 'console',
+  6 => 'info',
+  7 => 'balance',
+  8 => 'banner',
+  9 => 'level',
+  10 => 'notice',
+  11 => 'hezuo',
+  12 => 'jianjie',
+  13 => 'guize',
+  14 => 'gundong',
+  15 => 'tanchunag',
+  16 => 'list',
+  17 => 'pic',
+  18 => 'cate',
+  19 => 'lixibao',
+  20 => 'tod_user_yongjin',
+  21 => 'yes_user_yongjin',
+  22 => 'user_yongjin',
+  23 => 'news',
+  24 => 'xy_message2',
+) ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:58+09:00] 127.0.0.1 GET localhost/static_new6/css/app.3227f3b635185d55fe635aae11c7880e.css.map
+[运行时间：0.020598s] [吞吐率：48.55req/s] [内存消耗：1,647.89kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2022-01-18T11:13:58+09:00] 127.0.0.1 GET localhost/static_new/js/swiper.min.js.map
+[运行时间：0.021032s] [吞吐率：47.55req/s] [内存消耗：1,647.85kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\thinkphp\lang\zh-cn.php

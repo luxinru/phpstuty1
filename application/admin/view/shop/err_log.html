@@ -1,0 +1,52 @@
+{extend name='main'}
+{block name="content"}
+
+<div class="think-box-shadow">
+
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='text-left nowrap'>订单号</th>
+            <th class='text-left nowrap'>用户名</th>
+            <th class='text-left nowrap'>交易金额</th>
+            <th class='text-left nowrap'>错误信息</th>
+            <th class='text-left nowrap'>发生时间</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $vo}
+        <tr>
+            <td class='text-left nowrap'>{$vo.oid}</td>
+            <td class='text-left nowrap'>{$vo.username|default='-'}</td>
+            <td class='text-left nowrap'>¥{$vo.num|default='0'}</td>
+            <td class='text-left nowrap'>{$vo.errmsg}</td>
+            <td class='text-left nowrap'>{$vo.addtime|format_datetime}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+</div>
+<script>
+    function del_goods(id){
+         layer.confirm("确认要删除吗，删除后不能恢复",{ title: "删除确认" },function(index){
+            $.ajax({
+                type: 'POST',
+                url: "{:url('del_goods')}",
+                data: {
+                    'id': id,
+                    '_csrf_': "{:systoken('admin/deal/del_goods')}"
+                },
+                success:function (res) {
+                    layer.msg(res.info,{time:2500});
+                    location.reload();
+                }
+            });
+        },function(){});
+    }
+</script>
+{/block}

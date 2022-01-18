@@ -1,0 +1,74 @@
+{extend name='main'}
+
+{block name="button"}
+
+    {if auth("add_message")}
+    <button data-open='{:url("add_message")}' data-title="添加公告" class='layui-btn'>添加公告</button>
+    {/if}
+
+{/block}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+ <div class="layui-form-item layui-inline" style="margin-right: 10px">
+                <button data-action='{:url("del_messageall")}' data-csrf="{:systoken('del_messageall')}" data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-danger'>批量删除</button>
+            </div>
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+             <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>标题</th>
+            <th class='text-left nowrap'>发表时间</th>
+            <th class='text-left nowrap'>查看内容</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+                   <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.title}</td>
+            <td class='text-left nowrap'>
+                {$vo.addtime|format_datetime}
+            </td>
+            <td class='text-left nowrap'>
+            {if auth("edit_message")}
+                <a class="layui-btn layui-btn-xs layui-btn" data-open="{:url('edit_message',['id'=>$vo.id])}" data-value="id#{$vo.id}" style='background:green;'>编辑</a>
+                <a class="layui-btn layui-btn-xs layui-btn" style='background:red;' onClick="del_message({$vo.id})">删除</a>
+            {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+</div>
+<script>
+    function del_message(id){
+        layer.confirm("确认要删除吗，删除后不能恢复",{ title: "删除确认" },function(index){
+            $.ajax({
+                type: 'POST',
+                url: "{:url('del_message')}",
+                data: {
+                    'id': id,
+                    '_csrf_': "{:systoken('admin/help/del_message')}"
+                },
+                success:function (res) {
+                    layer.msg(res.info,{time:2500});
+                    location.reload();
+                }
+            });
+        },function(){});
+    }
+</script>
+{/block}

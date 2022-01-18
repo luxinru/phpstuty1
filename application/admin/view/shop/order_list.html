@@ -1,0 +1,71 @@
+{extend name='main'}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+    {include file='deal/order_list_search'}
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='text-left nowrap'>订单号</th>
+            <th class='text-left nowrap'>用户名</th>
+            <th class='text-left nowrap'>商品名称</th>
+            <th class='text-left nowrap'>商品单价</th>
+            <th class='text-left nowrap'>交易数量</th>
+            <th class='text-left nowrap'>交易数额</th>
+            <th class='text-left nowrap'>下单时间</th>
+            <th class='text-left nowrap'>交易状态</th>
+            <th class='text-left nowrap'>操作</th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.username}</td>
+            <td class='text-left nowrap'>{$vo.goods_name}</td>
+            <td class='text-left nowrap'>¥{$vo.goods_price}</td>
+            <td class='text-left nowrap'>{$vo.num}</td>
+            <td class='text-left nowrap'>¥{$vo.num}</td>
+            <td class='text-left nowrap'>
+                {$vo.addtime|format_datetime}
+            </td>
+            <td class='text-left nowrap'>
+                {switch $vo.status}
+                    {case 0}
+                        {literal}
+                        <!-- {if auth("edit_recharge")}
+                                <a data-csrf="{:systoken('admin/deal/edit_recharge')}" class="layui-btn layui-btn-xs layui-btn" data-action="{:url('edit_recharge',['status'=>2,'id'=>$vo.id])}" data-value="id#{$vo.id};status#2" >确认付款</a>
+                                <a data-csrf="{:systoken('admin/deal/edit_recharge')}" class="layui-btn layui-btn-xs layui-btn-warm" data-action="{:url('edit_recharge',['status'=>3,'id'=>$vo.id])}" data-value="id#{$vo.id};status#3" >取消订单</a>
+                            {/if} -->
+                            等待付款
+                        {/literal}
+                    {/case}
+                    {case 1}完成付款{/case}
+                    {case 2}已发货{/case}
+                    {case 3}强制付款{/case}
+                    {case 4}系统取消{/case}
+                    {case 5}订单冻结{/case}
+                {/switch}
+            </td>
+            <td class='text-left nowrap'>
+                {if $vo.status==0}
+                <a data-csrf="{:systoken('admin/deal/do_user_order')}" class="layui-btn layui-btn-xs layui-btn" data-action="{:url('do_user_order')}" data-value="id#{$vo.id};status#3" >强制付款</a>
+                <a data-csrf="{:systoken('admin/deal/do_user_order')}" class="layui-btn layui-btn-xs layui-btn-warm" data-action="{:url('do_user_order')}" data-value="id#{$vo.id};status#4" >取消订单</a>
+                {/if}
+
+                {if $vo.status==1}
+                <a data-csrf="{:systoken('admin/shop/fahuo')}" class="layui-btn layui-btn-xs layui-btn" data-action="{:url('fahuo')}" data-value="id#{$vo.id};status#2" >发货</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+</div>
+{/block}

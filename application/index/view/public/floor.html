@@ -1,0 +1,176 @@
+<div data-v-8755e8fe="" data-v-eebac136="" class="footer"  style="background: none;width: 100%;height: 1.7rem;background-color: white;">
+    <ul data-v-8755e8fe="">
+        <li onclick="window.location.href='{:url(\'index/home\')}'" data-v-8755e8fe="">
+            <?php
+                if(cookie('lang') == 'th-th' ){
+            ?>
+            <img data-v-8755e8fe=""
+                 src="/image/571.png"
+                 alt="">
+                 <img data-v-8755e8fe=""
+                 src="/image/638651.png"
+                 alt="">
+            <?php }else{ ?>
+                
+            <!--if(cookie('lang') == 'en-us' )home-->
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/home_before.png','home')}"
+                 alt="" style="margin-top: -0.3rem;">
+                 <img data-v-8755e8fe=""
+                 src="{:lang('/img/home_after.png','home')}"
+                 alt="" style="margin-top: -0.3rem;">
+            <span style="display: block;margin: 0 27%;" class="activeText">{:lang('Home')}</span>
+            <?php
+                }
+            ?>
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h',[1])}"-->
+            <!--     alt="">-->
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_l',[1])}"-->
+            <!--     alt="">-->
+        </li>
+        <li onclick="window.location.href='{:url(\'order/index\')}'" data-v-8755e8fe="">
+            <?php
+                if(cookie('lang') == 'th-th' ){
+            ?>
+            <img data-v-8755e8fe=""
+                 src="/image/6561.png"
+                 alt="">
+                 <img data-v-8755e8fe=""
+                 src="/image/881.png"
+                 alt="">
+            <?php }else{ ?>
+            <!--if(cookie('lang') == 'en-us' )-->
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/order_before.png','order')}"
+                 alt="" style="margin-top: -0.3rem;">
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/order_after.png','order')}"
+                 alt="" style="margin-top: -0.3rem;">
+            <span style="display: block;margin: 0 20%;">{:lang('Historic')}</span>
+            <?php
+                }
+            ?>
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h',[2])}"-->
+            <!--     alt="">-->
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h',[2])}"-->
+            <!--     alt="">-->
+        </li>
+        <?php
+            $level = session('level') ? session('level') : 0;
+            $level = $level + 1;
+            $url = '/index/ctrl/team';
+        ?>
+        <li onclick="window.location.href='<?=$url?>'" data-v-8755e8fe="">
+            <?php
+                if(cookie('lang') == 'th-th' ){
+            ?>
+            <img data-v-8755e8fe=""
+                 src="/image/5425445-1.png"
+                 alt="" style="border-radius:30px;">
+            <img data-v-8755e8fe=""
+                 src="/image/5425445-1.png"
+                 alt=""  style="border-radius:30px;">
+            <?php }else{ ?>
+            <!--if(cookie('lang') == 'en-us' )-->
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/team_before.png',[3])} "
+                 alt="" style="border-radius:30px;
+                               margin-top: -0.3rem;
+                               width: auto;
+                               height: .933333rem;
+                               display: block;
+                               margin-bottom: .066667rem;">
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/team_before.png',[3])}"
+                 alt=""  style="border-radius:30px;">
+            <span style="display: block;margin: 0 23%;text-align: center;">{:lang('Team')}</span>
+            <?php
+                }
+            ?>
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h1')}"-->
+            <!--     alt="" style="border-radius:30px;">-->
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h1')}"-->
+            <!--     alt=""  style="border-radius:30px;">-->
+        </li>
+        <li onclick="window.location.href='{:url(\'ctrl/lixibao\')}'" data-v-8755e8fe="">
+            <?php
+                if(cookie('lang') == 'th-th' ){
+            ?>
+            <img data-v-8755e8fe=""
+                 src="/image/61.png"
+                 alt="">
+            <img data-v-8755e8fe=""
+                 src="/image/6361.png"
+                 alt="">
+            <?php }else{ ?>
+            <!--if(cookie('lang') == 'en-us' )-->
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/jr_before.png',[4])}"
+                 alt="" style="margin-top: -0.3rem;">
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/jr_before.png',[4])}"
+                 alt="" style="margin-top: -0.3rem;">
+            <span style="display: block;margin: 0 16%;">{:lang('Financial')}</span>
+            <?php
+                }
+            ?>
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h',[4])}"-->
+            <!--     alt="">-->
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_l',[4])}"-->
+            <!--     alt="">-->
+        </li>
+        <li onclick="window.location.href='{:url(\'my/index\')}'" data-v-8755e8fe="">
+            <?php
+                if(cookie('lang') == 'th-th' ){
+            ?>
+            <img data-v-8755e8fe=""
+                 src="/image/9681.png"
+                 alt="" style="margin-top: -0.3rem;">
+            <img data-v-8755e8fe=""
+                 src="/image/6541.png"
+                 alt="" style="margin-top: -0.3rem;">
+            <?php }else{ ?>
+            <!--if(cookie('lang') == 'en-us' )-->
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/person_before.png',[5])}"
+                 alt="" style="margin-top: -0.3rem;">
+            <img data-v-8755e8fe=""
+                 src="{:lang('/img/person_after.png',[5])}"
+                 alt="" style="margin-top: -0.3rem;">
+            <span style="display: block;margin: 0 17%;">{:lang('Personal')}</span>
+            <?php
+                }
+            ?>
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_h',[5])}"-->
+            <!--     alt="">-->
+            <!--<img data-v-8755e8fe=""-->
+            <!--     src="{:lang('img_bar_l',[5])}"-->
+            <!--     alt="">-->
+        </li>
+    </ul>
+</div>
+<style>
+   /* .footer li.activeText{
+      color: #347DFF;
+  } */
+    .footer ui li {
+        float: none;
+        width: auto;
+    }
+    .footer ul img {
+        height: 0.733rem !important;
+    }
+    .footer span {
+        text-align: center;
+    }
+
+</style>

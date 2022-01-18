@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>账户余额</title>
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/access.css">
+    <link rel="stylesheet" href="/static_new/css/icon-font.css">
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+    <script src="/static_new/js/pack.js"></script>
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head>
+<body id="app">
+<div class="header">
+    <div class="goback">
+        <span class="icon iconfont icon-fanhui"></span>
+        <a href="javascript:void(0)" onclick="window.history.back(-1)">返回</a>
+    </div>
+    <p>账户余额</p>
+</div>
+<div class="access-info">
+    <div class="access-mian">
+        <span>余额</span>
+        <p>{$info.balance}</p>
+    </div>
+</div>
+<div class="access-money">
+    <a href="/index/ctrl/recharge">
+        <div class="access-item"><img src="/static_new/img/icon09.png"><span>充值</span></div>
+    </a>
+    <a href="/index/ctrl/deposit">
+        <div class="access-item"><img src="/static_new/img/icon10.png"><span>提现</span></div>
+    </a>
+    <div class="clear"></div>
+</div>
+<div class="access-list" style="display:none;">
+    <div class="number">
+        <p class="order-id">2019121657975057</p>
+        <p class="time">2019-12-16 10:39:21</p>
+    </div>
+    <div class="status"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{:lang('app_name')}</title>
+    <link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css?v=1.6" rel="stylesheet">
+    <link rel="stylesheet" href="/static_new/css/public.css">
+
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/dialog.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/common.js"></script>
+
+
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <style type="text/css" title="fading circle style">
+        .circle-color-23>div::before {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body style="background: #f6f6f8;">
+  <div>
+    <header style="background: #347dfe;">
+      <div class="back" onclick="window.location.href='/index/index/home.html'"></div>
+      <span>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">{:lang('Amazon')}</font>
+        </font>
+      </span>
+    </header>
+    <div class="container">
+      <!-- 添加 页面 -->
+      <!-- 头部 -->
+      <div class="bbox_t">
+        <p style="margin-top: 3%">
+          <span style="color: white;">{:lang('Current data')}</span>
+        </p>
+        <div class="my_money">
+          <div class="my_up">
+            <p style="float:left;font-size:22PX">
+              <span>VIP {$dengji}</span>
+            </p>
+            <p class="ol_p" style="background:#ffffff"><!--有效期2121-12-14到2022-12-14--></p>
+          </div>
+          <div class="my_down">
+            <div class="d_l">
+              <p>
+                <span>{:lang('Balance available')}</span>
+              </p>
+              <p class="p_ye">
+                  <span>{$price}</span>
+              </p>
+              </div>
+              <div class="d_r">
+                <p>
+                    <span>{:lang("Today's Commission")}</span>
+                </p>
+                <p class="p_ye">
+                  <span>{$day_deal} {$Think.lang.yuan}</span>
+                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      <!-- 中间内容 -->
+      <div class="rot_box"><div class="r_first">
+        <div class="dd"><img src="/image-self/rot_order/r1.png">
+          <p style="height: 70px;">
+            <font style="vertical-align: inherit;">{:lang("Today'Order Number")}</font></font></p>
+              <p class="r_tp"><font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">{$day_d_count}{$Think.lang.single}</font>
+          </font>
+        </p>
+      </div>
+      <div class="dd">
+        <img src="/image-self/rot_order/r2.png"><p style="height: 70px;">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">{:lang("Yesterday's earnings")}</font>
+            </font></p><p class="r_tp">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">{$yes_user_yongjin}</font>
+                </font></p></div><div class="dd">
+              <img src="/image-self/rot_order/r3.png"><p style="height: 70px;">
+            <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">{:lang("Balance Available for Purchase")}</font>
+        </font></p>
+      <p class="r_tp">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">{$price}</font></font></p>
+        </div>
+      </div>
+      <div class="r_first">
+        <div class="dd">
+          <img src="/image-self/rot_order/r4.png"><p style="height: 70px;">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">{:lang('Current Balance')}</font></font></p>
+          <p class="r_tp"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">{$price}</font></font></p>
+      </div>
+      <div class="dd">
+        <img src="/image-self/rot_order/r5.png">
+          <p style="height: 70px;">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">{:lang('Frozen Account Balance')}</font></font></p>
+            <p class="r_tp"><font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">{$lock_deal}</font></font></p>
+        </div>
+      <div class="dd">
+        <img src="/image-self/rot_order/r6.png">
+          <p style="height: 70px;">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">{:lang('Total Team Commission')}</font></font></p>
+              <p class="r_tp"><font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">{$day_deal}{$Think.lang.yuan}</font></font></p>
+          </div>
+        </div>
+      </div>
+    
+    <!-- 需要更改订单按钮 -->
+    <div data-v-4c2dcb20="" class="postForm">
+        <!--<button data-v-4c2dcb20="" class="uplevel"><font color="#FFFFFF" id="autoStart1">手动匹配</font></span></a></button>-->
+        <div data-v-4c2dcb20="" class="postForm">
+           
+            <div data-v-4c2dcb20="" class="autoStart" id="autoStart" >{$Think.lang.Automaticmatching}</div>
+             <div data-v-4c2dcb20="" class="autoStart" style="background-color: #e3e3e3;">
+              <a href="/index/ctrl/vip.html">{:lang('充值')}</a>   </div>
+            
+        </div>
+    </div>
+    
+    <!-- 底部文本 -->
+    <div class="wrin">
+      <p>
+        <span data-key="remark">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit; color: #000;">{:lang('Observation Manual')}</font></font>
+        </span>
+      </p>
+    <div class="content" style="color: #000;">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">1.{:lang("The system is based on cloud computing to help you make automatic correspondence with orders, all those that are initiated by the trader, be patient! ")}</font><font style="vertical-align: inherit;">{:lang("When the platform matches the bidder's orders, the information from those orders will be sent for merchant authentication.")} </font>
+         
+            <font style="vertical-align: inherit;">{:lang("After authentication, the system will automatically refund the order amount and commissions.")}</font>
+          <font style="vertical-align: inherit;">2. {:lang("Order commissions will be calculated according to your class. The higher the level of the account, the higher the price of the corresponding product, and the higher the price of the product, the higher the commission. Customer Service.")}</font></font><!--<p>1.本系统基于云计算帮您自动匹配订单，所有订单均有商家发起，请耐心等待，当平台与投标人匹配订单时，订单信息被提交给商家后台进行验证，验证后，系统将自动返回订单金额与佣金。--><!--</p>--><!--<p>2.关于订单的佣金是根据您的等级来算的，等级越高，佣金越多。</p>-->
+        </div>
+    </div>
+    
+    <!--弹出层-->
+    <div data-v-4c2dcb20="" class="" style="" id="orderDetail">
+        <div data-v-4c2dcb20="" class="van-overlay"
+            style="z-index: 1000;padding: 0 10px;display:none;overflow-y:scroll; overflow-x:hidden;height：100rem;">
+            <div data-v-4c2dcb20="" class="grabSuccess" style="width: 100%;background: #347dfe;color: white;">
+                <div data-v-4c2dcb20="" class="title" style="height: 1.586667rem;font-size: .5rem;">
+                    <img data-v-4c2dcb20="" src="/image/ppcg.png" alt="">
+                </div>
+                <div data-v-4c2dcb20="" class="records_tabs_box" style="background: none;">
+                    <div data-v-4c2dcb20="" class="records_tabs_box_top" style="color: #fff;">{$Think.lang.Collectiontime}：<span
+                            id="otime">2020-03-17T17:11:41</span><br>
+                        {$Think.lang.Ordernumber}：<span id="oid">202003171711414080</span>
+                    </div>
+                    <img data-v-4c2dcb20="" src="/image/succ.png" class="records_tabs_box_img">
+                    <div data-v-4c2dcb20="" class="records_tabs_box_des" style="background: #fff;">
+                        <div data-v-4c2dcb20="" class="tabs_box_des_img">
+                            <img data-v-4c2dcb20="" alt="" id="oimg" src="/static_new6/img/wenhao.png">
+                        </div>
+                        <div data-v-4c2dcb20="" class="tabs_box_des_r">
+                            <p data-v-4c2dcb20="" class="tabs_box_des_r_tit" id="otitle">
+                                {$Think.lang.Productinformationacquisition}～～～
+                            </p>
+                            <div data-v-4c2dcb20="" class="tabs_box_des_r_pic">
+                                <p data-v-4c2dcb20="" id="oprice">{$Think.lang.yuan} ???</p>
+                                <p data-v-4c2dcb20="" id="onum">x ?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-4c2dcb20="" class="tabs_box_des_r_pic">
+                        <p data-v-4c2dcb20="" class="gray" style="color:#fff;">{$Think.lang.Ordertotal}</p>
+                        <p data-v-4c2dcb20="" id="ototal" style="color:#fff;">{$Think.lang.yuan} ???</p>
+                    </div>
+                    <div data-v-4c2dcb20="" class="tabs_box_des_r_pic">
+                        <p data-v-4c2dcb20="" class="gray" style="color:#fff;">{$Think.lang.commission}</p>
+                        <p data-v-4c2dcb20="" style="color:#fff;">{$Think.lang.yuan} <span id="yongjin">???</span></p>
+                    </div>
+                    <div data-v-4c2dcb20="" class="tabs_box_des_r_pic">
+                        <p data-v-4c2dcb20="" class="txt" style="color: #fff;font-weight:700;">{$Think.lang.Refundamount}</p>
+                        <p data-v-4c2dcb20="" class="txt1" style="color: #fff;font-weight:700;">{$Think.lang.yuan} <span id="yuji">???</span></p>
+                    </div>
+                </div>
+                <div data-v-4c2dcb20="" class="tabs_btn">
+                    <div data-v-4c2dcb20="" class="tabs_btn1" style="border: 1px #fff solid;">{$Think.lang.Notsubmit}</div>
+                    <div data-v-4c2dcb20="" class="tabs_btn2" style="background: white;color: #347dfe;font-weight: 500;">{$Think.lang.Submitnow}</div>
+                </div>
+            </div>
+            <img data-v-4c2dcb20=""
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAP1BMVEVHcEz///////////////////////////////////////////////////////////////////////////////9KjZoYAAAAFXRSTlMAEFN/o8rX6/sxkf9z88Q9XSlotgUhojDzAAABp0lEQVR4AaSSVwKzIBgEkfYBS1vN/a/690oitnlK1Bmq2mPRxjovIYh31uhFXSImjwGf4ll7yR5AqSnr1mJsTedUCwCflzO6EUBsj/yP2K0AYg4TXQC38iOrA6RPdVbAde7SHVC57+sCyZySBUXv+QnYIg+IG5A+6i+LYHgCE2BfH/wNpfMUvWB7L1iI5km0wL6vv2ieRpdxHzRC5wV6gP7XZ4HhJQwK/wlUbLzIhqr+0CGRF4mCP7d6EWReJkMW9RMDxxs4mD8T6LxB/z2FDMdbOGT1HY91vCfOrxxYvdPjI/jvfoS8pxHysGUB7xMVxB+X2HLA43th9OE5YJF+rKBzYA0/CoMfVg7072tYUP5cokHI49+RWLAojUpOChOfrNDKIHFSmPpMMMoic1qY+DSwykFzVpj51HDKo3FWmPls8ErQOCvMfDaICoicFiY+I8LjwOMlPN7EZ8fY4Z5dpAz7/Cp/Lb0OBAAAABiE+VsPYhB/tWPqOe+h9KX1qe6tN1gebQ/Xx/sLxivOS9Zr3ovmq+7L9uv+B8cnz0fXZ9+HZ6ZvxHfkP9pUwubvmZnSAAAAAElFTkSuQmCC"
+                alt="" class="close">
+        </div>
+
+
+
+    </div>
+    
+    <!--数字倒数-->
+    <div id="num"></div>
+      
+    </div>
+  </div>
+  <script>
+    function getHtmlFontSize() {
+      let html = document.querySelector('html');
+      html.style.fontSize = (document.documentElement.clientWidth/10 - 17.5)+'px';
+    }
+    window.addEventListener('resize', getHtmlFontSize);
+  </script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    header {
+      height: 2rem;
+      position: fixed;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      top: 0;
+      max-width: 750px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      z-index: 999;
+      padding: 0 1rem;
+      font-size: .8rem;
+      color: white !important;
+    }
+    header > .back {
+      position: absolute;
+      width: 1.3rem;
+      height: 1.2rem;
+      top: 3%;
+      bottom: 0;
+      left: .5rem;
+      margin: auto;
+      background-image: url(/image-self/rot_order/back.png);
+      background-size: 80%;
+      background-repeat: no-repeat;
+    }
+    header span {
+      margin: auto;
+      font-size: 1rem;
+    }
+    .container {
+      color: white;
+      padding-bottom: 0;
+      font-size: .7rem;
+    }
+    .bbox_t {
+        background-image: url(/image-self/rot_order/bbot.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 9rem;
+        padding: 3%;
+    }
+    .my_money {
+        width: 100%;
+        background: #fff;
+        border-radius: 15px;
+        text-align: center;
+        padding: 3%;
+        color: #666;
+        margin-top: 10%;
+    }
+    .d_l {
+        float: left;
+        border-right: 1px solid #DFDFDF;
+        width: 50%;
+        padding-left: 5%;
+    }
+    .p_ye {
+        color: #000;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .d_r {
+        float: left;
+        padding-left: 5%;
+        white-space: nowrap;
+    }
+    .my_up {
+        border-bottom: 1px solid #DFDFDF;
+        padding: 2%;
+        margin: 2% 3%;
+    }
+    .my_up p {
+        color: #000;
+      margin-top: -2px;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .ol_p {
+        text-align: center;
+        font-size: 12px;
+        /* width: 99%; */
+        border-radius: 0.133rem;
+        color: #fff;
+        padding: 1%;
+        /* float: right; */
+        background: #347dfe;
+        /* animation-fill-mode: backwards; */
+        display: inline-block;
+        color: #fff !important;
+        font-size: 10px;
+        /* height: 0.53rem; */
+        /* line-height: 10px; */
+        margin-top: 0.133rem;
+    }
+    .my_down {
+        display: flex;
+        width: 100%;
+        padding: 0%;
+        text-align: left;
+        overflow: hidden;
+    }
+    .rot_box {
+      width: 96%;
+      padding: 2%;
+      margin: 20% 2% 2%;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      color: #347dfe;
+    }
+    .r_first {
+        padding: 2%;
+        overflow: hidden;
+        margin: 5%;
+    }
+    .dd {
+        width: 33%;
+        float: left;
+        text-align: center;
+        font-size: 12px;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .r_tp {
+        font-size: 0.9rem;
+        margin-top: 3%;
+        color: #000;
+    }
+    .dd {
+        width: 33%;
+        float: left;
+        text-align: center;
+        font-size: 12px;
+    }
+    .dd img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    element.style {
+    }
+    .dd img {
+        width: 30px;
+        height: 30px;
+    }
+    img {
+        border: none;
+    }
+    .r_tp {
+        font-size: 0.9rem;
+        margin-top: 3%;
+        color: #000;
+    }
+    .r_first {
+        padding: 2%;
+        overflow: hidden;
+        margin: 5%;
+    }
+    
+    .postForm {
+        height: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .autoStart {
+        width: 320px;
+        height: 32px;
+        margin: 3px 0;
+        background-color: #000;
+        line-height: 32px;
+        text-align: center;
+        background: #FF7F41;
+        border-radius: 2px;
+    }
+    
+    .wrin {
+        padding: 0 0.53rem;
+        margin: 2%;
+    }
+    .wrin p {
+        margin-bottom: 10px;
+        font-size: 0.48rem;
+        text-align: center;
+    }
+    span[data-key] {
+        display: inline-block;
+        transform: scale(.8);
+    }
+    #num {
+        border-radius: 0.133rem;
+        text-align: center;
+        width: 16%;
+        background-color: rgba(0, 0, 0, 0.65);
+        font-size: 2.5rem;
+        color: #fff;
+        position: fixed;
+        top: 32%;
+        margin-left: 42%;
+        z-index: 29891014;
+        height: 3.6rem;
+        line-height: 3.6rem;
+        display: none;
+    }
+    .custom-style{
+      width: 90%;
+      margin: 0.53rem auto;
+    }
+  </style>
+  <script type="text/javascript" src="/static_new6/js/manifest.3ad1d5771e9b13dbdad2.js"></script>
+  <span style="display: none;">
+        <audio id="audio" src="/static_new/img/hongbao.mp3" controls="controls"></audio>
+    </span>
+  <script>
+    var has_member_address = "{$has_member_address}";
+    setInterval(function () {
+        $('.p_pp').each(function (i) {
+            if (i == 0) {
+                var dis = $(this).css('display');
+                $(this).remove();
+                $('.zon_p').append(
+                    '<div class="p_pp" style="display:none;justify-content:space-between;">' + $(this).html() + '</div>'
+                );
+            }
+        });
+
+        $('.p_pp').each(function () {
+            if ($(this).css('display') == 'none') {
+                $(this).css('display', 'flex')
+                //  alert($(this).html())
+                return false;
+            }
+        });
+    }, 2500);
+    
+    var cid = "{$Think.get.type|default=1}";
+    var oid = '';
+    var add_id = '';
+    var countdown = 5,tt1 = 2483;
+    var audio = document.getElementById("audio");
+    $(function () {
+
+        $('#autoStart').click(function () {
+            // if (has_member_address != 1) {
+            //     $(document).dialog({infoText: "{$Think.lang.Youhavenotsetthedeliveryaddress}", autoClose: 2000});
+            //     setTimeout(function () {
+            //         window.location.href = '/index/my/edit_address.html';
+            //     }, 2000);
+            //     return false;
+            // }
+            if ( $('#autoStart').text() == '{$Think.lang.Automaticmatching}' ){
+                countdown=5;
+                $('#autoStart').text('{$Think.lang.Matching}');
+                start()
+            }
+
+        })
+    });
+
+    function palySong(wi) {
+        audio.load();
+        stopSong();
+        audio.play();
+        if (wi == 0) {
+            audio.pause();
+        }
+    }
+
+    function stopSong() {
+        audio.pause();
+    }
+
+    function qdSuccess(oid)
+    {
+        $('#orderDetail .van-overlay').show();
+        $.ajax({
+            url: "/index/order/order_info",
+            type: "POST",
+            dataType: "JSON",
+            data: { id: oid },
+            success: function(res) {
+                console.log(res)
+                var data = res.data;
+                if (res.code == 0) {
+                    $('#otime').html(data.addtime)
+                    $('#oid').html(data.oid)
+                    $('#otitle').html(data.goods_name)
+                    $('#oimg').attr('src',data.goods_pic)
+                    $('#oprice').html((data.goods_price * "{:lang('duna')}").toFixed(2))
+                    $('#onum').html(data.goods_count)
+                    $('#ototal').html('{$Think.lang.yuan} '+(data.num * "{:lang('duna')}").toFixed(2))
+                    $('#yongjin').html(''+(data.commission * "{:lang('duna')}").toFixed(2))
+                    var yuji = ( (data.commission * 1 +  data.num * 1 ) * "{:lang('duna')}");
+                    yuji = yuji.toFixed(2);
+                    $('#yuji').html(yuji)
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    }
+
+    var num_min = "{$num_min}";
+    function start() {
+        $(".J_hhh").css("height", "165px").css("padding-top", "0px");
+        console.log(countdown);
+        if (countdown <= 3) {
+            $("#num").show().text(countdown);
+        }
+        if (countdown <= 0) {
+            $("#num").hide();
+            //$('#orderDetail .van-overlay').show();
+//------------------------------------------------------------------
+            loading = $(document).dialog({
+                type: 'notice',
+                infoIcon: '/static_new/img/loading.gif',
+                infoText: '{$Think.lang.Matching}',
+                autoClose: 0
+            });
+            $.ajax({
+                url: "{:url('submit_order')}" + '?cid='+cid+'&m=' + Math.random(),
+                timeout: 5000,
+                type: 'POST',
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    setTimeout(function () {
+                        $(".J_hhh").css("height", "125px").css("padding-top", "15px");
+                    }, 2200);
+                    $('#autoStart').text('{$Think.lang.Automaticmatching}');
+                    loading.close();
+                    $(document).dialog({infoText: "{$Think.lang.Thecurrentorderisfullpleaseryagainlater}！", autoClose: 2000});
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $(".J_hhh").css("height", "125px").css("padding-top", "15px");
+                    }, 2200);
+                    $('#autoStart').text('{$Think.lang.Automaticmatching}');
+                    if (data.code == 1) {
+                        loading.close();
+                        $(document).dialog({infoText: data.info, autoClose: 4000});
+                        //nextclick();
+                    } else if (data.code == 0) {
+                        loading.close();
+                        palySong(1);
+                        sessionStorage.setItem('oid', data.oid);
+                        $(document).dialog({infoText: data.info});
+                        qdSuccess(data.oid);
+                        oid = data.oid;
+                        add_id = data.add_id;
+                    } else {
+                        loading.close();
+                        if (data.info) {
+                            $(document).dialog({infoText: data.info, autoClose: 2000});
+                        } else {
+                            // $(document).dialog({infoText: "当前订单爆满，请稍等再试！", autoClose: 2000});
+                            $(document).dialog({infoText: "{$Think.lang.Thelater}！", autoClose: 2000});
+                        }
+                    }
+                }
+            });
+
+//------------------------------------------------------------------
+
+            tt1 = 2483 * -1;
+            $('.animation-ease').eq(0).css('transform','translate3d(0px, '+tt1+'px, 0px)');
+            $('.animation-ease').eq(1).css('transform','translate3d(0px, '+tt1+'px, 0px)');
+            $('.animation-ease').eq(2).css('transform','translate3d(0px, '+tt1+'px, 0px)');
+        }else{
+            tt1 = sum(1,2000) * -1;
+            $('.animation-ease').eq(0).css('transform','translate3d(0px, '+tt1+'px, 0px)')
+            tt2 = sum(1,2000) * -1;
+            $('.animation-ease').eq(1).css('transform','translate3d(0px, '+tt2+'px, 0px)')
+            tt3 = sum(1,2000) * -1;
+            $('.animation-ease').eq(2).css('transform','translate3d(0px, '+tt3+'px, 0px)')
+
+            countdown--;
+            setTimeout(function () {
+                start()
+            }, 1000);
+        }
+
+    }
+
+    function sum (m,n){
+        var num = Math.floor(Math.random()*(m - n) + n);
+        return num;
+    }
+
+    $('.tabs_btn1').click(function () {
+        $(document).dialog({
+            type: 'confirm',
+            titleText: "{$Think.lang.Thelater}",
+            autoClose: 0,
+             buttonTextConfirm:'{$Think.lang.ok}',
+         buttonTextCancel:'{$Think.lang.no}',
+            onClickConfirmBtn: function () {
+                $('#orderDetail .van-overlay').hide();
+                //window.location.href="{:url('user/logout')}";
+            },
+            onClickCancelBtn: function () {
+
+            }
+        });
+    });
+
+    $('.close').click(function () {
+        $(document).dialog({
+            type: 'confirm',
+            titleText: "{$Think.lang.Dominutes}",
+            autoClose: 0,
+            onClickConfirmBtn: function () {
+                $('#orderDetail .van-overlay').hide();
+                //window.location.href="{:url('user/logout')}";
+            },
+            onClickCancelBtn: function () {
+
+            }
+        });
+    });
+
+    var zhujiTime = "{:config('deal_zhuji_time')}";
+    var shopTime = "{:config('deal_shop_time')}";
+
+    zhujiTime = zhujiTime *1000;
+    shopTime = shopTime *1000;
+    //提交
+    $('.tabs_btn2').click(function () {
+        //--------------------------------
+        var i = 0;
+        layer.open({
+            type: 2
+            , content: '{$Think.lang.Ordersubmission}',
+            time: zhujiTime,
+            shadeClose: false,
+        });
+
+        //--------------------------------
+        var i = 0;
+        layer.open({
+            type: 2
+            , content: '{$Think.lang.Ordersubmission}',
+            time: zhujiTime,
+            shadeClose: false,
+        });
+        var timer = setInterval(function() {
+            i++;
+            if (i == 1) {
+                layer.open({
+                    type: 2
+                    , content: '{$Think.lang.Theremotehostisbeingallocated}',
+                    time: zhujiTime,
+                    shadeClose: false,
+                })
+            } else if (i == 2) {
+                layer.open({
+                    type: 2
+                    , content: '{$Think.lang.Waitforthemerchantsystemtorespond}',
+                    time: shopTime,
+                    shadeClose: false,
+                })
+                var ajaxT = setTimeout(function(){
+                    $.ajax({
+                        url: "/index/order/do_order",
+                        type: "POST",
+                        dataType: "JSON",
+                        data: { oid:oid, add_id:add_id },
+                        success: function(res) {
+                            console.log(res)
+                            if (res.code == 0) {
+                                 layer.closeAll();
+                                $(document).dialog({
+                                    infoText: "{$Think.lang.Submittedsuccessfully}!",
+                                    autoClose: 2000
+                                });
+                                clearInterval(timer);
+                                var linkTime = setTimeout(function() {
+                                    location.reload()
+                                }, 1800);
+                            } else {
+                                layer.closeAll();
+                                $(document).dialog({
+                                    infoText: res.info,
+                                    autoClose: 2000
+                                });
+                            }
+                            sumbit = true;
+                        },
+                        error: function(err) { console.log(err); sumbit = true; }
+                    })
+                },shopTime)
+            }
+        }, zhujiTime)
+
+
+    });
+
+
+</script>
+</body>
+</html>

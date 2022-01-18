@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <script src="__ROOT__/public/js/common.js"></script>
+    <title>Document</title>
+    <style>
+    img{
+        width:100%;
+    }
+        </style>
+</head>
+<body>
+    <header>
+            <div class="back" onclick="window.history.back(-1)"></div>
+        <span></span>
+    </header>
+    <div class="container">
+
+    </div>
+</body>
+<script>
+    $(function(){
+        const type =sessionStorage.getItem("type")
+        if(type==1){
+            $('header>span').html('简介')
+        }else if(type==2){
+            $('header>span').html('规则')
+        }else if(type==3){
+            $('header>span').html('合作')
+        }else if(type==4){
+            $('header>span').html('问题')
+        }
+        $.ajax({
+            url:urlPost('index/get_msg'),
+            type:'POST',
+            dataType:'json',
+            data:{type:type},
+            success:function(res){
+                console.log(res)
+                $('.container').append("${res.data.content}")
+            },
+            error:function(err){console.log(err)}
+        })
+    })
+</script>
+
+</html>

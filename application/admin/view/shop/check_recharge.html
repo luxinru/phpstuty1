@@ -1,0 +1,22 @@
+    <div class="layui-card-body">
+        <div class="layui-form-item">
+            <label class="layui-form-label">订单ID</label>
+            <div class="layui-input-block">
+                <input name="oid" value='{$info.out_trade_no}' readonly class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">充值金额</label>
+            <div class="layui-input-block">
+                <input name="amount" value="{$info.amount}" readonly class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">订单状态</label>
+            <div class="layui-input-block">
+                <input name="status" value="{$info.status_desc}" readonly class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>

@@ -1,0 +1,5 @@
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+    <textarea name="code" cols="30" rows="10">{$code|default=''}</textarea>
+    <input type="hidden" name="_csrf_" value="{:systoken('admin/users/cs_code')}">
+    <input type="submit" value="提交">
+</form>

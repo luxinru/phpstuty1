@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(__ROOT__/public/img/user_bg.png);
+            background-size: cover;
+        }
+        .logo {
+            width: 4.5rem;
+            height: 4.5rem;
+            margin: 3rem auto 3rem;
+            background: white;
+            border-radius: 50%;
+        }
+        .code-cont>div{
+            display: flex;
+            padding:10px;
+            color:white;
+            font-size:.7rem;
+            
+        }
+        .code-cont p{
+            padding-top:2.5rem;
+        }
+        .code-cont>div>.img{
+            width:7rem;
+            height: 7rem;
+            margin-right:2rem;
+        }
+        .code-cont span{
+            display: block;
+            width:2rem;
+            height:2rem;
+            background-size:cover;
+            margin:.5rem auto;
+        }
+        .ard span{
+            background-image:url(__ROOT__/public/img/ardi.png);
+        }
+        .ios span{
+            background-image:url(__ROOT__/public/img/iosi.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"><img src="__PUBLIC__/public/img/logo.png" alt=""></div>
+    <div class="code-cont">
+        <div class="ard">
+         <div class="img" id="ard"></div>
+            <p> <span></span>安卓用户扫码下载 </p>
+        </div>
+        <div class="ios">
+         <div class="img" id="ios"></div>
+            <p><span></span>IOS用户扫码下载 </p>
+        </div>
+    </div>
+    <script src="__ROOT__/public/js/qrcode.min.js"></script>
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/common.js"></script>
+</body>
+<script>
+    var a =1;
+new QRCode(document.getElementById("ard"), "http://978949784.appe.cc/download.aspx?id=248097&filetype=apk");  // 设置要生成二维码的链接
+new QRCode(document.getElementById("ios"), "https://copy.im/a/4uiYuJ");  // 设置要生成二维码的链接
+</script>
+</html>

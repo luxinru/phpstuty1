@@ -1,0 +1,103 @@
+html {
+	font-size: 20px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    font-family: sans-serif;
+}
+@media only screen and (min-width: 400px) {
+	html {
+		font-size: 21.33333333px !important;
+	}
+}
+
+@media only screen and (min-width: 414px) {
+	html {
+		font-size: 22.08px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	html {
+		font-size: 25.6px !important;
+	}
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, button, input, textarea, form, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    max-width: 750px;
+    display: block;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    height: 2rem;
+    line-height: 2.5rem;
+}
+
+.header span{
+    margin-left:1rem;
+    font-size: .7rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    vertical-align: top;
+    display: inline-block;
+}
+header {
+    height: 2rem;
+    background: #00BCD4;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    top: 0;
+    max-width: 750px;
+    left: 0;right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 999;
+    padding: 0 1rem;
+    font-size: .8rem;
+    color: white;
+    /*background-image: linear-gradient(135deg, #f761a1 10%, #8c1bab 100%);*/
+    /*background-image: linear-gradient(135deg, #a26cd2  10%, #7a01f3 100%);*/
+    background-image: linear-gradient(450deg,#8a6eff,#936dff);
+}
+header span{
+    margin: auto;
+    font-size: .7rem;
+    color:#fff;
+}
+header>.back{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.2rem;
+    top: 0;bottom: 0;
+    left: .5rem;
+    margin: auto;
+    background-image: url(../img/back.png);
+    background-size: 80%;
+    background-repeat: no-repeat;;
+}
+.container{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    font-size: .7rem;
+}
+#customer-chat-iframe{
+    bottom:70px !important;
+}

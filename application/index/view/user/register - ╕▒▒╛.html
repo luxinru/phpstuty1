@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <style>
+        body {
+            background-image: url(__ROOT__/public/img/user_bg.png);
+            background-size: cover;
+            padding-top: 3rem;
+            font-size: .6rem;
+        }
+
+        .logo {
+            width: 4.5rem;
+            height: 4.5rem;
+            margin: 0 auto 3rem;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .form {
+            margin: 0 auto;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .input_radius {
+            background: white;
+            width: 100%;
+            border-radius: 50px;
+            height: 2rem;
+            margin: 0 auto 1rem;
+            display: flex;
+            padding: 0 .5rem 0 1rem;
+        }
+
+        .input_radius span {
+            width: 1rem;
+            height: 1rem;
+            margin: auto .5rem auto 0;
+            background: #bbbbbb;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .input_radius span::before {
+            content: "";
+            width: .6rem;
+            height: .6rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .input_radius input {
+            border: none;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #bbbbbb;
+        }
+
+
+        .btn {
+            width: 80%;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            border-radius: 50px;
+            margin: 1rem auto 0;
+            color: white;
+            font-size: .7rem ;
+        }
+
+        .user::before {
+            background-image: url(__ROOT__/public/img/user.png);
+        }
+
+        .input_radius span.pwd::before {
+            background-image: url(__ROOT__/public/img/pwd.png);
+            width: .7rem;
+            height: .7rem;
+        }
+
+        .verify_btn {
+            padding: 0 .4rem;
+            border-radius: 50px;
+            background: rgb(222, 90, 87);
+            height: 1.2rem;
+            line-height: 1.2rem;
+            color: white;
+            margin: auto 0 auto auto;
+        }
+    
+        .link-box{
+            display: flex;
+            padding: 0 10px;
+            justify-content: space-between;
+        }
+        .link-box>a{
+            text-align:center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="__PUBLIC__/public/img/logo.png" alt="">
+    </div>
+    <div class="form">
+        <div class="input_radius">
+            <span class="icon user"></span>
+            <input type="text" id="tel" placeholder="请输入手机号">
+        </div>
+        <div class="input_radius">
+            <span class="icon pwd"></span>
+            <input type="password" id="pwd" placeholder="请输入密码">
+        </div>
+        <div class="input_radius">
+            <span class="icon pwd"></span>
+            <input type="password" id="deposit_pwd" placeholder="请输入交易密码">
+        </div>
+        <div class="input_radius">
+                <span class="icon pwd"></span>
+                <input type="text" id="verify" placeholder="请输入验证码">
+                <div class="verify_btn">获取验证码</div>
+            </div>
+        <div class="input_radius">
+            <span class="icon pwd"></span>
+            <input type="text" id="invite" value="{$invite_code}" placeholder="请输入推荐码" >
+        </div>
+        <div class="link-box">
+                <a href="">去下载</a>
+                    <a href="{:url('user/login')}">去登陆</a>
+            </div>
+
+    </div>
+    <div class="btn register_btn" style="background: rgb(90, 153, 224);">确认注册</div>
+</body>
+<script>
+    var t=60,clock=null;
+    $(".register_btn").click(function() {
+        var tel = $('#tel').val(),
+            user_name = $('#tel').val(),
+            pwd = $('#pwd').val(),
+            deposit_pwd= $('#deposit_pwd').val()
+            verify = $('#verify').val(),
+            invite_code = $('#invite').val();
+        if (tel == "") {
+            QS_toast.show("请输入账号", true)
+        }
+        else if (pwd == "") {
+            QS_toast.show("请输入密码", true)
+        }
+        else if(verify==""){
+            QS_toast.show("请输入验证码", true)
+
+        } else {
+            $.ajax({
+                url: "{:url('do_register')}",
+                type: "POST",
+                dataType: "JSON",
+                data: { tel:tel, pwd:pwd,user_name:user_name,invite_code:invite_code,verify:verify,deposit_pwd:deposit_pwd },
+                success: function(res) {
+                    console.log(res)
+                    if (res.code == 0) {
+                        QS_toast.show(res.info, true)
+                        var timer = setTimeout(function() {
+                            location.href = "{:url('user/login')}"
+                        }, 1800)
+                    }else{
+                        QS_toast.show(res.info, true)
+                    }
+                },
+                error: function(err) { console.log(err) }
+            })
+        }
+
+    })
+
+
+     // 获取验证码
+     $('.verify_btn').click(function () {
+         var tel = $("#tel").val()
+        if (clock) return;
+        $.ajax({
+            url: urlPost("send/sendsms"),
+            type: "POST",
+            dataType: "JSON",
+            data: { tel:tel },
+            success: function(res) {
+                console.log(res)
+                if (res.code == 0) {
+                    QS_toast.show(res.info, true)
+                    clock = setInterval(verify_time, 1000);
+                }else{
+                    QS_toast.show(res.info, true)
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    })
+
+
+    function verify_time() {
+        $(".verify_btn").text(`已发送(${t})`).css('background', '#777777');
+        t--;
+        if (t <= 0) {
+            clearInterval(clock);
+            clock = null;
+            t = 60;
+            $(".verify_btn").text('获取验证码').css('background', '#de5a57');;
+        }
+    }
+</script>
+
+</html>

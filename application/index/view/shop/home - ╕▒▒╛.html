@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.min.css">
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <style>
+        .swiper-container {
+            height: 9rem;
+        }
+
+        .swiper-pagination-bullet {
+            width: .25rem;
+            height: .25rem;
+            background: white;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: rgb(255, 210, 2);
+        }
+
+        .flex_container {
+            margin: .6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0 1rem;
+            font-size: .7rem;
+            text-align: center;
+        }
+
+        .icon_cont {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: red;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            padding:10px;
+        }
+        .tab_nav{
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-top: 1px solid #f7f7f7;
+            border-bottom: 1px solid #f7f7f7;
+            padding:  0 .5rem;
+        }
+        .tab_nav li{
+            margin: auto 0;
+            height: 1.9rem;
+            line-height: 1.9rem;
+        }
+        .tab_nav li.nav_active{
+            position: relative;
+            color:#00bcd4;
+            border-bottom: 2px solid #00bcd4;
+        }
+        .icon_cont>i{
+            display: block;
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .flex_container .flex_item:nth-child(1) .icon_cont>i{
+            background-image: url(__ROOT__/public/img/cz1.png);   
+        }
+        .flex_container .flex_item:nth-child(2) .icon_cont>i{
+            background-image: url(__ROOT__/public/img/xx.png);   
+        }
+        .flex_container .flex_item:nth-child(3) .icon_cont>i{
+            background-image: url(__ROOT__/public/img/kf.png);   
+        }
+        .flex_container .flex_item:nth-child(4) .icon_cont>i{
+            background-image: url(__ROOT__/public/img/sz.png);   
+        }
+        .tab_cont>div{
+            display: none;
+        }
+        .tab_cont{
+            padding:15px;}
+        .my_data{
+            height:9rem;
+            background-image: url(__ROOT__/public/img/user_bg.png);
+            background-position: 1px -450px;
+            background-size: cover;
+            color:white;
+            text-align: center;;
+            font-size:.9rem;
+            padding-top:1rem;
+        }
+        h3{
+            color:white;
+            margin-top:1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>首页</span>
+    </header>
+    <div class="container" style="padding-top:1.8rem">
+        <!-- 轮播图 -->
+        <div class="swiper-container ">
+            <div class="swiper-wrapper ">
+                {if $banner}
+                    {volist name='banner' id='vo'}
+                    <div class="swiper-slide">
+                        <a href="{$vo.url}">
+                            <img src="{$vo.image}" alt="__ROOT__/public/img/bg.jpg">
+                        </a>
+                    </div>
+                    {/volist}
+                {else\}
+
+                {/if}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- <div class="my_data">
+            <p>余额</p>
+            <h3>{$balance|format='%.2f'}</span>CNY</h3>
+        </div> -->
+        <div class="flex_container">
+                <div class="flex_item" id="cz" onclick="location.href=`{:url('ctrl/recharge')}`">
+                    <div class="icon_cont" style="background:#2cd4e1 ;">
+                        <i></i>
+                    </div>
+                    <p>充值</p>
+                </div>
+            <div class="flex_item" id="info" onclick="location.href=`{:url('my/msg')}`">
+                <div class="icon_cont" style="background:#35a522;">
+                    <i></i>
+                </div>
+                <p>我的消息</p>
+            </div>
+            <div class="flex_item" id="support" onclick="location.href=`{:url('support/index')}`">
+                <div class="icon_cont" style="background:#e87272 ;">
+                    <i></i>
+                </div>
+                <p>在线客服</p>
+            </div>
+            <div class="flex_item" id="set" onclick="location.href=`{:url('ctrl/set')}`">
+                <div class="icon_cont" style="background:#6f6f6b ;">
+                    <i></i>
+                </div>
+                <p>设置</p>
+            </div>
+        </div>
+        <div class="tab_switch">
+            <ul class="tab_nav">
+                <li class="nav_active">平台公告</li>
+                <li>平台简介</li>
+                <li>抢单规则</li>
+                <li>邀请好友</li>
+                <li>常见问题</li>
+            </ul>
+            <div class="tab_cont">
+                <div style="display: block;">{$info[0]['content']|raw}</div>
+                <div>{$info[1]['content']|raw}</div>
+                <div>{$info[2]['content']|raw}</div>
+                <div> <img src="{$pic}" onerror="this.src='__ROOT__/public/img/userqr1.png'" alt=""></div>
+                <div>{$info[4]['content']|raw|default=''}</div>
+            </div>
+        </div>
+    </div>
+    {include file="public/floor" /}
+</body>
+<script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+<script src="__ROOT__/public/js/swiper.min.js"></script>
+<script>
+    // 初始化轮播图
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: true,
+        pagination: {
+            el: '.swiper-pagination',
+        }
+    })
+    $(function() {
+        $('.floor li').eq(0).addClass("floor-active")
+    })
+    $(".tab_nav>li").click(function(){
+        var _ind = $(this).index();
+        $(this).addClass("nav_active").siblings().removeClass('nav_active')
+        $(".tab_cont>div").eq(_ind).show().siblings().hide()
+    })
+</script>
+
+</html>

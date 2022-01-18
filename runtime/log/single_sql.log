@@ -1,0 +1,210 @@
+---------------------------------------------------------------
+
+[2022-01-18T10:23:34+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029754s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.040846s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = 'admin' OR `username` = 'admin' [ RunTime:0.000563s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:23:53+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001053s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002882s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '6664101972' OR `username` = '6664101972' [ RunTime:0.000327s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:23:59+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000867s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002794s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '6664101972' OR `username` = '6664101972' [ RunTime:0.000389s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:24:03+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002776s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '6664101972' OR `username` = '6664101972' [ RunTime:0.000414s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:24:24+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000873s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002880s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `xy_users` WHERE  `invite_code` = '123456' LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:31:12+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004618s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.010652s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '6664101972' OR `username` = '6664101972' [ RunTime:0.000499s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:33:34+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000916s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002966s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `xy_users` WHERE  `invite_code` = '123' LIMIT 1 [ RunTime:0.007640s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:33:39+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000903s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.003372s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `xy_users` WHERE  `invite_code` = '123456' LIMIT 1 [ RunTime:0.000533s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:34:18+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000865s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002740s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18778183012' [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `username` = '18778183012' [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `invite_code` = '7ndtm' [ RunTime:0.000333s ]
+---------------------------------------------------------------
+
+[2022-01-18T10:35:00+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000834s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002757s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18778183012' [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `username` = '18778183012' [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `id` = 123456 LIMIT 1 [ RunTime:0.000358s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:08:16+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001210s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.003644s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = pwd_error_num+1 , `allow_login_time` = 1642471996  WHERE  `id` = 175 [ RunTime:0.030982s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:08:32+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000775s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002766s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = pwd_error_num+1 , `allow_login_time` = 1642472012  WHERE  `id` = 175 [ RunTime:0.037441s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:08:59+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000937s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002871s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = pwd_error_num+1 , `allow_login_time` = 1642472039  WHERE  `id` = 175 [ RunTime:0.036927s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:46+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000920s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002984s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.051981s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:48+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010222s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001346s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000780s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002738s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000778s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.002619s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000304s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000890s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.031738s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.002508s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000800s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.002299s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000615s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009748s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000620s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000505s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000664s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000637s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000571s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000577s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000617s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.002764s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.023788s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000847s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.003093s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.002546s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000965s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.002898s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000834s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002659s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642472028 [ RunTime:0.018332s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000867s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.002636s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000738s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.002413s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000828s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000728s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000589s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000624s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.002505s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003305s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000311s ]
+---------------------------------------------------------------
+
+[2022-01-18T11:13:58+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000857s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000632s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002679s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000782s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.003046s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000300s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000644s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.039576s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000743s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.002663s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000697s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000569s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000502s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000474s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000520s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000513s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000504s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000480s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000489s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000474s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000500s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000580s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.002446s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000664s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.002603s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000689s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002433s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642472038 [ RunTime:0.000320s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000533s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.002276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.002302s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000632s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000428s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010574s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000414s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000868s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000232s ]

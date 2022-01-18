@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1463191_xdm42ti8gyp.css">
+<style>
+    .floor{
+        width: 100%;
+        max-width: 750px;
+        height: 3rem;
+        position: fixed;
+        bottom: 0;left: 0;right: 0;
+        margin: auto;
+        background: #f7f7f7;
+        font-size: .7rem;
+        padding: .4rem 1rem;
+        border-top: 1px solid #eaeaea;
+    }
+    .floor ul{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 100%;
+    }
+    .floor li{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        color: #929292;
+    }
+    .floor li i{
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+        margin:0 auto .2rem;
+    }
+    .floor li.floor-active{
+        color: #8c1bab;
+    }
+</style>
+<div class="floor">
+    <ul>
+        <li onclick="location.href=`{:url('index/home')}`">
+            <i class="iconfont icon-shouye"></i>
+            <p>首页</p>
+        </li>
+        <li onclick="location.href=`{:url('rot_order/index')}`">
+            <i class="iconfont icon-dianji"></i>
+            <p>抢单</p>
+        </li>
+        <li onclick="location.href=`{:url('order/index')}`">
+            <i class="iconfont icon-dingdan-yichenggong"></i>
+            <p>收单</p>
+        </li>
+        <li onclick="location.href=`{:url('support/index')}`">
+            <i class="iconfont icon-tubiao-"></i>
+            <p>客服</p>
+        </li>
+        <li onclick="location.href=`{:url('my/index')}`">
+            <i class="iconfont icon-weibiaoti-"></i>
+            <p>我的</p>
+        </li>
+    </ul>
+</div>
+<script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+<script>
+    $(".floor li").click(function(){
+        $(this).addClass('floor-active').siblings().removeClass('floor-active')
+    })
+</script>
+{$console|raw|default=''}

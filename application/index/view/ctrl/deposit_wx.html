@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title>提现</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <script src="__ROOT__/public/js/common.js"></script>
+    <style>
+        .form {
+            height: 2rem;
+            line-height: 2rem;
+            color: rgb(240, 98, 96);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0 .5rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .form>div:nth-child(2) {
+            margin-right: auto;
+            margin-left: 1rem;
+            max-width: 60%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .form_title {
+            font-size: .5rem;
+            width: 20%;
+        }
+
+        .copy_btn {
+            color: #60aef0;
+            width: 10%;
+            text-align: center;
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        #bank_site {
+            overflow-x: scroll !important;
+            text-overflow: initial;
+            white-space: initial;
+        }
+
+        .user_info {
+            height: 2rem;
+            line-height: 2rem;
+            display: flex;
+            padding: 0 .5rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .user_info>div:first-child {
+            width: 20%;
+            height: 100%;
+            display: flex;
+        }
+
+        .icon {
+            width: 1.3rem;
+            height: 1.3rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: auto 0 auto auto;
+            background-position: -1px 0px;
+        }
+
+        .user_info>.input {
+            margin-left: 1rem;
+            width: 60%;
+            border: none;
+            outline: none;
+        }
+
+        .user_box>.user_info:nth-child(1) .icon {
+            background-image: url(__ROOT__/public/img/name.png);
+        }
+
+        .user_box>.user_info:nth-child(2) .icon {
+            background-image: url(__ROOT__/public/img/phone.png);
+            background-size: 80%;
+            background-position: 4px 0px;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        .user_box>.user_info:nth-child(3) .icon {
+            background-image: url(__ROOT__/public/img/bank1.png);
+        }
+
+        .user_box>.user_info:nth-child(4) .icon {
+            background-size: 90%;
+            background-position: 3px 0px;
+            width: 1.6rem;
+            background-image: url(__ROOT__/public/img/card.png);
+        }
+
+        .user_box>.user_info:nth-child(5) .icon {
+            background-position: 0px 0px;
+            background-image: url(__ROOT__/public/img/money.png);
+        }
+
+        .btn {
+            width: 90%;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            color: white;
+            margin: 3rem auto 0;
+            border-radius: 5px;
+            background: #8BC34A;
+        }
+
+        .input-radiu {
+            width: 70%;
+            border: 1px solid #b9adad;
+            border-radius: 50px;
+            margin: auto;
+            height: 1.5rem;
+        }
+
+        .input-radiu input {
+            border: none;
+            outline: none;
+            background: transparent;
+            height: 100%;
+            text-align: center;
+            color: #777777;
+        }
+
+        .QS-toast {
+            z-index: 19891016 !important;
+        }
+
+        .share {
+            background-color: rgba(0, 0, 0, .7);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            display: none;
+        }
+
+        #container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .confirm {
+            margin: auto;
+            background: white;
+            width: 90%;
+            border-radius: 5px;
+            ;
+            overflow: hidden;
+        }
+
+        .box {
+            padding: 50px 30px;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .btn-cont {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-top: 1px solid #D0D0D0;
+            background-color: #F2F2F2;
+            display: flex;
+        }
+
+        .btn-cont>div {
+            width: 50%;
+            text-align: center;
+            font-size: .7rem;
+        }
+
+        #on {
+            color: #40AFFE;
+            border-left: 1px solid #d0d0d0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="back" onclick="window.history.back(-1)"></div>
+        <span>{$title}</span>
+    </header>
+    <div class="container">
+        <div class="user_box">
+            <div class="user_info" style="min-height: 200px">
+                <div style="min-width: 100px">
+                    <div class="icon2">二维码</div>
+                </div>
+                <img src="{$user.wx_ewm}" alt="" style="display: inline-block;width:200px" >
+            </div>
+            <p style="text-align: center;margin:10px 0 20px 0">没有二维码,请点击 <a href="{:url('ctrl/my_data')}">去上传</a></p>
+            <div class="user_info">
+                <div>
+                    <div class="icon2">金额</div>
+                </div>
+                <input class="input" type="text" placeholder="请输入提现金额" id="num">
+            </div>
+        </div>
+        <div style="padding: 20px;font-size: 12px">
+            可用余额: {$user.balance} <a href="javascript:void(0)" onclick="return tixianAll({$user.balance})" style="margin-left:20px">全部提现</a>
+        </div>
+        <div class="share">
+            <div id="container">
+                <div class="confirm">
+                    <div class="box">
+                        <div class='input-radiu'><input placeholder='请输入交易密码' type='text' id='pwd2' class='int'>
+                        </div>
+                    </div>
+                    <div class="btn-cont">
+                        <div id="off">取消</div>
+                        <div id="on" data-start="0">确认</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn">确定</div>
+    </div>
+</body>
+<script>
+
+    $('.btn').click(function() {
+        num = $("#num").val();
+        if (num == "") {
+            QS_toast.show("请输入提现金额", true)
+        } else {
+            $('.share').show();
+        }
+    })
+    $("#off").click(function() {
+        layer.closeAll();
+    });
+
+    $("#on").click(function() {
+        if ($('#on').attr('data-start') == 1) {
+            return false;
+        }
+        var index2 = layer.open({
+            type: 2
+            ,shade: true
+            ,time:  10
+            ,shadeClose:false
+        });
+
+        if ($("#pwd2").val() == "") {
+            QS_toast.show("请输入交易密码", true)
+        }
+
+        //验证交易密码
+        $.ajax({
+            url: urlPost("order/check_pwd2"),
+            type: "POST",
+            dataType: "JSON",
+            data: { pwd2: $("#pwd2").val() },
+            success: function(res) {
+                console.log(res);
+                $("#pwd2").val('');
+                if (res.code == 0) {
+                    // 发起提现请求
+                    $.ajax({
+                        url: urlPost("ctrl/do_deposit"),
+                        type: "POST",
+                        dataType: "JSON",
+                        data: { num:num, bk_id:'',type:'{$type}' },
+                        success: function(res) {
+                            console.log(res)
+                            if (res.code == 0) {
+                        $('.share').hide();
+                                QS_toast.show('提现申请已提交', true)
+                                var timer = setTimeout(function() {
+                                    history.back(-1)
+                                }, 1500)
+                            } else {
+                                QS_toast.show(res.info, true)
+                                submit = true;
+                            }
+
+                            $('#on').attr('data-start',0);
+                            layer.close(index2);
+                        },
+                        error: function(err) {
+                            console.log(err); submit = true;
+                            $('#on').attr('data-start',0);
+                            layer.close(index2);
+                        }
+                    })
+                } else {
+                    QS_toast.show(res.info, true);
+                    $('#on').attr('data-start',0);
+                    layer.close(index2);
+                }
+                //$('#on').attr('data-start',0);
+            },
+            error: function(err) {
+                console.log(err)
+                $('#on').attr('data-start',0);
+                layer.close(index2);
+                $("#pwd2").val('');
+            }
+        })
+    })
+
+
+
+    function tixianAll(price)
+    {
+        $('#num').val(price);
+    }
+</script>
+
+</html>

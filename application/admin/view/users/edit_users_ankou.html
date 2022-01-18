@@ -1,0 +1,75 @@
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+    <div class="layui-card-body">
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">真实姓名</label>
+            <div class="layui-input-block">
+                <input name="user_name" required placeholder="请输入用户名称" value="{$info.username}" class="layui-input" readonly>
+                {:token()}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级ID</label>
+            <div class="layui-input-block">
+                <input name="parent_id" placeholder="请输入上级ID" value="{$info.parent_id}" class="layui-input" readonly>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">是否显示我的团队</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="show_td" lay-skin="switch" lay-text="ON|OFF" <?php echo $info['show_td']? 'checked=""':'' ?>><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" pane="">
+            <label class="layui-form-label">显示选项</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="show_cz" lay-skin="primary" title="充值" <?php echo $info['show_cz']? 'checked=""':'' ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>充值</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="show_tx" lay-skin="primary" title="提现" <?php echo $info['show_tx']? 'checked=""':'' ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>提现</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="show_num" lay-skin="primary" title="推荐人数" <?php echo $info['show_num']? 'checked=""':'' ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>推荐人数</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="show_tel" lay-skin="primary" title="电话" <?php echo $info['show_tel']? 'checked=""':'' ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>电话</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="show_tel2" lay-skin="primary" title="电话隐藏部分" <?php echo $info['show_tel2']? 'checked=""':'' ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>电话隐藏部分</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="like1[name]" lay-skin="primary" title="姓名" disabled="" checked=""><div class="layui-unselect layui-form-checkbox layui-checkbox-disbaled layui-disabled layui-form-checked" lay-skin="primary"><span>姓名</span><i class="layui-icon layui-icon-ok"></i></div>
+                <input type="checkbox" name="like1[reg]" lay-skin="primary" title="注册时间" disabled="" checked=""><div class="layui-unselect layui-form-checkbox layui-checkbox-disbaled layui-disabled layui-form-checked" lay-skin="primary"><span>注册时间</span><i class="layui-icon layui-icon-ok"></i></div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">选择扣除人</label>
+            <div class="layui-input-inline">
+                <select name="kouchu_balance_uid" id="selectList">
+                    <option value="">选择人</option>
+                    {foreach $cate as $key=>$vo}
+                    <option value="{$vo.id}">{$vo.username}({$vo.tel}) [充值:({$vo.chongzhi})],[提现:({$vo.tixian})],</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">扣除余额</label>
+            <div class="layui-input-block">
+                <input name="kouchu_balance" type="number" min="0" required placeholder="请输入扣除余额" value="{$info.kouchu_balance}" class="layui-input">
+            </div>
+        </div>
+
+  
+    </div>
+    <input name="id" type="hidden" value="{$info.id}">
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>提交</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-close>取消</button>
+    </div>
+
+    <script>
+        var test = "{$info.kouchu_balance_uid|default='0'}";
+        $("#selectList").find("option[value="+test+"]").prop("selected",true);
+
+        window.form.render();
+    </script>
+
+</form>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/record.css">
+    <script charset="utf-8" src="/static_new/js/pack.js"></script>
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/dialog.min.js"></script>
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head>
+<body id="app">
+<div class="header">
+    <p>订单</p>
+</div>
+<div class="record-main">
+    <ul class="record-tab">
+        <li class="active">待付款</li>
+        <li class="">待收货</li>
+        <li class="">已完成</li>
+        <div class="clear"></div>
+    </ul>
+    <div class="record-tab-content">
+        <div class="tab-content wait_list" style="display: block;">
+
+        </div>
+        <div class="tab-content freeze_list" style="display: none;">
+
+        </div>
+        <div class="tab-content make_list" style="display: none;">
+
+        </div>
+    </div>
+</div>
+
+{include file="public/floor_shop" /}
+
+<script type="application/javascript">
+    var page = 1,fpage=1,mpage=1, listHeight = $('.list').height(),fcont = 0, mcont = 0;
+    $(function() {
+        wait(page); // 待处理订单
+
+        //
+        var type ="{$Think.get.type|default='0'}";
+        type = type*1;
+        if (type > 0) {
+            $('.record-tab li').eq(type).click();
+        }
+
+    });
+
+    // tab切换
+    $('.record-tab li').click(function () {
+        var _ind = $(this).index();
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".record-tab-content>div").eq(_ind).show().siblings().hide();
+        if (_ind == 1) {
+            if (fcont == 0) {
+                fcont = 1;
+                freeze(fpage);//冻结订单
+            }
+        } else if (_ind == 2) {
+            if (mcont == 0) {
+                mcont = 1;
+                make(mpage);//完成订单
+            }
+        }
+    });
+
+
+
+    // 待处理订单滚动加载
+    $(".wait_list").scroll(function () {
+        var nScrollHight = $(this)[0].scrollHeight;
+        var nScrollTop = $(this)[0].scrollTop;
+        if (nScrollTop + listHeight >= nScrollHight) {
+            page++;
+            wait(page);
+        }
+    });
+
+    // 冻结订单滚动加载
+    $(".freeze_list").scroll(function () {
+        var nScrollHight = $(this)[0].scrollHeight;
+        var nScrollTop = $(this)[0].scrollTop;
+        if (nScrollTop + listHeight >= nScrollHight) {
+            page++;
+            freeze(page);
+        }
+    });
+
+    // 完成订单滚动加载
+    $(".make_list").scroll(function () {
+        var nScrollHight = $(this)[0].scrollHeight;
+        var nScrollTop = $(this)[0].scrollTop;
+        if (nScrollTop + listHeight >= nScrollHight) {
+            page++;
+            make(page);
+        }
+    });
+
+
+
+    // 待处理订单请求
+    function wait(page) {
+        $.ajax({
+            url: "/index/shop/orderlist",
+            type: "POST",
+            dataType: "JSON",
+            data: { page:page, status: 0 },
+            success: function(res) {
+                console.log(res);
+                if (res.code == 0) {
+                    var list = res.data;
+                    if (page != 1 && list.length == 0) {
+                        QS_toast.show('没有更多的数据了..', true)
+                    }
+                    if (page == 1 && list.length == 0) {
+                        $(".wait_list").append('<div class="order-empty"> <img src="/static_new/img/order_empty.png"> <p>暂无记录</p> <a href="/index/rot_order/index">去抢单</a> </div>')
+                    }
+                    list.map(function(val) {
+                        $(".wait_list").append(`
+                               <div class="record-list " >
+                <div class="number">
+                    <p class="order-id">${val.id}</p>
+                    <p class="time">${val.addtime}</p>
+                </div>
+                <a href="{:url('shop/order_detail')}?oid=${val.id}" class="status thaw gosure" data-id="1725592">详情</a>
+            </div>
+                            `)
+                    })
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    }
+
+
+
+
+    // 待处理订单请求
+    function freeze(page) {
+        $.ajax({
+            url: "/index/shop/orderlist",
+            type: "POST",
+            dataType: "JSON",
+            data: { page:page, status: 1 },
+            success: function(res) {
+                console.log(res);
+                if (res.code == 0) {
+                    var list = res.data;
+                    if (page != 1 && list.length == 0) {
+                        QS_toast.show('没有更多的数据了..', true)
+                    }
+                    if (page == 1 && list.length == 0) {
+                        $(".freeze_list").append('<div class="order-empty"> <img src="/static_new/img/order_empty.png"> <p>暂无记录</p> <a href="/index/rot_order/index">去抢单</a> </div>')
+                    }
+                    list.map(function(val) {
+                        $(".freeze_list").append(`
+                               <div class="record-list " >
+                <div class="number">
+                    <p class="order-id">${val.id}</p>
+                    <p class="time">${val.addtime}</p>
+                </div>
+                <a href="{:url('shop/order_detail')}?oid=${val.id}" class="status thaw gosure" data-id="1725592">详情</a>
+            </div>
+                            `)
+                    })
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    }
+
+
+    // 待处理订单请求
+    function make(page) {
+        $.ajax({
+            url: "/index/shop/orderlist",
+            type: "POST",
+            dataType: "JSON",
+            data: { page:page, status: 2 },
+            success: function(res) {
+                console.log(res);
+                if (res.code == 0) {
+                    var list = res.data;
+                    if (page != 1 && list.length == 0) {
+                        QS_toast.show('没有更多的数据了..', true)
+                    }
+                    if (page == 1 && list.length == 0) {
+                        $(".make_list").append('<div class="order-empty"> <img src="/static_new/img/order_empty.png"> <p>暂无记录</p> <a href="/index/rot_order/index">去抢单</a> </div>')
+                    }
+                    list.map(function(val) {
+                        $(".make_list").append(`
+                               <div class="record-list " >
+                <div class="number">
+                    <p class="order-id">${val.id}</p>
+                    <p class="time">${val.addtime}</p>
+                </div>
+                <a href="{:url('shop/order_detail')}?oid=${val.id}" class="status thaw gosure" data-id="1725592">详情</a>
+            </div>
+                            `)
+                    })
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    }
+
+
+    $(function () {
+
+        var span = document.querySelectorAll('.record-tab li'),
+            div = document.querySelectorAll('.tab-content');
+        for (var i = 0; i < span.length; i++) {
+            span[i].idx = i;
+            span[i].onclick = function () {
+                for (var j = 0; j < div.length; j++) {
+                    div[j].style.display = 'none';
+                    span[j].classList.remove('active');
+                }
+                div[this.idx].style.display = 'block';
+                this.classList.add('active');
+            }
+        }
+
+
+        $(".gosure").click(function () {
+            var that = $(this);
+            var id = $(this).data("id");
+            if (id > 0) {
+                location.href = '/Home/Run/ordersubmitpage/id/' + id;
+            }
+        });
+
+        $(".gocancle").click(function () {
+            var that = $(this);
+            var id = $(this).data("id");
+            if (id > 0) {
+                var loading = null;
+                $.ajax({
+                    url: '/Home/Run/ordercancle',
+                    data: {id: id},
+                    type: 'POST',
+                    beforeSend: function () {
+                        loading = $(document).dialog({
+                            type: 'notice',
+                            infoIcon: '/Public/images/loading.gif',
+                            infoText: '正在加载中',
+                            autoClose: 0
+                        });
+                    },
+                    success: function (data) {
+                        loading.close();
+                        if (data.status == 1) {
+                            $(document).dialog({infoText: data.info});
+                            setTimeout(function () {
+                                window.location.href = data.url;
+                            }, 1000);
+                        } else {
+                            $(document).dialog({infoText: data.info});
+                        }
+                    }
+                });
+            }
+        });
+
+    })
+</script>
+
+</body>
+</html>

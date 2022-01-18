@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抢单</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <style>
+        .form {
+            background: #8BC34A;
+            border-radius: 6px;
+            margin: 1rem auto 1rem auto;
+            padding: .3rem .7rem;
+            color: white;
+            font-size: .5rem;
+            background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
+        }
+
+        .form>div {
+            height: 1.8rem;
+            display: flex;
+        }
+        .form>div>p{
+            line-height:1.8rem
+        }
+        .form>div>p:nth-child(2){
+            margin-left:1rem;
+            text-align: left;
+        }
+        .after{
+            margin:auto 0 auto auto;
+            border-radius: 50px;
+            font-size:.5rem;
+            width:4rem;
+            text-align: center;
+            color:white;
+            display: flex;
+            height:1.5rem;
+            background: #e44679;
+        }
+        .after>span{
+            display: block;
+            transform: scale(.8);
+            margin:0 auto;
+        }
+        /* .form_before::after {
+            content: "佣金{:config('deal_commission')*100}%";
+            position: absolute;
+            right: 0;
+            top: .1rem;
+            width: 4rem;
+            transform: scale(.8);
+            height: 1.5rem;
+            text-align: center;
+            border-radius: 50px;
+            background: rgb(225, 47, 47);
+        } */
+
+        .form_title {
+            width: 4rem;
+            text-align: justify;
+        }
+
+        .form>div>p:last-child {
+            margin-left: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            color: white;
+            border-radius: 50px;
+            margin-bottom: 1rem
+        }
+
+        .worn_title {
+            font-size: .8rem;
+        }
+
+        .loading {
+            width: 2rem;
+            height: 2rem;
+            margin: auto;
+            background-image: url(__ROOT__/public/img/load.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            animation: load 2s linear infinite;
+
+        }
+
+        @keyframes load {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>抢单</span>
+    </header>
+    <div class="container" style="width: 90%;margin: auto;">
+        <div class="form">
+            <div  style="position: relative;">
+                <p class="form_title">
+                    今日已抢佣金 :
+                </p>
+                <p class="today_commission">{$day_deal|format='%.2f'}</p>
+                <div class="after" style="background:#FF5722">
+                   <span> 佣金<br/>{:config('vip_1_commission')*100}%</span>
+                </div>
+            </div>
+            <div>
+                <p class="form_title">
+                    账户冻结金额 :
+                </p>
+                <p class="user_freeze">{$lock_deal|format='%.2f'}</p>
+            </div>
+            <div>
+                <p class="form_title">
+                    今日已抢单数 :
+                </p>
+                <p class="today_order">{$day_d_count|default=0}</p>
+                <!-- <div class="after" style="background:rgb(32,105,156)">
+                    <span>中级佣金<br/>{:config('vip_2_commission')*100}%</span>
+                </div> -->
+            </div>
+            <div>
+                <p class="form_title">
+                    今日冻结单数 :
+                </p>
+                <p class="today_freeze">{$day_l_count|default=0}</p>
+            </div>
+            <div>
+                <p class="form_title" style="letter-spacing: 1.9px;">
+                    团队总佣金 :
+                </p>
+                <p class="team_commission">{$team_num|format='%.2f'}</p>
+                <!-- <div class="after" style="background:rgb(255,192,0)">
+                    <span>高级佣金<br/>{:config('vip_3_commission')*100}%</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="self_btn btn" style="background: #735f5e;">自动抢单</div>
+        <!-- <div class="stop_btn btn" style="background: rgb(181, 38, 118);">停止抢单</div> -->
+        <p>温馨提示:</p>
+        <p class="worn_title2">
+            若您选择了自动抢单且离开抢单界面有可能系统派单给您没接到，导致订单被冻结。建议您点击自动抢单了不要离开抢单界面，或者有事离开的时候点击停止抢单。系统才能知道您已经取消了抢单操作。感谢您的理解。
+        </p>
+    </div>
+    {include file="public/floor" /}
+</body>
+<script>
+    $(function(){
+        $('.floor li').eq(1).addClass("floor-active");
+    })
+    var submit = true, status = false, timer = null, ajaxT = null,lay=0;
+
+    $('.self_btn').click( function() {
+        layer.open({
+            content: '抢单中...<br/><div class="loading"></div>'
+            , btn: ['停止抢单',],
+            shadeClose: false
+            , yes: function (index) {
+                lay=index;
+                clearTimeout(ajaxT);//清除抢单请求
+                QS_toast.show('已停止抢单', true);
+                layer.close(index)
+            }
+        });
+
+        // 延时发送抢单请求
+        ajaxT = setTimeout( function() {
+            $.ajax({
+                url: "{:url('submit_order')}",
+                type: "POST",
+                dataType: "JSON",
+                data: {},
+                success: function(res) {
+                    console.log(res)
+                    status = true;
+                    if (res.code == 0) {
+                        QS_toast.show(res.info, true);
+                        layer.close(lay)
+                        sessionStorage.setItem('oid', res.oid);
+                        var timer = setTimeout(function() {
+                            location.href = "{:url('ctrl/order_info')}"
+                        }, 1800) 
+                    } else {
+                        QS_toast.show(res.info, true)
+                        layer.close(lay)
+                    }
+
+                },
+                error: function(err) { console.log(err) }
+            })
+        },5000)
+    })
+</script>
+
+</html>

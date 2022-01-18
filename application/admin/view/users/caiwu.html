@@ -1,0 +1,106 @@
+{extend name='main'}
+
+
+{block name="content"}
+
+<div class="think-box-shadow">
+
+    <div class="layui-card-header layui-anim layui-anim-fadein notselect">
+        <span class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>
+        当前用户: {$uinfo.username}({$uinfo.tel})
+        <div class="pull-right"></div></div>
+
+
+    {if auth("open") }
+    <div class="layui-form-item layui-inline" style="margin-right: 10px">
+        <a class="layui-btn layui-btn-sm layui-btn-normal" data-open="{:url('index')}" data-reload="true"  data-csrf="{:systoken('index')}">返回会员列表</a>
+    </div>
+    {/if}
+
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <select name="type" id="selectList">
+                        <option value="">所有状态</option>
+                        <option value="-1">系统</option>
+                        <option value="1">充值</option>
+                        <option value="2">交易</option>
+                        <option value="3">返佣</option>
+                        <option value="4">强制交易</option>
+                        <option value="5">推广返佣</option>
+                        <option value="6">下级交易返佣</option>
+                        <option value="7">利息宝</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">发生时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择注册时间" class="layui-input">
+                </div>
+            </div>
+
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+    </fieldset>
+
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">Ta的财务记录</li>
+
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table id="demo0" lay-filter="test1"></table>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var table = layui.table;
+
+            //第一个实例
+            table.render({
+                elem: '#demo0'
+                ,where: {
+                    iasjax:1,
+                    level:1,
+                    addtime:"{$Think.get.addtime}",
+                    type:"{$Think.get.type}",
+                    id:{$uid}
+                }
+                ,height: 512
+                ,totalRow: true
+                ,url: '/admin/users/caiwu' //数据接口
+                ,page: true //开启分页
+                ,cols: [[ //表头
+                    {field: 'id', title: 'ID', width:100, sort: true, fixed: 'left'}
+                    ,{field: 'tel', title: '账号',totalRowText: '合计' }
+                    ,{field: 'oid', title: '订单编号',sort: true}
+                    ,{field: 'num', title: '金额',sort: true,totalRow: true}
+                    ,{field: 'type', title: '类型'}
+                    ,{field: 'status', title: '状态' }
+                    ,{field: 'addtime', title: '发生时间',width:150 }
+                ]]
+            });
+
+        })
+    </script>
+    <script>
+        var test = "{$Think.get.type|default='0'}";
+        $("#selectList").find("option[value="+test+"]").prop("selected",true);
+        form.render()
+    </script>
+
+
+</div>
+{/block}

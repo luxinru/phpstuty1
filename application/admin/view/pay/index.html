@@ -1,0 +1,106 @@
+{extend name='admin@main'}
+
+{block name="content"}
+
+<!--<form onsubmit="return false;" id="GoodsForm" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">-->
+
+    <!--<div class="layui-card-body think-box-shadow padding-left-40">-->
+
+
+        <!--<div class="layui-form-item">-->
+            <!--<span class="color-green label-required-prev">轮播展示图片</span>-->
+            <!--<table class="layui-table">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th class="text-left">展示图片</th>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="auto" class="text-left"><input name="image" type="hidden" value="{$info.image|default=''}"></td>-->
+                <!--</tr>-->
+                <!--</thead>-->
+            <!--</table>-->
+            <!--<script> $('[name="image"]').uploadMultipleImage()</script>-->
+        <!--</div>-->
+
+        <!--<div class="layui-form-item text-center">-->
+            <!--<button class="layui-btn" type="submit">保存图片</button>-->
+            <!--<button class="layui-btn layui-btn-danger" ng-click="hsitoryBack()" type="button">取消编辑</button>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</form>-->
+
+
+<div class="think-box-shadow">
+    <!--<a class="layui-btn layui-btn layui-btn" data-open="{:url('add_banner',['id'=>0])}" data-value="id#0" style='background:green;'>新增</a>-->
+
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='text-left nowrap'>名称</th>
+            <th class='text-left nowrap'>图片</th>
+            <th class='text-left nowrap'>标识</th>
+            <th class='text-left nowrap'>最小金额</th>
+            <th class='text-left nowrap'>最大金额</th>
+            <th class='text-left nowrap'>状态</th>
+            {if auth("edit_home_msg")}
+            <th class='text-left nowrap'>操作</th>
+            {/if}
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='text-left nowrap'>{$vo.name}</td>
+            <td class='text-left nowrap'>
+                <img src="{$vo.ico}" alt="" width="50">
+            </td>
+            <td class='text-left nowrap'>{$vo.name2}</td>
+            <td class='text-left nowrap'>{$vo.min}</td>
+            <td class='text-left nowrap'>{$vo.max}</td>
+            <td class='text-left nowrap'>
+                {eq name='vo.status' value='0'}<span class="color-red">已禁用</span>{else}<span class="color-green">使用中</span>{/eq}
+            </td>
+
+            <td class='text-left nowrap'>
+                {if auth("edit_home_msg")}
+                <a data-dbclick class="layui-btn layui-btn-xs" data-title="编辑" data-open='{:url("admin/pay/edit")}?id={$vo.id}'>编 辑</a>
+
+                {if $vo.status eq 1}
+                <a class="layui-btn layui-btn-warm layui-btn-xs" data-action="{:url('forbid')}" data-value="id#{$vo.id};status#0" data-csrf="{:systoken('admin/pay/forbid')}">禁 用</a>
+                {elseif $vo.status eq 0}
+                <a class="layui-btn layui-btn-warm layui-btn-xs" data-action="{:url('resume')}" data-value="id#{$vo.id};status#1" data-csrf="{:systoken('admin/apy/resume')}">启 用</a>
+                {/if}
+
+                <!--<a class="layui-btn layui-btn-xs layui-btn" onClick="del_message({$vo.id})" style='background:red;'>删除</a>-->
+                {/if}
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+</div>
+<script>
+    function del_message(id){
+        layer.confirm("确认要删除吗，删除后不能恢复",{ title: "删除确认" },function(index){
+            $.ajax({
+                type: 'POST',
+                url: "{:url('del_banner')}",
+                data: {
+                    'id': id,
+                    '_csrf_': "{:systoken('admin/help/del_banner')}"
+                },
+                success:function (res) {
+                    layer.msg(res.info,{time:2500});
+                    location.reload();
+                }
+            });
+        },function(){});
+    }
+</script>
+
+{/block}

@@ -1,0 +1,113 @@
+<div id="foot">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        .foot {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 3px 0;
+            border-top: 1px solid rgb(0, 0, 0, .1);
+            z-index: 9999;
+        }
+
+        .foot > ul {
+            width: 100%;
+        }
+
+        .foot > ul > a > li {
+            flex: 1;
+            float: left;
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+
+        .foot > ul > a > li > img {
+            width: 27px;
+            height: 27px;
+        }
+
+        .foot > ul > a > li > p {
+            color: rgb(112, 112, 112);
+            font-size: 12px;
+        }
+
+        .foot > ul > a > li > .get-order {
+            width: 100%;
+            position: absolute;
+            top: -15px;
+        }
+
+        .foot > ul > a > li > .get-order > .buttom {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .foot > ul > a > li > .get-order > .buttom > img {
+            width: 29px;
+            height: 46px;
+            margin-top: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+        .foot > ul > a > .active p{color:#fc486d}
+    </style>
+    <?php
+
+        $action = \Request::action();
+    ?>
+    <div class="foot">
+        <ul>
+            <a href="/">
+                <li>
+                    <img src="/static_new/img/nav01.png">
+                    <p>回到首页</p>
+                </li>
+            </a>
+            <a href="/index/shop/index">
+                <li class="<?php echo $action=='index'? 'active' : ''; ?>">
+                    <img src="/static_new/img/nav01.png">
+                    <p>商城首页</p>
+                </li>
+            </a>
+            <a href="/index/shop/goodslist">
+                <li class="<?php echo $action=='goodslist'? 'active' : ''; ?>">
+                    <img src="/static_new/img/nav02.png">
+                    <p>商品</p>
+                </li>
+            </a>
+            <a href="/index/shop/orderlist">
+                <li class="<?php echo $action=='orderlist'? 'active' : ''; ?>" >
+                    <img src="/static_new/img/nav04.png">
+                    <p>订单</p>
+                </li>
+            </a>
+
+
+            <div class="clear"></div>
+        </ul>
+    </div>
+</div>

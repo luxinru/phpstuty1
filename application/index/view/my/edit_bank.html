@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编辑银行卡</title>
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <script src="__ROOT__/public/js/common.js"></script>
+    <style>
+        .form_container {
+            border-top: 1px solid #f3f3f3;
+            margin-top: 1rem;
+        }
+
+        .form {
+            width: 90%;
+            margin: .5rem auto;
+            display: flex;
+            height: 1.5rem;
+        }
+
+        .form .form_title {
+            line-height: 1.5rem;
+            width: 20%;
+        }
+
+        .input_box {
+            height: 100%;
+            border: 1px solid #e2dcdc;
+            border-radius: 3px;
+            width: 80%;
+        }
+
+        .input_box input {
+            border: none;
+            outline: none;
+            height: 100%;
+            width: 100%;
+            text-indent: 10px;
+        }
+
+        .input_box input::placeholder {
+            color: #a7a7a7;
+        }
+
+        .swith {
+            position: relative;
+            height: 2rem;
+            display: flex;
+        }
+
+        .swith>label {
+            float: right;
+            margin: auto 3.5rem auto auto;
+            font-size: .5rem;
+            color: #777777;
+        }
+
+        .swith>label::before {
+            content: "";
+            position: absolute;
+            height: 1rem;
+            width: 2rem;
+            border-radius: 50px;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ddd;
+            right: 1rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transition: background-color .0s linear .2s;
+        }
+
+        .swith>label::after {
+            content: "";
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background: white;
+            background-clip: padding-box;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+            position: absolute;
+            right: 2rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transition: right .2s linear;
+        }
+
+        .swith>input {
+            display: none;
+        }
+
+        .swith>input:checked+label::after {
+            right: 1rem;
+        }
+
+        .swith>input:checked+label::before {
+            background: #00bcd4;
+        }
+
+        .btn {
+            margin: 2rem auto;
+            width: 90%;
+            height: 2rem;
+            line-height: 2rem;
+            border-radius: 7px;
+            background: #00bcd4;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="back" onclick="history.back(-1)"></div>
+        <span>编辑银行卡</span>
+    </header>
+    <div class="container">
+            <div class="form">
+                    <p class="form_title">开户人:</p>
+                    <div class="input_box">
+                        <input type="text" placeholder="请输入开户人姓名" name="username" maxlength="10" value="{$info.username}" >
+                    </div>
+                </div>
+        <div class="form">
+            <p class="form_title">开户银行:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入开户银行" id="bank">
+            </div>
+        </div>
+        <div class="form">
+            <p class="form_title">银行卡号:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入银行卡号" id="card">
+            </div>
+        </div>
+        <div class="form">
+            <p class="form_title">开户地址:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入开户行地址" id="site">
+            </div>
+        </div>
+        <div class="form">
+            <p class="form_title">手机号码:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入开户人手机号码" id="tel">
+            </div>
+        </div>
+        <div class="swith">
+            <input type="checkbox" name="" id="swith">
+            <label for="swith">设为默认</label>
+        </div>
+        <div class="btn">提交</div>
+    </div>
+</body>
+<script>
+    var submit = true, id = sessionStorage.getItem('bankId');
+    $(function() {
+        $.ajax({
+            url: urlPost("ctrl/do_bankinfo"),
+            type: "GET",
+            dataType: "JSON",
+            data: { id:id },
+            success: function(res) {
+                console.log(res)
+                if (res.code == 0) {
+                    var data = res.data[0];
+                    $("#bank").val(data.bankname)
+                    $("#card").val(data.cardnum)
+                    $("#name").val(data.username)
+                    $("#tel").val(data.tel);
+                    $("#site").val(data.site)
+                    if(data.status==1){
+                        $('#swith').attr('checked',true)
+                    }
+                }
+            },
+            error: function(err) { console.log(err); submit = true }
+        })
+    })
+
+    $('.btn').click(function() {
+        var bank = $('#bank').val(),
+            card = $('#card').val(),
+            name = $('#name').val(),
+            tel = $('#tel').val(),
+            swith = $("#swith").is(":checked") ? 1 : 0,
+            token = "{$Request.token}",
+            site=$("#site").val();
+        if (bank == "") {
+            QS_toast.show('请输入开户行', true)
+        } else if (card == "") {
+            QS_toast.show('请输入银行卡号', true)
+        } else if (name == "") {
+            QS_toast.show('请输入开户人姓名', true)
+        } else if (tel == "") {
+            QS_toast.show('请输入开户人手机号码', true)
+        } else {
+            if (submit) {
+                submit = false;
+                $.ajax({
+                    url: urlPost("ctrl/do_bankinfo"),
+                    type: "POST",
+                    dataType: "JSON",
+                    data: {
+                        username: name,
+                        bankname: bank,
+                        cardnum: card,
+                        tel:tel,
+                        bkid: id,
+                        token:token,
+                        default: swith,
+                        site:site
+                    },
+                    success: function(res) {
+                        console.log(res)
+                        if (res.code == 0) {
+                            QS_toast.show('修改成功', true);
+                            var timer = setTimeout(function(){
+                                history.back(-1)
+                            }, 1500)
+                        } else {
+                            QS_toast.show(res.info, true);
+                        }
+                    },
+                    error: function(err) { console.log(err); submit = true }
+                })
+            }
+        }
+    })
+</script>
+
+</html>

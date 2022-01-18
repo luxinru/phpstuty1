@@ -1,0 +1,85 @@
+{extend name='admin@main'}
+
+{block name="button"}
+{if auth("admin/bank/add")}
+<button data-modal='{:url("add")}' data-title="添加银行卡" class='layui-btn layui-btn-sm layui-btn-primary'>添加银行卡</button>
+{/if}
+{if auth("admin/bank/remove")}
+<button data-action='{:url("remove")}' data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-primary'>删除银行卡</button>
+{/if}
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow">
+   
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='list-table-sort-td'>
+                <button type="button" data-reload class="layui-btn layui-btn-xs">刷 新</button>
+            </th>
+            <th class='text-left nowrap'>银行名称</th>
+            <th class='text-left nowrap'>账号</th>
+            <th class='text-left nowrap'>开户行</th>
+            <th class='text-left nowrap'>收款人姓名</th>
+            <th class="text-center">状态</th>
+            <th class="text-center">创建时间</th>
+            <th class="text-center"></th>
+            <th></th>
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='list-table-sort-td'>
+                <input data-action-blur="{:request()->url()}" data-value="id#{$vo.id};action#sort;sort#{value}" data-loading="false" value="{$vo.sort}" class="list-sort-input">
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.name|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.account|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.kaihuhang|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.realname|default=''}
+            </td>
+            
+            <td class='text-center nowrap'>
+                {eq name='vo.status' value='0'}已禁用{else}使用中{/eq}<br>
+            </td>
+            <td class='text-center nowrap'>{$vo.create_at|format_datetime}</td>
+            <td class='text-left nowrap'>
+
+                {if auth("admin/bank/edit")}
+                <a data-title="编辑银行卡" class="layui-btn layui-btn-sm" data-modal='{:url("edit")}?id={$vo.id}'>编 辑</a>
+                {/if}
+
+                {if $vo.status eq 1 and auth("admin/bank/forbid")}
+                <a class="layui-btn layui-btn-sm layui-btn-warm" data-action="{:url('forbid')}" data-value="id#{$vo.id};status#0">禁 用</a>
+                {elseif auth("admin/bank/resume")}
+                <a class="layui-btn layui-btn-sm layui-btn-warm" data-action="{:url('resume')}" data-value="id#{$vo.id};status#1">启 用</a>
+                {/if}
+
+                {if auth("admin/bank/remove")}
+                <a class="layui-btn layui-btn-sm layui-btn-danger" data-confirm="确定要删除数据吗?" data-action="{:url('remove')}" data-value="id#{$vo.id}">删 除</a>
+                {/if}
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}

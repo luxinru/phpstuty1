@@ -1,0 +1,92 @@
+{extend name='admin@main'}
+
+{block name="content"}
+
+<!--<form onsubmit="return false;" id="GoodsForm" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">-->
+
+<!--<div class="layui-card-body think-box-shadow padding-left-40">-->
+
+
+<!--<div class="layui-form-item">-->
+<!--<span class="color-green label-required-prev">轮播展示图片</span>-->
+<!--<table class="layui-table">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th class="text-left">展示图片</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td width="auto" class="text-left"><input name="image" type="hidden" value="{$info.image|default=''}"></td>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--</table>-->
+<!--<script> $('[name="image"]').uploadMultipleImage()</script>-->
+<!--</div>-->
+
+<!--<div class="layui-form-item text-center">-->
+<!--<button class="layui-btn" type="submit">保存图片</button>-->
+<!--<button class="layui-btn layui-btn-danger" ng-click="hsitoryBack()" type="button">取消编辑</button>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</form>-->
+
+
+<form onsubmit="return false;" id="GoodsForm" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body think-box-shadow padding-left-40">
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">名称</span>
+                <input name="name" required class="layui-input" placeholder="请输入名称" value="{$info.name}">
+                <input type="hidden" name="id" value="{$info.id}">
+                <input type="hidden" name="_csrf_" value="{:systoken('admin/pay/edit')}">
+            </label>
+        </div>
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">标识</span>
+                <input name="url" required class="layui-input" placeholder="请输入标识" value="{$info.name2}" readonly>
+            </label>
+        </div>
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">ico</span>
+                <input type="hidden" name="ico" value="{$info.ico}" readonly>
+                <img src="{$info.ico}" alt="" width="50">
+            </label>
+        </div>
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">最小金额</span>
+                <input name="min" required class="layui-input" placeholder="请输入最小金额" value="{$info.min}">
+            </label>
+        </div>
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">最大金额</span>
+                <input name="max" required class="layui-input" placeholder="请输入最大金额" value="{$info.max}">
+            </label>
+        </div>
+
+
+        <div class="layui-form-item block">
+            <span class="label-required-prev color-green">二维码</span>
+
+            <p width="auto" class="text-left"><input name="ewm" type="hidden" value="{$info.ewm|default=''}"></p>
+            <script> $('[name="ewm"]').uploadOneImage()</script>
+            <p> 图片只能保存一张,更换请先删除</p>
+        </div>
+
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type="submit">提交</button>
+            <button class="layui-btn layui-btn-danger" ng-click="hsitoryBack()" type="button">取消</button>
+        </div>
+
+    </div>
+</form>
+
+
+{/block}

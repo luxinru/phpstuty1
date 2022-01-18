@@ -1,0 +1,156 @@
+{notempty name='bk_info'}
+{volist name='bk_info' id='vo'}
+
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+    <div class="layui-card-body">
+        <div class="layui-form-item">
+            <label class="layui-form-label">等级名称</label>
+            <div class="layui-input-block">
+                <input name="name" placeholder="等级名称" value="{$vo.name}" class="layui-input">
+                <input type="hidden" name="_csrf_" value="{:systoken('admin/users/edit_users_level')}">
+                <input type="hidden" name="id" value="{$vo.id}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">会员等级(请勿修改)</label>
+            <div class="layui-input-block">
+                <input name="level" required value="{$vo.level}" placeholder="请输入开户银行" class="layui-input" readonly>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">升级价格</label>
+            <div class="layui-input-block">
+                <input name="num" required value="{$vo.num}" placeholder="请输入升级价格" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">接单限制</label>
+            <div class="layui-input-block">
+                <input name="order_num" required value="{$vo.order_num}" placeholder="请输入接单限制" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">佣金比例</label>
+            <div class="layui-input-block">
+                <input name="bili" required value="{$vo.bili}" placeholder="请输入佣金比例" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">提现次数</label>
+            <div class="layui-input-block">
+                <input name="tixian_ci" required value="{$vo.tixian_ci}" placeholder="请输入提现次数" class="layui-input">
+            </div>
+        </div>
+        <!--<div class="layui-form-item">
+            <label class="layui-form-label label-required">交易所需余额</label>
+            <div class="layui-input-block">
+                <input name="deal_min_balance" required value="{$vo.deal_min_balance}" placeholder="请输入交易所需余额" class="layui-input">
+            </div>
+        </div>-->
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">提现最小限制</label>
+            <div class="layui-input-block">
+                <input name="tixian_min" required value="{$vo.tixian_min}" placeholder="提现最小限制" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">提现最大限制</label>
+            <div class="layui-input-block">
+                <input name="tixian_max" required value="{$vo.tixian_max}" placeholder="提现最大限制" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">有效期（天）0表示无限</label>
+            <div class="layui-input-block">
+                <input name="validity" required value="{$vo.validity}" placeholder="有效期" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">用户余额限制</label>
+            <div class="layui-input-block">
+                <input name="num_min" required value="{$vo.num_min}" placeholder="用户余额限制" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">自动升级需邀请</label>
+            <div class="layui-input-block">
+                <input name="auto_vip_xu_num" required value="{$vo.auto_vip_xu_num}" placeholder="人数" class="layui-input">
+            </div>
+            <p class="help-block">邀请几个人 会自动升级到该等级</p>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">提现至少完成订单/天</label>
+            <div class="layui-input-block">
+                <input name="tixian_nim_order" required value="{$vo.tixian_nim_order}" placeholder="用户订单限制" class="layui-input">
+            </div>
+            <p class="help-block">提现需要完成 几笔订单才开提现  / 天</p>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">提现手续费</label>
+            <div class="layui-input-block">
+                <input name="tixian_shouxu" required value="{$vo.tixian_shouxu}" placeholder="用户提现手续" class="layui-input">
+            </div>
+            <p class="help-block">提现手续费,不用百分比,直接写小数,如: 0.01</p>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">等级LOGO</label>
+            <div class="layui-input-block">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td width="90px" class="text-center"><input name="pic" value="{$vo.pic}" type="hidden"></td>
+                    </tr>
+                    </thead>
+                </table>
+                <script>$('[name="pic"]').uploadOneImage();</script>
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label label-required">等级LOGO2</label>
+            <div class="layui-input-block">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td width="90px" class="text-center"><input name="pic2" value="{$vo.pic2}" type="hidden"></td>
+                    </tr>
+                    </thead>
+                </table>
+                <script>$('[name="pic2"]').uploadOneImage();</script>
+            </div>
+
+        </div>
+        <!--<div class="layui-form-item" pane="">-->
+            <!--<label class="layui-form-label">限制分类</label>-->
+            <!--<div class="layui-input-block">-->
+
+               <!--{foreach $cate as $key=>$v}-->
+
+                <!--<input type="checkbox" name="cids{$v.id}" lay-skin="primary" title="{$v.name}"  <?php $cids = explode(',',$vo['cids']); echo in_array($v['id'],$cids) ? 'checked':''; ?>><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>{$vo.name}</span><i class="layui-icon layui-icon-ok"></i></div>-->
+
+                <!--{/foreach}-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type='submit'>提交</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-close>取消</button>
+    </div>
+
+    <script>window.form.render();</script>
+
+</form>
+
+{/volist}
+{/notempty}
+

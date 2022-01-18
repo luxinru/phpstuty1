@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <script src="__ROOT__/public/js/common.js"></script>
+    <style>
+        .form_container {
+            border-top: 1px solid #f3f3f3;
+            margin-top: 1rem;
+        }
+
+        .form {
+            width: 90%;
+            margin: .5rem auto;
+            display: flex;
+            height: 1.5rem;
+        }
+
+        .form .form_title {
+            line-height: 1.5rem;
+            width: 20%;
+        }
+
+        .input_box {
+            height: 100%;
+            border: 1px solid #e2dcdc;
+            border-radius: 3px;
+            width: 80%;
+        }
+
+        .input_box input {
+            border: none;
+            outline: none;
+            height: 100%;
+            width: 100%;
+            text-indent: 10px;
+        }
+
+        .input_box input::placeholder {
+            color: #a7a7a7;
+        }
+
+        .verify>.input_box {
+            width: 50%;
+            margin-left: 0rem;
+        }
+
+        .verify_btn {
+            border: 1px solid #e2dcdc;
+            border-radius: 3px;
+            width: 25%;
+            text-align: center;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: .5rem;
+            margin-left: auto;
+        }
+
+        .btn {
+            width: 90%;
+            height: 2rem;
+            line-height: 2rem;
+            background: #00bcd4;
+            border-radius: 7px;
+            text-align: center;
+            color: white;
+            margin: 4rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="back" onclick="history.back(-1)"></div>
+        <span>绑定手机号</span>
+    </header>
+    <div class="container">
+        <div class="form">
+            <p class="form_title">登录密码:</p>
+            <div class="input_box">
+                <input type="password" placeholder="请输入登录密码" id="pwd">
+            </div>
+        </div>
+        <div class="form">
+            <p class="form_title">新手机号:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入新手机号" id="new_tel">
+            </div>
+        </div>
+        <div class="form verify">
+            <p class="form_title">验证码:</p>
+            <div class="input_box">
+                <input type="text" placeholder="请输入验证码" id="verify">
+            </div>
+            <div class="verify_btn">获取验证码</div>
+        </div>
+        <div class="btn">确定</div>
+    </div>
+</body>
+<script>
+    var t = 60, clock = null, submit = true;
+
+    $(".btn").click(function() {
+        var tel = $("#tel").val(),
+            verify = $("#verify").val(),
+            new_tel = $("#new_tel").val(),
+            pwd = $("#pwd").val();
+       if (pwd=="") {
+            QS_toast.show('请输入原密码', true)
+        } else if (verify=="") {
+            QS_toast.show('请输入手机验证码', true)
+        } else if (new_tel=="") {
+            QS_toast.show('请输入新手机号', true)
+        } else {
+            if (submit) {
+                submit = false;
+                $.ajax({
+                    url: urlPost('my/reset_tel'),
+                    type: "POST",
+                    dataType: "JSON",
+                    data: { tel: new_tel, verify:verify, pwd:pwd },
+                    success: function(res) {
+                        console.log(res)
+                        if (res.code == 0) {
+                            QS_toast.show(res.info, true)
+                            submit=true;
+                        } else {
+                            QS_toast.show(res.info, true)
+                            submit=true;
+                        }
+                    },
+                    error: function(err) { console.log(err) , submit=true;}
+                })
+            }
+        }
+    })
+
+    // 获取验证码
+    $('.verify_btn').click(function () {
+        var tel = $("#new_tel").val();
+        if (clock) return;
+        $.ajax({
+            url: urlPost('send/sendsms'),
+            type: "POST",
+            dataType: "JSON",
+            data: { tel,type:3},
+            success: function(res ) {
+                console.log(res)
+                if (res.code == 0) {
+                    QS_toast.show(res.info, true)
+                    clock = setInterval(verify_time, 1000);
+                } else {
+                    QS_toast.show(res.info, true)
+                }
+            },
+            error: function(err) { console.log(err) }
+        })
+    })
+
+
+    function verify_time() {
+        $(".verify_btn").text("已发送(${t})").css({ 'background': '#777777', 'color': 'white' });
+        t--;
+        if (t <= 0) {
+            clearInterval(clock);
+            clock = null;
+            t = 60;
+            $(".verify_btn").text('获取验证码').css({ 'background': '#fff', 'color': 'black' });
+        }
+    }
+</script>
+
+</html>

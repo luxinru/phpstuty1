@@ -1,0 +1,81 @@
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off">
+        <div class="layui-card-body">
+            <div class="layui-form-item">
+                <label class="layui-form-label label-required">真实姓名</label>
+                <div class="layui-input-block">
+                    <input name="username" required placeholder="请输入真实姓名" class="layui-input">
+                    <input type="hidden" name="_csrf_" value="{:systoken('admin/users/add_cs')}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label label-required">手机号码</label>
+                <div class="layui-input-block">
+                    <input name="tel" required placeholder="请输入手机号码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label label-required">登录密码</label>
+                <div class="layui-input-block">
+                    <input name="pwd" required placeholder="请输入登录密码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Whats APP</label>
+                <div class="layui-input-block">
+                    <input name="qq" placeholder="请输入Whats APP" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">链接</label>
+                <div class="layui-input-block">
+                    <input name="url" placeholder="请输入链接" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Line</label>
+                <div class="layui-input-block">
+                    <input name="wechat" placeholder="请输入Line" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">二维码</label>
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th class="text-center">二维码</th>
+                    </tr>
+                    <tr>
+                        <td width="90px" class="text-center"><input name="qr_code" type="hidden" value="{$vo.logo|default=''}"></td>
+                    </tr>
+                    </thead>
+                </table>
+                <script>$('[name="qr_code"]').uploadOneImage(), $('[name="image"]').uploadMultipleImage()</script>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">时间范围</label>
+                <div class="layui-input-inline">
+                    <input data-time-range type="text" class="layui-input" name='time' id="time" placeholder=" - ">
+                </div>
+            </div>
+        </div>
+    
+        <div class="hr-line-dashed"></div>
+    
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type='submit'>提交</button>
+            <button class="layui-btn layui-btn-danger" type='button' data-close>取消</button>
+        </div>
+    
+        <script>window.form.render();</script>
+        <script>
+        laydate.render({ 
+        elem: '#time'
+        ,type: 'time'
+        ,range:'-'
+        ,done: function(value, date, endDate){
+            console.log(value); //得到日期生成的值，如：2017-08-18
+        }
+        });
+        </script>
+    </form>
+    

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>活动中心</title>
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/icon-font.css">
+    <link rel="stylesheet" href="/static_new/css/notice.css">
+    <script src="/static_new/js/pack.js"></script>
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            margin-bottom: 65px;
+        }
+
+        .header {
+            width: 100%;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            position: relative;
+        }
+
+        .header > p {
+            width: 96%;
+            margin: 0 2%;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+        }
+
+        .order-empty {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .order-empty > img {
+            width: 160px;
+            height: 160px;
+        }
+
+        .order-empty > p {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .order-empty > a {
+            padding: 10px 40px;
+            background: #7669fd;
+            color: #fff;
+            border-radius: 45px;
+            display: inline;
+        }
+    </style>
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head>
+<body id="app">
+<div class="header">
+    <div class="goback">
+        <span class="icon iconfont icon-fanhui"></span> <a href="javascript:history.go(-1)">返回</a>
+    </div>
+    <p>活动中心</p>
+</div>
+
+<div class="notice-main">
+    <div class="notice-tab-content">
+        <div class="tab-content" style="display: block">
+            {foreach $msg as $key=>$vo}
+            <div class="notice-list">
+                <a href="/index/my/detail?id={$vo.id}">
+                    <p class="title">{$vo.title}</p>
+                    <p class="time">
+                        <?php  echo date('Y-m-d H:i:s', $vo['addtime']);  ?>
+                    </p>
+                </a>
+            </div>
+            {/foreach}
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

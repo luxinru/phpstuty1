@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 37.5px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>提示</title>
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+</head>
+<body>
+<script>
+    $(function() {
+        var url = "{$url}";
+        var re_url = url ? url : window.history.go(-1);
+        // 信息框
+        layer.open({
+            content: "{$info}"
+            ,btn: '确定'
+            ,yes: function(index) {
+                window.location.href = re_url;
+            }
+        });
+        setTimeout(function () {
+            window.location.href = re_url;
+        }, 2000);
+    });
+</script>
+</body>
+</html>

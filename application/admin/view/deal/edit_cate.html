@@ -1,0 +1,128 @@
+{extend name='admin@main'}
+
+{block name="content"}
+
+<form onsubmit="return false;" id="GoodsForm" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body think-box-shadow padding-left-40">
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">分类名称</span>
+                <input name="name" required class="layui-input" value="{$info.name}" placeholder="请输入分类名称">
+                <input type="hidden" name="id" value="{$info.id}">
+                <input type="hidden" name="_csrf_" value="{:systoken('admin/deal/edit_cate')}">
+            </label>
+        </div>
+
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">绑定会员等级</span>
+                <select name="level" id="selectList" readonly="readonly" disabled>
+                    {foreach $level as $key=>$vo}
+                    <option value="{$vo.level}" <?php echo $info['level_id']==$vo['id'] ? 'selected': ''; ?> >{$vo.name}</option>
+                    {/foreach}
+                </select>
+            </label>
+        </div>
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">比例</span>
+                <input name="bili" required class="layui-input" value="{$info.bili}" placeholder="比例以会员等级为主" >
+                <!--readonly-->
+            </label>
+        </div>
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">简介</span>
+                <input name="cate_info" required class="layui-input" value="{$info.cate_info}" placeholder="请输入简介">
+            </label>
+        </div>
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">最低金额限制</span>
+                <input name="min" required class="layui-input" value="{$info.min}" placeholder="请输入金额">
+            </label>
+        </div>
+        
+
+        <div class="layui-form-item layui-row layui-col-space15">
+                     <label class="layui-form-item margin-top-20 block relative">
+                        <span class="color-green margin-right-10">匹配区间(%)</span>
+                    
+                        <p>
+                        
+                            匹配区间(min): <input name="pipei_min" style="width:100px;display: inline-block" required placeholder="" value="{$info.pipei_min}" class="layui-input">%，
+                            匹配区间(max) <input name="pipei_max" style="width:100px;display: inline-block" required placeholder="" value="{$info.pipei_max}" class="layui-input">%
+
+                        </p>
+                        
+                    </label>
+        </div>
+        
+        <div class="layui-form-item">
+            <span class="color-green label-required-prev">分类LOGO(不用修改)</span>
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th class="text-center">展示图片</th>
+                </tr>
+                <tr>
+                    <td width="90px" class="text-center"><input name="cate_pic" value="{$info.cate_pic}" type="hidden"></td>
+                </tr>
+                </thead>
+            </table>
+            <script>$('[name="cate_pic"]').uploadOneImage();</script>
+        </div>
+        <div class="layui-form-item block">
+
+        </div>
+
+
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type="submit">保存</button>
+            <button class="layui-btn layui-btn-danger" ng-click="hsitoryBack()" type="button">取消编辑</button>
+        </div>
+
+    </div>
+</form>
+{/block}
+
+{block name='script'}
+<script>
+
+    window.form.render();
+    require(['ckeditor', 'angular'], function () {
+        window.createEditor('[name="goods_info"]', {height: 500});
+        var app = angular.module("GoodsForm", []).run(callback);
+        angular.bootstrap(document.getElementById(app.name), [app.name]);
+
+        function callback($rootScope) {
+            $rootScope.isAddMode = parseInt('{$isAddMode|default=0}');
+            $rootScope.maps = JSON.parse(angular.element('#goods-value').val() || '[]') || {};
+            $rootScope.specs = JSON.parse(angular.element('#goods-specs').val() || '[{"name":"默认分组","list":[{"name":"默认规格","check":true}]}]');
+            // 批量设置数值
+            $rootScope.batchSet = function (type, fixed) {
+                layer.prompt({title: '请输入数值', formType: 0}, function (value, index) {
+                    $rootScope.$apply(function () {
+                        var val = (parseFloat(value) || 0).toFixed(fixed);
+                        for (var i in $rootScope.specsTreeData) for (var j in $rootScope.specsTreeData[i]) {
+                            $rootScope.specsTreeData[i][j][type] = val;
+                        }
+                    });
+                    layer.close(index);
+                });
+            };
+            // 返回商品列表
+            $rootScope.hsitoryBack = function () {
+                $.msg.confirm('确定要取消编辑吗？', function (index) {
+                    history.back(), $.msg.close(index);
+                });
+            };
+
+        }
+    })
+</script>
+{/block}

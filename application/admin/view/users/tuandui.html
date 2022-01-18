@@ -1,0 +1,559 @@
+{extend name='main'}
+
+
+{block name="content"}
+<script src="/static_new6/layui/layui.all.js"></script>
+<div class="think-box-shadow">
+
+    <div class="layui-card-header layui-anim layui-anim-fadein notselect">
+        <span class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>
+        当前用户: {$uinfo.username}({$uinfo.tel})  状态: {$uinfo['status']>0?'<font color="green">正常</font>':'<font color="red">封禁</font>'}
+        <div class="pull-right"></div></div>
+
+
+    {if auth("open") }
+    <div class="layui-form-item layui-inline" style="margin-right: 10px">
+
+        <a class="layui-btn layui-btn-sm layui-btn-normal" data-open="{:url('index')}" data-reload="true"  data-csrf="{:systoken('index')}">返回会员列表</a>
+        <a class="layui-btn layui-btn-sm layui-btn-danger" data-confirm="确定要{$uinfo['status']>0?'封禁':'解封'}该用户【{$uinfo.username}】吗？" data-action="{:url('open')}" data-value="id#{$uid};status#{$uinfo.status};type#0" data-csrf="{:systoken('open')}">{$uinfo['status']>0?'封禁':'解封'}</a>
+        <a class="layui-btn layui-btn-sm layui-btn-warning" data-confirm="确定要{$uinfo['status']>0?'封禁':'解封'}该用户【{$uinfo.username}】所有下级吗？" data-action="{:url('open')}" data-value="id#{$uid};status#{$uinfo.status};type#1" data-csrf="{:systoken('open')}">{$uinfo['status']>0?'封禁':'解封'}团队</a>
+    </div>
+    {/if}
+    <fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">用户名称</label>
+                <div class="layui-input-inline">
+                    <input name="username" value="{$Think.get.username|default=''}" placeholder="请输入用户名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">手机号码</label>
+                <div class="layui-input-inline">
+                    <input name="tel" value="{$Think.get.tel|default=''}" placeholder="请输入手机号码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">注册时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择注册时间" class="layui-input">
+                </div>
+            </div>
+            
+             <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">是否完成任务</label>
+                <div class="layui-input-inline">
+                   <select name="is_order" id="selectList" class="layui-input-inline">
+                    
+                    <option value="0">全部</option>
+                    <option value="1">已完成</option>
+                    <option value="-1">未完成</option>
+                    </select>
+                </div>
+            </div>
+            
+
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+        </form>
+    </fieldset>
+<table lay-filter="parse-table-demo">
+  <thead>
+    <tr>
+      <th lay-data="{field:'username', width:300}">团队总人数</th>
+      <th lay-data="{field:'joinTime', width:300}">团队总余额</th>
+      <th lay-data="{field:'qwq', minWidth: 300}">团队总充值</th>
+      <th lay-data="{field:'sign', minWidth: 300}">团队总提现</th>
+    </tr> 
+  </thead>
+  <tbody>
+      
+    <tr>
+      <td><span style="color:green">{$user_num}</span></td>
+      <td><span style="color:green">{$user_price}</span></td>
+      <td><span style="color:green"> {$user_cz}</span></td>
+      <td><span style="color:green">{$user_tx}</span></td>
+    </tr>
+  </tbody>
+</table>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">Ta的下线</li>
+            <li class="">一级会员</li>
+            <li>二级会员</li>
+            <li>三级会员</li>
+            <li>四级会员</li>
+            <li>五级会员</li>
+            
+            <li>今日首充用户</li>
+            <li>历史充值用户</li>
+            <li>今日提现用户</li>
+            <li>今日充值用户</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table id="demo0" lay-filter="test1"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo1" lay-filter="test2"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo2" lay-filter="test2"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo3" lay-filter="test3"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo4" lay-filter="test2"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo5" lay-filter="test3"></table>
+            </div>
+
+
+
+            <div class="layui-tab-item">
+                <table id="demo6" lay-filter="test3"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo7" lay-filter="test3"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo8" lay-filter="test3"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table id="demo9" lay-filter="test3"></table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var table = layui.table;
+table.init('parse-table-demo', { //转化静态表格
+        //height: 'full-500'
+      }); 
+            //第一个实例
+            table.render({
+                elem: '#demo0'
+                ,where: {
+                    iasjax:1,
+                    level:-1,
+                    addtime:"{$Think.get.addtime}",
+                    tel:"{$Think.get.tel}",
+                    username:"{$Think.get.username}",
+                     is_order:"{$Think.get.is_order}",
+                    id:{$uid}
+                }
+                ,height: 512
+                ,url: '/admin/users/tuandui' //数据接口
+                ,totalRow: true
+                ,page: true //开启分页
+                ,cols: [[ //表头
+                    {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                    ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                    ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                    ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                    /*,{field: 'cz', title: '充值',totalRow: true}*/
+                    ,{field: 'tx', title: '提现',totalRow: true}
+                    ,{field: 'jb', title: '级别',sort:true }
+                    ,{field: 'parent_name', title: '上级用户' }
+                    ,{field: 'childs', title: '直推人数',totalRow: true }
+                    ,{field: 'addtime', title: '注册时间',width:150 }
+                    ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                        var name = d.status ? "封禁":"解封";
+                        return '' +
+                            '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                            '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                            '' +
+                            '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                        var color = d.status ? "red":"green";
+                    }}
+                ]]
+            });
+
+            //<th lay-data="{field:'id',width:50}" class='text-left nowrap'>ID</th>
+            $('.layui-tab-title li').click(function () {
+                if( $(this).text() == '一级会员') {
+
+                    //第2个实例
+                    table.render({
+                        elem: '#demo1'
+                        ,where: {
+                            iasjax:1,
+                            level:1,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+
+                }else if( $(this).text() == '二级会员') {
+
+                    //第3个实例
+                    table.render({
+                        elem: '#demo2'
+                        ,where: {
+                            iasjax:1,
+                            level:2,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+
+                }else if( $(this).text() == '三级会员') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo3'
+                        ,where: {
+                            iasjax:1,
+                            level:3,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '四级会员') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo4'
+                        ,where: {
+                            iasjax:1,
+                            level:4,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '五级会员') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo5'
+                        ,where: {
+                            iasjax:1,
+                            level:5,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '今日首充用户') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo6'
+                        ,where: {
+                            iasjax:1,
+                            level:6,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '历史充值用户') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo7'
+                        ,where: {
+                            iasjax:1,
+                            level:7,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '今日提现用户') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo8'
+                        ,where: {
+                            iasjax:1,
+                            level:8,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }else if( $(this).text() == '今日充值用户') {
+
+                    //第4个实例
+                    table.render({
+                        elem: '#demo9'
+                        ,where: {
+                            iasjax:1,
+                            level:9,
+                            addtime:"{$Think.get.addtime}",
+                            tel:"{$Think.get.tel}",
+                            username:"{$Think.get.username}",
+                            id:{$uid}
+                        }
+                        ,height: 512
+                        ,url: '/admin/users/tuandui' //数据接口
+                        ,totalRow: true
+                        ,page: true //开启分页
+                        ,cols: [[ //表头
+                            {field: 'id', title: 'ID', width:50, sort: true, fixed: 'left',}
+                            ,{field: 'tel', title: '账号',width:120 ,totalRowText: '合计'}
+                            ,{field: 'balance', title: '余额',sort: true,totalRow: true}
+                            ,{field: 'yj', title: '佣金',sort: true,totalRow: true}
+                            ,{field: 'cz', title: '充值',totalRow: true}
+                            ,{field: 'tx', title: '提现',totalRow: true}
+                            ,{field: 'jb', title: '级别',sort:true }
+                            ,{field: 'parent_name', title: '上级用户' }
+                            ,{field: 'childs', title: '直推人数',totalRow: true }
+                            ,{field: 'addtime', title: '注册时间',width:150 }
+                            ,{field: 'id', title: '操作',width:170, templet:function (d) {
+                                var name = d.status ? "封禁":"解封";
+                                return '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-title="查看账变" data-reload="true" data-open="{:url(\'admin/users/caiwu\')}?id='+d.id+'" style="background: #dc1ed1">账变</a>' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-danger"  data-confirm="确定要'+name+'该用户【'+d.username+'】吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#0" data-csrf="{:systoken(\'open\')}" style="background: '+color+'">'+name+'</a>' +
+                                    '' +
+                                    '<a class="layui-btn layui-btn-xs layui-btn-warning"  data-confirm="确定要封禁该用户【'+d.username+'】所有下级吗？" data-action="{:url(\'open\')}" data-value="id#'+d.id+';status#'+d.status+';type#1" data-csrf="{:systoken(\'open\')}">'+name+'团队</a>'
+                                var color = d.status ? "red":"green";
+                            }}
+                        ]]
+                    });
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            })
+        })
+    </script>
+ <script>
+          var test = "{$Think.get.is_order|default=0}";
+    $("#selectList").find("option[value="+test+"]").prop("selected",true);
+        form.render()</script>
+    
+
+</div>
+{/block}
+
+
+

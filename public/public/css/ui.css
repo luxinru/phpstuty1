@@ -1,0 +1,44 @@
+.QS-toast {
+    position: fixed;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    transition-property: transform, opacity;
+    -webkit-transform: translate3d(0, 0, 0) scale(.9);
+    transform: translate3d(0, 0, 0) scale(.9);
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+    z-index: 19891015;
+}
+
+.QS-toast.in {
+    opacity: 1;
+    -moz-transition-duration: 300ms;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.QS-toast.out {
+    opacity: 0;
+    z-index: 10999;
+    -moz-transition-duration: 300ms;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    -webkit-transform: translate3d(0, 0, 0) scale(0.8);
+    transform: translate3d(0, 0, 0) scale(0.8);
+}
+
+.QS-toast .QS-toast-text {
+    display: inline-block;
+    color: #fff;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.2rem;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    max-width: 60%;
+}

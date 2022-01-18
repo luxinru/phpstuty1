@@ -1,0 +1,752 @@
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-01-17 23:04:08 count(): Parameter must be an array or an object that implements Countable on line 447 in E:\code\tmp_code\yule\public\customlivechat\php\model\UserModel.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:06:33 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:07:26 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:07:50 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:08:46 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:10:12 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:17:58 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:19:19 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:26:12 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:33:24 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:34:21 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-17 23:34:23 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?is-guest-logged-in
+2020-01-18 00:06:36 Undefined property: UserModel::$image on line 32 in E:\code\tmp_code\yule\public\customlivechat\php\controller\AuthenticationController.php
+Application path: /customlivechat/php/app.php?department-online
+2020-04-15 10:34:33 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:33 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-04-15 10:34:33 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:33 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-04-15 10:34:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-04-15 10:34:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-04-15 10:34:48 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:48 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-04-15 10:34:58 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:34:58 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-04-15 10:40:48 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:40:48 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-04-15 10:41:21 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:41:21 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-04-15 10:42:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-04-15 10:42:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/13.demoym.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/13.demoym.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-08-28 11:28:43 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-08-28 11:28:43 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-08-28 11:28:43 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-08-28 11:28:43 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-08-28 11:30:47 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-08-28 11:30:47 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-09-07 21:08:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-09-07 21:08:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-09-07 21:08:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-09-07 21:08:42 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/amazonjz.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/amazonjz.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:39 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:39 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:40 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-16 12:02:41 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-16 12:02:41 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/www.nzsysc.com/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-22 03:22:05 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-22 03:22:05 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-22 03:22:05 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-22 03:22:05 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-10-22 03:22:22 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-22 03:22:22 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-10-22 03:22:22 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-22 03:22:22 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?login
+2020-10-22 03:22:37 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/AuthenticationController.php:248 (UserModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (AuthenticationController:loginAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-10-22 03:22:37 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?operator-is-online
+2020-11-02 11:37:36 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/UserModel.php:518 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/OperatorController.php:356 (UserModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (OperatorController:isOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-11-02 11:37:36 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+Application path: /customlivechat/php/app.php?department-online
+2020-11-02 11:37:36 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:50 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:68 (Database:connect())
+/www/wwwroot/qd01/public/customlivechat/php/service/Database.php:28 (Database:reconnect())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Service.php:17 (Database:onRegister())
+/www/wwwroot/qd01/public/customlivechat/php/lib/ServiceContainer.php:55 (Service:setServiceContainer())
+/www/wwwroot/qd01/public/customlivechat/php/lib/Model.php:20 (ServiceContainer:get())
+/www/wwwroot/qd01/public/customlivechat/php/model/DepartmentModel.php:26 (Model:__construct())
+/www/wwwroot/qd01/public/customlivechat/php/controller/DepartmentController.php:188 (DepartmentModel:repo())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:165 (DepartmentController:getOnlineAction())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+
+2020-11-02 11:37:36 [error] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Stack trace:
+/www/wwwroot/qd01/public/customlivechat/php/service/ExceptionHandler.php:23 (Logger:error())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:180 (ExceptionHandler:createResponse())
+/www/wwwroot/qd01/public/customlivechat/php/app/Application.php:89 (Application:runAction())
+/www/wwwroot/qd01/public/customlivechat/php/app.php:27 (Application:run())
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title>银行卡</title>
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/js/layer_mobile/need/layer.css">
+    <script src="__ROOT__/public/js/layer_mobile/layer.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <script src="__ROOT__/public/js/common.js"></script>
+    <style>
+        .wallet_info {
+            background:#8BC34A;
+            border-radius: 5px;
+            color: white;
+            width: 90%;
+            margin: 1rem auto;
+            height: 7rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: .3rem .6rem;
+        }
+
+        .btn_container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0 1rem;
+            font-size: .5rem;
+        }
+
+        .btn {
+            border-radius: 50px;
+            width: 4rem;
+            text-align: center;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            /* background: linear-gradient(to left, rgb(93,104,44), 50%, rgb(109,127,45)); */
+            background: #00bcd4
+        }
+
+        .bank-list li {
+            height: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid #eeeeee;
+            padding: 0 2rem 0 1rem;
+            position: relative;
+        }
+
+        .bank-list li::after {
+            content: "";
+            position: absolute;
+            right: .5rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1rem;
+            height: 1rem;
+            background-image: url(__ROOT__/public/img/right.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .bank-list li>span {
+            margin: auto 0;
+        }
+
+        .bank_title {
+            padding: .5rem 1rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        #add {
+            position: absolute;
+            right: .5rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1.2rem;
+            height: 1.1rem;
+            background-image: url(__ROOT__/public/img/add.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .no-data {
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="back" onclick="window.history.back(-1)"></div>
+    <span>银行卡</span>
+    <div id="add" onclick="location.href=`{:url('my/add_bank')}`"></div>
+</header>
+<div class="container">
+
+    <div class="bank">
+        <p class="bank_title">我的银行卡</p>
+        <ul class="bank-list">
+
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        var dataList = 0;
+        $.ajax({
+            url: urlPost("ctrl/do_bankinfo"),
+            type: "GET",
+            dataType: "JSON",
+            data: {},
+            success: function(res) {
+                console.log(res)
+                var list = res.data || [];
+                dataList = list.length;
+                if (list.length == 0) {
+                    $('.bank-list').append('<div class="no-data">还未添加银行卡</div>');
+                    $('#deposit').click(function() {
+                        layer.open({
+                            content: '您还未添加银行卡信息'
+                            , btn: ['去添加', '取消'],
+                            shadeClose: false
+                            , yes: function (index) {
+                                location.href = "{:url('my/add_bank')}"
+                            }
+                        });
+                    })
+                } else {
+                    $('#deposit').click(function() {
+                        location.href = "{:url('ctrl/deposit')}"
+                    })
+                }
+                if (res.code == 0) {
+                    list.map(function(val) {
+                        if (val.status == 1) {
+                            $('.bank-list').prepend(`
+                            <li id="${val.id}">
+                                <span class="title" title="">${val.bankname}</span>
+                                <span>${val.cardnum}</span>
+                            </li>
+                            `)
+                        } else {
+                            $('.bank-list').append(`
+                            <li id="${val.id}">
+                                <span class="title" title="">${val.bankname}</span>
+                                <span>${val.cardnum}</span>
+                            </li>
+                            `)
+                        }
+                    })
+                }
+            },
+            error: function(err){ console.log(err)}
+        })
+
+    })
+
+    $(".bank-list").on('click', 'li', function(e) {
+        var bankCard = $(e.target).attr('id') || $(e.target).parents('li').attr('id');
+        sessionStorage.setItem('bankId', bankCard)
+        location.href = "{:url('my/edit_bank')}"
+    })
+</script>
+
+</html>

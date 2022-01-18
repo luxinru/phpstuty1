@@ -1,0 +1,68 @@
+{extend name='admin@main'}
+
+{block name="content"}
+
+<form onsubmit="return false;" id="GoodsForm" data-auto="true" method="post" class='layui-form layui-card' autocomplete="off">
+
+    <div class="layui-card-body think-box-shadow padding-left-40">
+
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">分类名称</span>
+                <input name="name" required class="layui-input" value="{$info.name}" placeholder="请输入分类名称">
+                <input type="hidden" name="id" value="{$info.id}">
+                <input type="hidden" name="_csrf_" value="{:systoken('admin/shop/edit_cate')}">
+            </label>
+        </div>
+        <!--<div class="layui-form-item layui-row layui-col-space15">-->
+            <!--<label class="layui-col-xs9 relative">-->
+                <!--<span class="color-green">比例</span>-->
+                <!--<input name="bili" required class="layui-input" value="{$info.bili}" placeholder="请输入比例">-->
+            <!--</label>-->
+        <!--</div>-->
+        <div class="layui-form-item layui-row layui-col-space15">
+            <label class="layui-col-xs9 relative">
+                <span class="color-green">简介</span>
+                <input name="cate_info" required class="layui-input" value="{$info.cate_info}" placeholder="请输入简介">
+            </label>
+        </div>
+        <!--<div class="layui-form-item layui-row layui-col-space15">-->
+            <!--<label class="layui-col-xs9 relative">-->
+                <!--<span class="color-green">最低金额限制</span>-->
+                <!--<input name="min" required class="layui-input" value="{$info.min}" placeholder="请输入金额">-->
+            <!--</label>-->
+        <!--</div>-->
+        <div class="layui-form-item">
+            <span class="color-green label-required-prev">分类LOGO</span>
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th class="text-center">展示图片</th>
+                </tr>
+                <tr>
+                    <td width="90px" class="text-center"><input name="cate_pic" value="{$info.cate_pic}" type="hidden"></td>
+                </tr>
+                </thead>
+            </table>
+            <script>$('[name="cate_pic"]').uploadOneImage();</script>
+        </div>
+        <div class="layui-form-item block">
+
+        </div>
+
+
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type="submit">保存</button>
+            <button class="layui-btn layui-btn-danger" ng-click="hsitoryBack()" type="button">取消编辑</button>
+        </div>
+
+    </div>
+</form>
+{/block}
+
+{block name='script'}
+<script>
+    window.form.render();
+
+</script>
+{/block}

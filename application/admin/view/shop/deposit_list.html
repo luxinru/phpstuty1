@@ -1,0 +1,132 @@
+{extend name='main'}
+
+{block name="content"}
+
+<div class="think-box-shadow">
+    <fieldset>
+        <legend>条件搜索</legend>
+
+
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            {if auth("do_deposit") }
+            <div class="layui-form-item layui-inline" style="margin-right: 10px">
+                <button data-action='{:url("do_deposit2")}' data-csrf="{:systoken('do_deposit2')}" data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-danger'>批量通过</button>
+                <button data-action='{:url("do_deposit3")}' data-csrf="{:systoken('do_deposit3')}" data-rule="id#{key}" class='layui-btn layui-btn-sm layui-btn-warning'>批量拒绝</button>
+            </div>
+            {/if}
+
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">订单号</label>
+                <div class="layui-input-inline">
+                    <input name="oid" value="{$Think.get.oid|default=''}" placeholder="请输入订单号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">用户名称</label>
+                <div class="layui-input-inline">
+                    <input name="username" value="{$Think.get.username|default=''}" placeholder="请输入用户名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">发起时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择发起时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                {if auth("do_deposit") }
+                <a href="/admin/deal/daochu.html" class="layui-btn layui-btn-danger" ><i class="layui-icon">&#xe615;</i> 导 出</a>
+                {/if}
+            </div>
+        </form>
+    </fieldset>
+    
+    <script>form.render()</script>
+    <table class="layui-table margin-top-15" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <input data-auto-none data-check-target='.list-check-box' type='checkbox'>
+            </th>
+
+            <th class='text-left nowrap'>订单号</th>
+            <th class='text-left nowrap'>提现用户</th>
+            <th class='text-left nowrap'>提现金额</th>
+            <th class='text-left nowrap'>手续费</th>
+            <th class='text-left nowrap'>实际到账</th>
+            <th class='text-left nowrap'>银行名称</th>
+            <th class='text-left nowrap'>开户名称</th>
+            <th class='text-left nowrap'>银行卡号</th>
+            <th class='text-left nowrap'>联系电话</th>
+            <th class='text-left nowrap'>发起时间</th>
+            <th class='text-left nowrap'>处理时间</th>
+
+            <th class='text-left nowrap'>方式</th>
+            <th class='text-left nowrap'>二维码</th>
+            <th class='text-left nowrap'>订单状态</th>
+            {if auth('do_deposit')}
+                <th class='text-left nowrap'>操作</th>
+            {/if}
+        </tr>
+        </thead>
+        {/notempty}
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td think-checkbox'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+
+            <td class='text-left nowrap'>{$vo.id}</td>
+            <td class='text-left nowrap'>{$vo.username}</td>
+            <td class='text-left nowrap'>¥{$vo.num}</td>
+            <td class='text-left nowrap'>{$vo.shouxu*100}%</td>
+            <td class='text-left nowrap'>¥{$vo.real_num}</td>
+            <td class='text-left nowrap'>{$vo.bankname}</td>
+            <td class='text-left nowrap'>{$vo.khname}</td>
+            <td class='text-left nowrap'>{$vo.cardnum}</td>
+            <td class='text-left nowrap'>{$vo.tel}</td>
+            <td class='text-left nowrap'>{$vo.addtime|format_datetime}</td>
+            <td class='text-left nowrap'>{$vo.endtime|format_datetime}</td>
+
+            <td class='text-left nowrap'>
+                {if ($vo.type == 'wx') }
+                    <span class="layui-btn layui-btn-xs">微信</span>
+                {/if}
+                {if ($vo.type == 'zfb') }
+                    <span class="layui-btn layui-btn-xs layui-btn-warm">支付宝</span>
+                {/if}
+            </td>
+            <td class='text-left nowrap'>
+                {if ($vo.type == 'wx') }
+                <a data-dbclick data-title="查看图片" data-modal='{:url("admin/users/picinfo")}?pic={$vo.wx_ewm}'><img src="{$vo.wx_ewm}" style="width:150px;height:100px;"></a>
+                {/if}
+
+                {if ($vo.type == 'zfb') }
+                <a data-dbclick data-title="查看图片" data-modal='{:url("admin/users/picinfo")}?pic={$vo.zfb_ewm}'><img src="{$vo.zfb_ewm}" style="width:150px;height:100px;"></a>
+                {/if}
+            </td>
+            <td class='text-left nowrap'>
+                {switch $vo.status}
+                {case 1}待审核{/case}
+                {case 2}审核通过{/case}
+                {case 3}审核驳回{/case}
+                {/switch}
+            </td>
+            <td class='text-left nowrap'>
+            {if ($vo.status == 1) and auth("do_deposit")}
+                <a class="layui-btn layui-btn-xs" data-csrf="{:systoken('admin/deal/do_deposit')}" data-action="{:url('do_deposit')}" data-value="id#{$vo.id};status#2">通过</a>
+                <a class="layui-btn layui-btn-xs layui-btn-warm" data-csrf="{:systoken('admin/deal/do_deposit')}" data-action="{:url('do_deposit')}" data-value="id#{$vo.id};status#3;uid#{$vo.uid};num#{$vo.num}">驳回</a>
+            {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+</div>
+{/block}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>返回中</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/statics/css/hui.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+
+
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <script src="__ROOT__/public/js/common.js"></script>
+    <style>
+        nav {
+            position: fixed;
+            top: 2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 750px;
+            width: 100%;
+            background: white;
+            display: flex;
+            height: 2rem;
+            line-height: 2rem;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+
+        nav>p {
+            width: 33%;
+            text-align: center;
+        }
+
+        .cont>div {
+            display: none;
+        }
+
+        .list {
+            height: 77vh;
+            overflow-y: scroll;
+        }
+
+        .list>li {
+            font-size: .5rem;
+            border-bottom: .1rem solid rgb(248, 242, 242);
+            padding: .5rem 1rem;
+        }
+
+    </style>
+</head>
+
+<body style="background: #fff">
+<header><div class="back" onclick="window.history.back(-1)"></div><span>充值</span></header>
+<div class="container mescroll" style="padding-top: 4rem;" id="mescroll">
+
+    <div class="cont" style="text-align: center">
+
+        <h1>充值中,<span id="count">4</span>秒后返回我的页面</h1>
+        <div style="display: block;">
+            <ul class="list wait_list">
+
+                <!-- 待处理订单 -->
+            </ul>
+        </div>
+        <div>
+            <ul class="list freeze_list">
+                <!-- 冻结订单 -->
+            </ul>
+        </div>
+        <div>
+            <ul class="list make_list">
+                <!-- 完成订单 -->
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(function(){
+        var count = 5;
+        setInterval(function() {
+            count--;
+            if (count <= 0) window.location.href = "{:url('/index/my/index')}";
+            $("#count").html("" + count + "");
+        }, 1000);
+    })
+</script>
+
+<script>
+
+</script>
+</body>
+
+</html>

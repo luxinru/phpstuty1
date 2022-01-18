@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>收单</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/ui.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/css/ui.css">
+    <style>
+        nav {
+            position: fixed;
+            top: 2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 750px;
+            width: 100%;
+            background: white;
+            display: flex;
+            height: 2rem;
+            line-height: 2rem;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .nav_active {
+            color: #00bcd4;
+            border-bottom: 1px solid #00bcd4;
+        }
+
+        nav>p {
+            width: 33%;
+            text-align: center;
+        }
+
+        .cont>div {
+            display: none;
+        }
+
+        .list {
+            height: 77vh;
+            overflow-y: scroll;
+        }
+
+        .list>li {
+            font-size: .5rem;
+            border-bottom: .1rem solid rgb(248, 242, 242);
+            padding: .5rem 1rem;
+        }
+
+        .order_info {
+            margin-top: .5rem;
+            display: flex;
+        }
+
+        .info_img {
+            width: 3rem;
+            height: 3rem;
+            background: #eeeeee;
+        }
+
+        .info_data {
+            max-width: 55%;
+            margin: 0 0 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .info_store,
+        .money {
+            color: #00bcd4;
+        }
+
+        .info_money {
+            margin-left: auto;
+            text-align: right;
+        }
+        .no-data{
+            border: none !important;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>收单列表</span>
+    </header>
+    <div class="container mescroll" style="padding-top: 4rem;" id="mescroll">
+        <nav>
+            <p class="nav_active">待处理</p>
+            <p>冻结中</p>
+            <p>已完成</p>
+        </nav>
+        <div class="cont">
+            <div style="display: block;">
+                <ul class="list wait_list">
+                    <!-- 待处理订单 -->
+                </ul>
+            </div>
+            <div>
+                <ul class="list freeze_list">
+                    <!-- 冻结订单 -->
+                </ul>
+            </div>
+            <div>
+                <ul class="list make_list">
+                    <!-- 完成订单 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    {include file="public/floor" /}
+    <script>
+        var page = 1,fpage=1,mpage=1, listHeight = $('.list').height(),fcont = 0, mcont = 0;
+        $(function() {
+            $('.floor li').eq(2).addClass("floor-active");
+            wait(page); // 待处理订单
+        });
+
+        // 待处理订单滚动加载
+        $(".wait_list").scroll(function () {
+            var nScrollHight = $(this)[0].scrollHeight;
+            var nScrollTop = $(this)[0].scrollTop;
+            if (nScrollTop + listHeight >= nScrollHight) {
+                page++;
+                wait(page);
+            }
+        });
+
+        // 冻结订单滚动加载
+        $(".freeze_list").scroll(function () {
+            var nScrollHight = $(this)[0].scrollHeight;
+            var nScrollTop = $(this)[0].scrollTop;
+            if (nScrollTop + listHeight >= nScrollHight) {
+                page++;
+                freeze(page);
+            }
+        });
+
+        // 完成订单滚动加载
+        $(".make_list").scroll(function () {
+            var nScrollHight = $(this)[0].scrollHeight;
+            var nScrollTop = $(this)[0].scrollTop;
+            if (nScrollTop + listHeight >= nScrollHight) {
+                page++;
+                make(page);
+            }
+        });
+
+        // tab切换
+        $('nav>p').click(function () {
+            var _ind = $(this).index();
+            $(this).addClass("nav_active").siblings().removeClass("nav_active");
+            $(".cont>div").eq(_ind).show().siblings().hide();
+            if (_ind == 1) {
+                if (fcont == 0) {
+                    fcont = 1;
+                    freeze(fpage);//冻结订单
+                }
+            } else if (_ind == 2) {
+                if (mcont == 0) {
+                    mcont = 1;
+                    make(mpage);//完成订单
+                }
+            }
+        });
+
+        // 待处理订单跳转详情
+        $(".wait_list").on('click', 'li', function(e) {
+            var id = $(e.target).attr('id') || $(e.target).parents('li').attr("id");
+            sessionStorage.setItem('oid', id);
+            location.href = "{:url('ctrl/order_info')}"
+        });
+
+//        $(".freeze_list").on('click', 'li', function(e) {
+//            var id = $(e.target).attr('id') || $(e.target).parents('li').attr("id");
+//            sessionStorage.setItem('oid', id);
+//            location.href = "{:url('ctrl/order_info')}"
+//        });
+
+        // 待处理订单请求
+        function wait(page) {
+            $.ajax({
+                url: urlPost("order/order_list"),
+                type: "POST",
+                dataType: "JSON",
+                data: { page:page, type: 1 },
+                success: function(res) {
+                    console.log(res);
+                    if (res.code == 0) {
+                        var list = res.data;
+                        if (page != 1 && list.length == 0) {
+                            QS_toast.show('没有更多的数据了..', true)
+                        }
+                        if (page == 1 && list.length == 0) {
+                            $(".wait_list").append('<li class="no-data">暂无数据...</li>')
+                        }
+                        list.map(function(val) {
+                            $(".wait_list").append(`
+                                <li id="${val.id}">
+                                    <div class="order_num">${val.id}</div>
+                                    <div class="order_info">
+                                        <div class="info_img"><img src="${val.goods_pic}" alt=""></div>
+                                        <div class="info_data">
+                                            <p class="info_name">${val.goods_name}</p>
+                                            <p class="info_store">${val.shop_name}</p>
+                                            <p class="info_store">订单超时:${val.endtime}</p>
+
+                                        </div>
+                                        <div class="info_money">
+                                            <p class="money" style="margin-bottom: .5rem;">￥${val.goods_price}</p>
+                                            <p>x<span class="info_num">${val.goods_count}</span></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            `)
+                        })
+                    }
+                },
+                error: function(err) { console.log(err) }
+            })
+        }
+
+        // 冻结订单请求
+        function freeze(page) {
+            $.ajax({
+                url: urlPost("order/order_list"),
+                type: "POST",
+                dataType: "JSON",
+                data: { page:page, type: 2 },
+                success: function(res) {
+                    console.log(res);
+                    if (res.code == 0) {
+                        var list = res.data;
+                        if (page != 1 && list.length == 0) {
+                            QS_toast.show('没有更多的数据了..', true)
+                        }
+                        if (page == 1 && list.length == 0) {
+                            $(".freeze_list").append('<li class="no-data">暂无数据...</li>')
+                        }
+                        list.map(function(val) {
+                            $(".freeze_list").append(`
+                                <li id="${val.id}">
+                                    <div class="order_num">${val.id}</div>
+                                    <div class="order_info">
+                                        <div class="info_img"><img src="${val.goods_pic}" alt=""></div>
+                                        <div class="info_data">
+                                            <p class="info_name">${val.goods_name}</p>
+                                            <p class="info_store">${val.shop_name}</p>
+                                              <p class="info_store">冻结期:${val.endtime}</p>
+                                        </div>
+                                        <div class="info_money">
+                                            <p class="money" style="margin-bottom: .5rem;">￥${val.goods_price}</p>
+                                            <p>x<span class="info_num">${val.goods_count}</span></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            `)
+                        })
+                    }
+                },
+                error: function(err) { console.log(err) }
+            })
+        }
+
+        // 完成订单请求
+        function make(page) {
+            $.ajax({
+                url: urlPost("order/order_list"),
+                type: "POST",
+                dataType: "JSON",
+                data: { page:page, type: 3 },
+                success: function(res) {
+                    console.log(res);
+                    if (res.code == 0) {
+                        var list = res.data;
+                        if (page != 1 && list.length == 0) {
+                            QS_toast.show('没有更多的数据了..', true)
+                        }
+                        if (page == 1 && list.length == 0) {
+                            $(".make_list").append('<li class="no-data">暂无数据...</li>')
+                        }
+                        list.map(function(val) {
+                            $(".make_list").append(`
+                                <li id="${val.id}">
+                                    <div class="order_num">${val.id}</div>
+                                    <div class="order_info">
+                                        <div class="info_img"><img src="${val.goods_pic}" alt=""></div>
+                                        <div class="info_data">
+                                            <p class="info_name">${val.goods_name}</p>
+                                            <p class="info_store">${val.shop_name}</p>
+                                        </div>
+                                        <div class="info_money">
+                                            <p class="money" style="margin-bottom: .5rem;">￥${val.goods_price}</p>
+                                            <p>x<span class="info_num">${val.goods_count}</span></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            `)
+                        })
+                    }
+                },
+                error: function(err) { console.log(err) }
+            })
+        }
+    </script>
+</body>
+
+</html>

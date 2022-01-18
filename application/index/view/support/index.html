@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://qiang6-www.baomiche.com/#/Msg -->
+<html data-dpr="1" style="font-size: 37.5px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>{:lang('客服')}</title>
+    <link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css" rel="stylesheet">
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <script charset="utf-8" src="/static_new/js/common.js"></script>
+
+    <style type="text/css" title="fading circle style">
+        .circle-color-9 > div::before {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body style="font-size: 12px;">
+    <div id="app">
+    <div data-v-6f96e2e4="" class="main">
+        <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="service_container">
+            <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="customer_service_center">
+                <p data-v-6f96e2e4=""
+                                                                                          data-v-54a6fdfd="">{:lang('客服中心')}</p>
+                <p data-v-6f96e2e4="" data-v-54a6fdfd="">{:lang('如遇到问题需要帮助请您尽快联系在线客服')}</p></div>
+            <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="customer_type">
+                <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="service_guide">
+                    <img data-v-6f96e2e4="" data-v-54a6fdfd="" src="/static_new6/img/msg.b2e6132.png" alt="">
+                </div>
+                <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="type_List">
+                    {volist name='list' id='v'}
+                    <?php 
+                       //if($v['id']>2) continue;
+                    ?>
+
+                    {if $v.url}
+                    <div data-v-6f96e2e4="" data-v-54a6fdfd="" onclick="window.location.href=`{$v.url}`" class="type_item" style="height: 5.2rem">
+                    {else/}
+                    <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="type_item" style="height: 5.2rem">
+                    {/if}
+                        <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" data-v-6f96e2e4="" data-v-54a6fdfd="">{:lang($v.username)}</p>
+                        <img data-v-6f96e2e4="" data-v-54a6fdfd="" src="/static_new6/img/msg.aeb1ce5.png" alt="">
+                        {if $v.qq}
+                        <p style="margin-top:3px">
+                            <img src="/public/img/qq.png" style="width: 20px;margin:0" alt="">
+                            <span style="position: relative;top:1px">{$v.qq}</span>
+                        </p>
+                        {/if}
+                        {if $v.wechat}
+                        <p style="margin-top:2px">
+                            <img src="/public/img/wx.png" style="width: 20px;margin:0" alt="">
+                            <span style="position: relative;top:1px">{$v.wechat}</span>
+                        </p>
+                        {/if}
+                        <p style="margin-top:2px">
+                            <img src="/public/img/kefu.png" style="width: 20px;margin:0" alt="">
+                            <span style="position: relative;top:1px">{$v.btime}-{$v.etime}</span>
+                        </p>
+                    </div>
+<!--                    <div data-v-6f96e2e4="" data-v-54a6fdfd="" class="type_item">-->
+<!--                        <p data-v-6f96e2e4="" data-v-54a6fdfd="">充值客服</p>-->
+<!--                        <img data-v-6f96e2e4="" data-v-54a6fdfd="" src="/static_new6/img/msg.aeb1ce5.png" alt="">-->
+<!--                    </div>-->
+                    {/volist}
+
+
+
+                    <!--<div data-v-6f96e2e4="" data-v-54a6fdfd="" class="type_item_qq">-->
+                        <!--<p data-v-6f96e2e4="" data-v-54a6fdfd="">专属客服(仅处理提现与充值问题)</p>-->
+
+                        <!--{volist name='list' id='v'}-->
+                        <!--<?php if($v['id']<=2) continue;?>-->
+
+                        <!--<div data-v-6f96e2e4="" class="am-accordion-item">-->
+                            <!--<div data-v-6f96e2e4="" tabindex="0" aria-expanded="false" class="am-accordion-header">-->
+                                <!--<i data-v-6f96e2e4="" class="arrow"></i>-->
+                                <!--<div data-v-6f96e2e4="" class="c2" style="width: 100%;">-->
+                                    <!--<div data-v-6f96e2e4="" style="float: left;">-->
+                                        <!--<img data-v-6f96e2e4="" src="data:image/png;base64,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"-->
+                                             <!--class="c2img">-->
+                                    <!--</div>-->
+                                    <!--<div data-v-6f96e2e4="" class="t3" style="border-bottom-width: 0.01rem; margin-left: 40px;">-->
+                                        <!--<div data-v-6f96e2e4="">-->
+                                            <!--{$v.username}-->
+                                        <!--</div>-->
+                                        <!--<div data-v-6f96e2e4="" class="remark">{$v.wechat}</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--{/volist}-->
+
+
+                    <!--</div>-->
+
+                       
+                </div>
+            </div>
+        </div>
+
+
+        {include file="public/floor" /}
+
+
+    </div>
+</div>
+<script>
+    $(function() {
+        $('.footer li').eq(3).addClass("on");
+
+    })
+</script>
+</body>
+</html>

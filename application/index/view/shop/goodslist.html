@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>{:sysconf('app_name')}</title>
+
+
+    <link rel="stylesheet" href="/static_new/css/index.css">
+    <link rel="stylesheet" href="/static_new/css/login.css">
+    <link rel="stylesheet" href="/static_new/css/public.css">
+    <link rel="stylesheet" href="/static_new/css/icon-font.css">
+    <link rel="stylesheet" href="/static_new/css/swiper.min.css">
+
+    <script charset="utf-8" src="/static_new/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static_new/css/theme.css">
+
+    <script src="/static/plugs/jquery/pace.min.js"></script>
+
+    <style>
+        .business>a>li {
+            width: 20%;
+            margin-bottom: 10px;
+        }
+        .header {
+            width: 100%;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            position: relative;
+        }
+
+        .header > p {
+            width: 96%;
+            margin: 0 2%;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+        }
+
+        .my-meun {
+            overflow: hidden;
+            margin-right: 15px;
+            margin-left: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .add {
+            position: absolute;
+            width: auto;
+            line-height: 46px;
+            top: 0;
+            bottom: 0;
+            right: .3rem;
+            margin: auto;
+            /*background-image: url(/public/img/add.png);*/
+            background-size: 80%;
+            background-repeat: no-repeat;
+        }
+
+
+        /*----------------------*/
+        .index_rwlb{
+            width: 96%;
+            margin-left: 2%;
+            height: 100%;
+            background: #fff;
+            margin-bottom: 68px;
+            margin-top: 20px;
+        }
+        .index_tjrw{
+            width: 100%;
+            height: 40px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 30px;
+            background-size: 25px 25px;
+            box-sizing: border-box;
+        }
+        .fui-goods-item{
+            width: 47.25%;
+            float: left;
+            border-bottom: 0;
+            background: none;
+            padding: 0.25rem;
+            display: block;
+            background:#f4f4f4;
+        }
+        .fui-goods-item .image {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding-bottom: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .fui-goods-item .detail{
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: #fff;
+            padding-left: .5rem;
+
+            padding: 0.5rem;
+            overflow: hidden;
+        }
+        .fui-goods-item .detail .name {
+            height: 1.7rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 0.65rem;
+            line-height: 0.9rem;
+
+
+        }
+        .fui-goods-item .detail .price {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 0.7rem;
+            margin-top: 0.3rem;
+        }
+        .fui-goods-item .detail .price .text {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            color: #ff5555;
+            font-size: 0.8rem;
+        }
+        .fui-goods-item .detail .price .buy {
+            display: inline-block;
+            height: 1.1rem;
+            color: #ff5555;
+            line-height: 1rem;
+            border-radius: 0;
+            background: #fff;
+            padding: 0rem 0.35rem;
+            width: auto;
+            border-radius: 0.1rem;
+            border: 1px solid transparent;
+        }
+
+
+        .image.triangle:before {
+            content: attr(data-text);
+            position: absolute;
+            width: 3.39rem;
+            height: 2.4rem;
+            background: #ff5555;
+            z-index: 0;
+            transform-origin: left bottom;
+            -webkit-transform-origin: left bottom;
+            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            color: #fff;
+            line-height: 3.7rem;
+            font-size: 0.6rem;
+            text-align: center;
+        }
+
+        /* 通用分页 */
+        .pagination-container {
+            line-height: 40px;
+        }
+        .pagination-container > span {
+            color: #666;
+            font-size: 9pt;
+        }
+        .pagination-container > ul {
+            float: right;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+        .pagination-container > ul > li {
+            z-index: 1;
+            display: inline-block;
+        }
+        .pagination-container > ul > li > a, .pagination-container > ul > li > span {
+            color: #333;
+            width: 33px;
+            height: 30px;
+            border: 1px solid #dcdcdc;
+            display: inline-block;
+            margin-left: -1px;
+            text-align: center;
+            line-height: 28px;
+        }
+        .pagination-container > ul > li > span {
+            background: #dcdcdc;
+            cursor: default;
+        }
+
+
+    </style>
+
+    <script>
+        (function () {
+            var dw = document.createElement("script");
+            dw.src = "/static_new/js/pack.js?e9154e78c011e7e0eba17228a1621937"
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dw, s);
+        })()
+    </script>
+    <script type="application/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+</head>
+<body id="apprun">
+<!--<div class="header">-->
+    <!--<div class="goback">-->
+        <!--<span class="icon iconfont icon-fanhui"></span> <a href="javascript:history.go(-1)">返回</a>-->
+    <!--</div>-->
+    <!--<p>商城</p>-->
+    <!--<div class="add" style="font-size: 12px" onclick="location.href=`/`">回到首页</div>-->
+
+<!--</div>-->
+<div style=";margin-top:0px;top:0;;width:100%;background: #a5a5a5">
+    <div style="padding:2% 2%">
+        <a href="javascript:history.go(-1)" style="display: inline-block;width:10%;position: relative;top: 10px;text-align: center">
+            <img src="/public/img/back.png" alt="" height="20" style="position: relative;top:-7px">
+        </a>
+        <input id="serachInput" type="text" data-danmu="1" style="width: 77%;border-radius: 7px;height: 30px;text-align: center;background: #efefef" placeholder="输入关键词">
+        <a id="serach" href="javascript:void(0)" style="display: inline-block;width:10%;position: relative;top: 10px;text-align: center">
+            <span style="position: relative;top: -10px;font-size: 12px">搜索</span>
+        </a>
+    </div>
+</div>
+
+
+<div class="index-body" style="margin-top: 10px">
+
+
+
+    <div style="height: 0px;"></div>
+
+    <div>
+        <div class="index_rwlb task_index_rwlbfl" style="background: #f4f4f4">
+            <p class="index_tjrw">所有商品 　</a></p>
+
+
+            {if $list}
+            {volist name='list' id='v'}
+
+            <a class="fui-goods-item" data-goodsid="271" href="/index/shop/detail?id={$v.id}" data-type="271" data-nocache="true" style="position: relative;">
+                {if $v.is_tj eq 1}
+                <div class="image triangle" data-text="推荐" data-lazyloaded="true" style="background-image:
+                url({$v.goods_pic});">
+                    {else /}
+
+                    <div class="image " data-text="" data-lazyloaded="true" style="background-image:
+                url({$v.goods_pic});">
+                {/if}
+                </div>
+                <div class="detail">
+                    <div class="name" style="color: #000000;">
+                        {$v.goods_name}
+                    </div>
+                    <p class="productprice noheight"></p>
+                    <div class="price">
+						<span class="text" style="color: #ff5555;">
+							<p class="minprice">¥{$v.goods_price}</p>
+						</span>
+                        <span class="buy btn-1" style="border-color: #ff5555;color:  #ff5555">购买</span>
+                    </div>
+                </div>
+            </a>
+            {/volist}
+            {else\}
+
+            {/if}
+
+            <div style="clear: both">
+                <br>
+            </div>
+            {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+
+
+        </div>
+
+    </div>
+    <div style="clear: both;"></div>
+
+
+</div>
+{include file="public/floor_shop" /}
+
+
+<!--<script charset="utf-8" src="/static_new/js/dialog.min.js"></script>-->
+<script src="/static/plugs/layui/layui.all.js"></script>
+<script src="/static/plugs/require/require.js"></script>
+<script src="/static/admin.js"></script>
+<script>
+    $('.pagination li').click(function () {
+        var class2= $(this).attr('class');
+        if( class2 == 'active' || class2 == 'disabled' ) {
+
+        }else{
+            var url = $(this).find('a').attr('href');
+            window.location.href = url;
+        }
+    })
+
+    $('#serach').click(function () {
+        var name = $('#serachInput').val();
+        if (name!="") {
+            window.location.href = window.location.href+'&name='+name;
+        }
+    })
+
+
+</script>
+</body>
+</html>

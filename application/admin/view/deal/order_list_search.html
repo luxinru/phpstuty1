@@ -1,0 +1,72 @@
+
+<fieldset>
+        <legend>条件搜索</legend>
+        <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get" autocomplete="off">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">订单号</label>
+                <div class="layui-input-inline">
+                    <input name="oid" value="{$Think.get.oid|default=''}" placeholder="请输入订单号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-inline">
+                    <input name="tel" value="{$Think.get.tel|default=''}" placeholder="请输入手机号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">真实姓名</label>
+                <div class="layui-input-inline">
+                    <input name="username" value="{$Think.get.username|default=''}" placeholder="请输入真实姓名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">下单时间</label>
+                <div class="layui-input-inline">
+                    <input data-date-range name="addtime" value="{$Think.get.addtime|default=''}" placeholder="请选择添加时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                 <select name="status" id="status" class="layui-input-inline" >
+                    <option value="1"  <?php
+                    if(isset($_GET['status'])){
+                    $dd = $_GET['status']=='1' ? 'selected' : '';echo $dd;  
+                    }
+                    
+                    ?>  >所有状态</option>
+                    <option value="2"  <?php 
+                    if(isset($_GET['status'])){
+                    $dd = $_GET['status']=='2' ? 'selected' : '';echo $dd;  
+                    } 
+                    ?> >等待付款</option>
+                    <option value="3" <?php
+                    if(isset($_GET['status'])){
+                    $dd = $_GET['status']=='3' ? 'selected' : '';echo $dd;  
+                    }
+                    ?> >完成付款</option>
+                    <option value="5" <?php
+                    if(isset($_GET['status'])){
+                    $dd = $_GET['status']=='5' ? 'selected' : '';echo $dd;
+                    }
+                    ?> >订单冻结</option>
+                </select>
+            </div>
+        </div>
+            <div class="layui-form-item layui-inline">
+                <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+            </div>
+            <div style="margin-left:20px;" class="layui-form-item layui-inline">
+                <button class="layui-btn" onclick="parent.location.reload()" > 刷新</button>
+            </div>
+        </form>
+    </fieldset>
+    
+    <fieldset>
+		<legend>数据统计</legend>
+		<font color="red">交易总额：{$order_tongji['sum_num']|default='0.00'}元</font>
+		&emsp; <font color="red">佣金总额：{$order_tongji['sum_commission']|default='0.00'}元</font></p>
+	</fieldset>
+    <script>form.render()</script>
+    

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客服</title>
+    <link rel="stylesheet" href="__ROOT__/public/css/style.css">
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url(__ROOT__/public/img/kf_bg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh
+        }
+
+        .qq-box,
+        .wx-box {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            color: #690708;
+        }
+
+        div>.title {
+            margin-bottom: 0.5rem;
+        }
+
+        .user {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-family: "fz";
+        }
+
+        @font-face {
+            font-family: 'fz';
+            src: url('__ROOT__/public/fz.TTF');
+        }
+        .title{
+            width: 30%;
+            margin: auto;
+            display: flex;
+        }
+        .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            display: inline-block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: auto 0;
+        }
+
+        .wx {
+            background-image: url(__ROOT__/public/img/wx.png);
+        }
+
+        .qq {
+            background-image: url(__ROOT__/public/img/qq.png);
+        }
+        .container>p{
+            text-align: center;
+        }
+        .qrcode{
+            width: 7rem;
+            height: 7rem;
+            /* background: #eeeeee; */
+            margin:1rem auto 0;
+        }
+        .btn2{
+            background-image: linear-gradient(135deg, #f761a1 10%, #8c1bab 100%);
+            color: #fff;
+            line-height: 1em;
+            border-radius: 20px;
+            border: 0px solid;
+            width: max-content;
+            padding: 5px 8px;
+            margin:0 auto;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <span>客服</span>
+</header>
+<?php
+   //var_dump($list);die;
+    ?>
+<div class="container" style="padding-top: 4rem;">
+    {foreach $list as $key=>$vo}
+    <p style=";margin-top:10px"><span style="position:relative;top:-6px;">{$vo.username}:</span>
+        <!--<a href="http://wpa.qq.com/msgrd?v=3&uin={$vo.qq}&site=qq&menu=yes"> -->
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={$vo.qq}&site=qq&menu=yes&from=message&isappinstalled=0">
+            <img class="" src="/public/img/button_11.gif" alt="" style="width:80px" />
+        </a>
+
+        <!--<span style="position:relative;top:-6px;margin-left:5px">{$vo.qq}</span>-->
+    </p>
+    {/foreach}
+
+
+
+
+    <p style="margin-top:30px">客服在线时间 09:00:00-22:00:00</p>
+</div>
+{include file="public/floor" /}
+</body>
+<script>
+    $(function() {
+        $('.floor li').eq(3).addClass("floor-active")
+    })
+</script>
+
+</html>

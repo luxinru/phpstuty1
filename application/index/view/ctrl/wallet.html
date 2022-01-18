@@ -1,0 +1,173 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+
+    <title>我的钱包</title>
+
+    <link href="__PUBLIC__/statics/css/base.css" rel="stylesheet">
+    <link href="__PUBLIC__/statics/css/funding.css" rel="stylesheet">
+
+    <script src="__ROOT__/static/plugs/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/public/js/common.js"></script>
+
+</head>
+
+<body>
+<header class="header">
+    <div class="header-return">
+        <a href="javascript:history.go(-1);"></a>
+    </div>
+
+    <div class="logo">我的钱包</div>
+</header>
+
+<section class="container vpay-container">
+    <div class="vpay-account">
+        <div class="vpay-account-balance">
+            <span>我的余额(元)</span>
+
+            <h1>{$balance}</h1>
+        </div>
+
+        <div class="vpay-account-details">
+            <ul>
+                <li>
+                    <a href="">
+                        <span>可提现余额</span>
+                        <h3>{$balance}</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span>总收益</span>
+                        <h3>{$balance_shouru}</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="vpay-record">
+        <div class="tab-title tab-title-s">
+            <div class="tab-item">
+                <div class="lava" style="left: 0px;"></div>
+
+                <span class="active">收益记录</span>
+                <span>提现记录</span>
+                <span class="">充值记录</span>
+            </div>
+        </div>
+
+        <div class="tab-content vpay-list" style="left: 0px;">
+
+            <div>
+                <div class="record-list">
+                    <div class="record-list-title">
+                        <span>时间</span>
+                        <span>当日收益</span>
+                        <span>收益类型</span>
+                    </div>
+
+                    {if $shouyi}
+                    {volist name='shouyi' id='vo'}
+                    <div class="record-list-content">
+                        <span><?php echo date('Y-m-d H:i:s', $vo['addtime']); ?></span>
+                        <span><b class="record-red">{$vo.commission}</b></span>
+                        <span>任务返佣</span>
+                    </div>
+                    {/volist}
+                    {else\}
+                    {/if}
+
+                    <!-- <div class="load-no-more">
+                        <span>没有更多了</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div>
+                <div class="record-list">
+                    <div class="record-list-title">
+                        <span>时间</span>
+                        <span>提现金额</span>
+                        <span>提现状态</span>
+                    </div>
+
+                    {if $tixian}
+                    {volist name='tixian' id='vo'}
+                    <div class="record-list-content">
+                        <span><?php echo date('Y-m-d H:i:s', $vo['addtime']); ?></span>
+                        <span><b class="record-red">{$vo.num}</b></span>
+                        <span>提现</span>
+                    </div>
+                    {/volist}
+                    {else\}
+                    {/if}
+
+
+
+
+                    <!-- <div class="load-no-more">
+                        <span>没有更多了</span>
+                    </div> -->
+                </div>
+            </div>
+
+
+            <div>
+                <div class="record-list">
+                    <div class="record-list-title">
+                        <span>时间</span>
+                        <span>充值金额</span>
+                        <span>充值状态</span>
+                    </div>
+
+                    {if $chongzhi}
+                    {volist name='chongzhi' id='vo'}
+                    <div class="record-list-content">
+                        <span><?php echo date('Y-m-d H:i:s', $vo['addtime']); ?></span>
+                        <span><b class="record-red">{$vo.num}</b></span>
+                        <span>充值</span>
+                    </div>
+                    {/volist}
+                    {else\}
+                    {/if}
+                </div>
+
+                    <!-- <div class="load-no-more">
+                        <span>没有更多了</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- <div>
+                <div class="no-content">
+                    <i></i>
+                    <p>没有找到相关记录</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<div class="vpay-toolbar">
+    <a href="{:url('ctrl/recharge_before')}">充值</a>
+
+    <a href="{:url('ctrl/deposit_before')}">提现</a>
+</div>
+
+<script src="__PUBLIC__/statics/js/main.js"></script>
+
+<script>
+    $(function () {
+
+        setTimeout(function (){
+            $('.tab-item .active').prev().click();
+            $('.tab-item .active').prev().trigger("click");
+
+        }, 3000);
+    })
+</script>
+
+</body></html>
