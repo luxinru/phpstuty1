@@ -1199,3 +1199,1667 @@
 [ sql ] [ DB ] CONNECT:[ UseTime:0.000661s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
 [ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000618s ]
 [ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000309s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:14+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001762s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.006811s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.635832s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:17+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000749s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000565s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000556s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.002554s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000245s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000483s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.029264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.002366s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 4 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000694s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000952s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000526s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000446s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 386 LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 389 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001500s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.003643s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.001119s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000500s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.002011s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000181s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000580s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002262s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512077 [ RunTime:0.000827s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000535s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.001227s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000472s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.001100s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000832s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000610s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000422s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000590s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.002069s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000170s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:19+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000739s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000504s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001401s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001142s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000202s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.034862s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.001102s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000414s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001209s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000228s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000855s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.002259s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.017974s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000300s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:26+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000770s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000497s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001421s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000473s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000472s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.217470s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000638s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000378s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:28+09:00] 127.0.0.1 GET localhost/index/ctrl/edit_pwd.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000485s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000409s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.023375s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:33+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000707s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000540s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001232s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.024986s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.001048s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:38+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000432s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001398s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001192s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.216000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000994s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011633s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001705s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000291s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000970s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012065s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001668s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000502s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000664s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000232s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:41+09:00] 127.0.0.1 GET localhost/index/ctrl/junior
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000792s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000477s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.104948s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000637s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000742s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.005988s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000132s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000976s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000425s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = -1 [ RunTime:0.000187s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000660s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001734s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.010889s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000854s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001885s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.015875s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000722s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.027890s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `id` = -1 [ RunTime:0.000568s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000864s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001416s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `id` = -1 [ RunTime:0.000203s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000682s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000195s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000731s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000674s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000152s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.001318s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000378s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000475s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` `u` WHERE  `u`.`id` = -1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` `u` WHERE  `u`.`id` = -1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000300s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:43+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000763s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.055475s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000848s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000449s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000517s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000956s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000414s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001131s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000188s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:44+09:00] 127.0.0.1 GET localhost/index/my/downsoft
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000737s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.033386s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:45+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000739s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000498s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000492s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001455s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.021587s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001424s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000468s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000449s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001250s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000175s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000182s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:46+09:00] 127.0.0.1 GET localhost/index/my/msg
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000793s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.008942s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000479s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000484s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000440s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.032390s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000731s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message` [ RunTime:0.026910s ]
+[ sql ] [ SQL ] SELECT `m`.*,r.id rid FROM `xy_message` `m` LEFT JOIN `xy_reads` `r` ON `r`.`mid`=m.id and r.uid=175 WHERE  `m`.`uid` IN (0,'175') ORDER BY `addtime` DESC [ RunTime:0.019827s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000823s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `status` = 1 [ RunTime:0.000655s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:48+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000488s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000345s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000584s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.210444s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000716s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000563s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000220s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000140s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000390s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001282s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000330s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000959s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001789s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000243s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:49+09:00] 127.0.0.1 GET localhost/index/ctrl/recharge_admin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000800s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000473s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.043352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001411s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_recharge` WHERE  `uid` = 175 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_recharge` WHERE  `uid` = 175 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000218s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:50+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000696s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000380s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.025902s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000666s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001227s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000208s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000176s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:53+09:00] 127.0.0.1 GET localhost/index/ctrl/lixibao.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010199s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013805s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001211s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000202s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000408s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.221107s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000690s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`lixibao_dj_balance` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021790s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` = 23 [ RunTime:0.000256s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000574s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` = 23  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000974s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao` WHERE  `uid` = 175  AND `is_qu` = 0 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bili`,`day`,`min_num` FROM `xy_lixibao_list` ORDER BY `day` ASC [ RunTime:0.000170s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:54+09:00] 127.0.0.1 GET localhost/index/ctrl/team
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000703s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021855s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.025118s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000583s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000342s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000128s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000130s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000129s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = -1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000379s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `id` = -1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `id` = -1 [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000463s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000150s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000447s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000424s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000424s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000131s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017814s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000384s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013790s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000431s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:56+09:00] 127.0.0.1 GET localhost/index/order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000725s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.038701s ]
+[ sql ] [ SQL ] SELECT `balance` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001289s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = '175'  AND `xc`.`status` = 0 [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`xg`.`goods_name`,`xg`.`shop_name`,`xg`.`goods_price`,`xg`.`goods_pic` FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = '175'  AND `xc`.`status` = 0 ORDER BY `xc`.`addtime` DESC LIMIT 0,20 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:21:58+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023894s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.069062s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000480s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000205s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.030904s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 4 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000575s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000525s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000440s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000689s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000597s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 386 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000560s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 389 LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000497s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001307s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001497s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000666s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.001224s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001289s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000426s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001226s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512118 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000981s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000492s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000687s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000348s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000480s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001227s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000166s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:05+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000716s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000655s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000409s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000569s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.898489s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000245s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000154s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000380s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000179s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:34+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000701s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.112826s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:36+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000791s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.026367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001084s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001518s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 4 LIMIT 1 [ RunTime:0.000181s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000562s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000161s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000154s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000147s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000378s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 386 LIMIT 1 [ RunTime:0.000174s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 389 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000362s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001356s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000309s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000380s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512156 [ RunTime:0.000240s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000385s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000185s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000585s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000209s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000428s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000337s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000461s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001172s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000156s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:40+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000809s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001184s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.028444s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000641s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001268s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000214s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000400s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000881s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000183s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:42+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000690s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000584s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000393s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000456s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.035543s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001467s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 4 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000152s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 386 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000407s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 389 LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000409s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001279s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001412s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000360s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000462s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001220s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000450s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512162 [ RunTime:0.000255s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000843s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000826s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.001109s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000583s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000366s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000468s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000235s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:44+09:00] 127.0.0.1 GET localhost/index/support/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000729s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000599s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000212s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.211936s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000935s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 [ RunTime:0.000220s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021172s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `status` = 1 [ RunTime:0.000275s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:47+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000689s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000503s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.029888s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000392s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000216s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000429s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000181s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000585s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000203s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:22:50+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000709s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000469s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.038303s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000629s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000343s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:23:51+09:00] 127.0.0.1 GET localhost/index/my/headimg.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000710s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000552s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.285682s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000682s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000346s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:23:53+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000695s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000518s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000522s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.071420s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000380s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:25:54+09:00] 127.0.0.1 GET localhost/index/ctrl/edit_pwd.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001026s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000840s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000541s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000541s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000492s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.299672s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:25:58+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000684s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000372s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.025496s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000591s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000345s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:25:59+09:00] 127.0.0.1 GET localhost/index/my/bind_bank.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000498s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000447s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.031151s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000561s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_bankinfo` [ RunTime:0.027354s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_bankinfo` WHERE  `uid` = 175 LIMIT 1 [ RunTime:0.014585s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000635s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000301s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:01+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000773s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000576s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000385s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.025241s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000677s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000352s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:02+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000711s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000589s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000202s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000460s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.029149s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000554s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000456s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000245s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000520s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001218s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000178s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000177s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:08+09:00] 127.0.0.1 GET localhost/index/my/caiwu
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000777s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001116s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021921s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001009s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000722s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000509s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.221965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_balance_log` WHERE  `uid` = 175 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_balance_log` WHERE  `uid` = 175 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000224s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:10+09:00] 127.0.0.1 GET localhost/index/my/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000803s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000372s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000369s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.055493s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000563s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000249s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000378s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001179s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001172s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000181s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:12+09:00] 127.0.0.1 GET localhost/index/ctrl/set
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000187s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.199749s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000924s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000426s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:13+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000473s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000188s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.031711s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000720s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000218s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000166s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000191s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:14+09:00] 127.0.0.1 GET localhost/index/my/headimg.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000712s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000369s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000374s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.026626s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000659s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000333s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:15+09:00] 127.0.0.1 GET localhost/index/my/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000667s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000505s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.027734s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000666s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001234s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000208s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001499s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000266s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:17+09:00] 127.0.0.1 GET localhost/index/ctrl/lixibao.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000508s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000374s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.034594s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000659s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`lixibao_dj_balance` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001206s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` = 23 [ RunTime:0.000222s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` = 23  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao` WHERE  `uid` = 175  AND `is_qu` = 0 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bili`,`day`,`min_num` FROM `xy_lixibao_list` ORDER BY `day` ASC [ RunTime:0.000171s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:19+09:00] 127.0.0.1 GET localhost/index/ctrl/team
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000778s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000496s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.024176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000671s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000668s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000150s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000134s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000429s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = -1 [ RunTime:0.000213s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000496s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001311s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.000200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001164s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `id` = -1  AND `status` = 2 [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000443s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `id` = -1 [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000509s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `id` = -1 [ RunTime:0.000177s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000538s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000182s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000608s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = 175 [ RunTime:0.000253s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000504s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000166s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000456s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000154s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000490s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000163s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `id` FROM `xy_users` WHERE  `parent_id` = -1 [ RunTime:0.000155s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000337s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000502s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:20+09:00] 127.0.0.1 GET localhost/index/order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000669s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000478s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000218s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000414s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.034437s ]
+[ sql ] [ SQL ] SELECT `balance` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = '175'  AND `xc`.`status` = 0 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`xg`.`goods_name`,`xg`.`shop_name`,`xg`.`goods_price`,`xg`.`goods_pic` FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = '175'  AND `xc`.`status` = 0 ORDER BY `xc`.`addtime` DESC LIMIT 0,20 [ RunTime:0.000255s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:22+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000553s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000456s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000206s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.213922s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001125s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 4 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000613s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000521s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000391s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 386 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 389 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001380s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000480s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000317s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001216s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512382 [ RunTime:0.000246s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000195s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000928s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000524s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001207s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000163s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:26:27+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000830s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000564s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000539s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.026543s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000587s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000676s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000290s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000603s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000390s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000181s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:27:38+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000865s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.033980s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:27:41+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000812s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000496s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.057981s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001552s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024817s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000474s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000496s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000410s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000409s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000400s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001434s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000647s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000359s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000505s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001162s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000419s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512461 [ RunTime:0.000242s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000617s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000390s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000613s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001333s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000170s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:27:43+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009941s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000547s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000510s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000393s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.046877s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000725s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000216s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000562s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000214s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000188s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:27:45+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000800s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000451s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000811s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000773s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.035406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000541s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000552s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000473s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000544s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001411s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012025s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000433s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000695s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000451s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642512465 [ RunTime:0.000275s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000589s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000541s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000262s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000564s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000443s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000207s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000436s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000164s ]
+---------------------------------------------------------------
+
+[2022-01-18T22:27:48+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000720s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000531s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000217s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000504s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.056183s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000440s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000428s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000149s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000174s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000560s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000660s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000221s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:34+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000855s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.239419s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:36+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000736s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000575s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000413s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.031461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000623s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000425s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013029s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000645s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001349s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000665s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000709s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000516s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642515096 [ RunTime:0.000252s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000484s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000424s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000196s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000152s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:39+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000855s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000425s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000413s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000216s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000390s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.033872s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000668s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000230s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000408s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000178s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000685s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000187s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:42+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000845s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.054268s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:45+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000787s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000531s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000198s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000483s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.033282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000586s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000506s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000381s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001423s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014045s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000358s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000590s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642515104 [ RunTime:0.000326s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000659s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000473s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000208s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000207s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000436s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000153s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:11:47+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000701s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.054881s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000996s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013185s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000490s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000674s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.028086s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000738s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000592s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000286s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000738s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000573s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000545s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000225s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000440s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000197s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:12:19+09:00] 127.0.0.1 POST localhost/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000695s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic`,`level` FROM `xy_users` WHERE  `tel` = '18888888888' OR `username` = '18888888888' LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1 , `ip` = '127.0.0.1'  WHERE  `id` = 175 [ RunTime:0.034331s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:12:21+09:00] 127.0.0.1 GET localhost/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000730s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000421s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000490s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.036552s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 175 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016877s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `level` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000558s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000593s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000159s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000439s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000176s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011948s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000592s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000469s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.001679s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,`c`.`pipei_min`,`c`.`pipei_max`,`c`.`bili`,u.name as levelname,`u`.`pic`,`u`.`pic2`,`u`.`level`,`u`.`num_min`,`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.000345s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000498s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.001136s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001118s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6)  AND `addtime` BETWEEN 1642431600 AND 1642515141 [ RunTime:0.000239s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 175  AND `status` = 1  AND `addtime` BETWEEN 1642345200 AND 1642431599 [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000463s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `uid` = 175  AND `status` = 1  AND `type` IN (3,6) [ RunTime:0.000197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000445s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `type` = 10 [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_message2` [ RunTime:0.001142s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_message2` [ RunTime:0.000150s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:12:23+09:00] 127.0.0.1 GET localhost/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000999s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000421s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` [ RunTime:0.000428s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `level` = 0  WHERE  `id` = 175 [ RunTime:0.035095s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000686s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 175 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000476s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024251s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 0 LIMIT 1 [ RunTime:0.000334s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000694s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001327s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 175 [ RunTime:0.000225s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000581s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.001169s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000202s ]
+---------------------------------------------------------------
+
+[2022-01-18T23:17:37+09:00] 127.0.0.1 POST localhost/index/user/do_register.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000771s ] mysql:host=127.0.0.1;port=3306;dbname=task;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT `id`,`status` FROM `xy_users` WHERE  `invite_code` = '1234456' LIMIT 1 [ RunTime:0.022038s ]
