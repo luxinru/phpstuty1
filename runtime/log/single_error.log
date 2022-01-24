@@ -22,3 +22,119 @@
 
 [2022-01-18T11:56:41+09:00] 127.0.0.1 GET localhost/index/user/style/login.less
 [ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\style.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:21:35+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:22:21+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:22:43+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:22:51+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:23:07+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:23:48+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:23:50+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:44:10+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:36+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:38+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:39+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:41+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:52+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:45:58+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:46:26+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:55:12+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:55:46+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:56:06+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:57:04+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:57:14+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T10:57:21+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:21:48+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:22:56+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:23:04+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:23:42+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:23:43+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T11:23:44+09:00] 127.0.0.1 GET localhost/index/user/public/static_new/img/%E8%BF%94%E5%9B%9E%20%E6%8B%B7%E8%B4%9D%205.png
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\user\public.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-24T12:25:34+09:00] 127.0.0.1 POST localhost/index/send/sendsms
+[ error ] [0]method param miss:mobile[D:\phpstudy_pro\WWW\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2022-01-24T12:30:54+09:00] 127.0.0.1 POST localhost/index/send/sendsms
+[ error ] [0]method param miss:mobile[D:\phpstudy_pro\WWW\thinkphp\library\think\Container.php:480]

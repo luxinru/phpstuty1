@@ -27,6 +27,11 @@
 
 <body>
   <div id="app">
+    <section class="top_bar">
+      <img class="back" src="/static_new/img/返回 拷贝 5.png"
+           alt="">
+    </section>
+
     <section class="title">
       Register
     </section>
@@ -76,6 +81,10 @@
   </div>
 </body>
 <script type="application/javascript">
+  $(".back").on('click', function () {
+    location.href = "{:url('user/login')}"
+  })
+  
   /*手机号码验证*/
   function check_phone() {
     if ($("input[name=user_name]").val() == '') {

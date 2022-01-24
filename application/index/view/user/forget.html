@@ -27,8 +27,167 @@
 
 <body>
   <div id="app">
+    <section class="top_bar">
+      <img class="back" src="/static_new/img/返回 拷贝 5.png"
+           alt="">
+    </section>
+
+    <section class="title"
+             style="font-size: 2.5625rem;">
+      Reset Password
+    </section>
+
+    <section class="form">
+      <form action=""
+            id="forgetpwd-form"
+            style="width: 100%">
+        <div class="item">
+          <span>Cell phone</span>
+          <input type="text"
+                 name="tel"
+                 placeholder="Please enter phone number">
+        </div>
+        <div class="item">
+          <span>login password</span>
+          <input type="password"
+                 name="pwd"
+                 placeholder="Please enter your password">
+        </div>
+        <div class="item">
+          <span>Confirm Password</span>
+          <input type="password"
+                 name="pwd_re"
+                 placeholder="Please enter again">
+        </div>
+        <div class="item">
+          <span>verification code</span>
+          <div class="input_box">
+            <input type="text"
+                   name="verify"
+                   placeholder="Please enter verification code">
+            <div id="code"
+                 class="code">send</div>
+          </div>
+
+        </div>
+      </form>
+
+    </section>
+
+    <section class="btns">
+      <div class="submit">Reset Password</div>
+    </section>
   </div>
 </body>
-<script type="application/javascript"></script>
+<script type="application/javascript">
+  let flag = true
+  let countdown = 60
+  let loading = null;
+
+  $(".back").on('click', function () {
+    location.href = "{:url('user/login')}"
+  })
+
+  /*检查表单*/
+  function check() {
+    if (!check_phone()) return false;
+
+    if ($("input[name=verify]").val() == '') {
+      $(document).dialog({ infoText: '{$Think.lang.PleaseentertheSMS}' });
+      return false;
+    }
+
+    if ($("input[name=pwd]").val() == '' || $("input[name=pwd_re]").val() == '') {
+      $(document).dialog({ infoText: '{$Think.lang.password}' });
+      return false;
+    }
+    if ($("input[name=pwd]").val() !== $("input[name=pwd_re]").val()) {
+      $(document).dialog({ infoText: '{$Think.lang.is_Pleasepassword}' });
+      return false;
+    }
+    return true;
+  }
+
+  /*手机号码验证*/
+  function check_phone() {
+    if ($("input[name=tel]").val() == '') {
+      $(document).dialog({ infoText: '{$Think.lang.number_tel}' });
+      return false;
+    }
+    var myreg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+    if (!myreg.test($("input[name=tel]").val())) {
+      $(document).dialog({ infoText: '{$Think.lang.number_tel_error}' })
+      return false;
+    }
+    return true;
+  }
+
+  /*验证码倒计时*/
+  function time_down(obj) {
+    if (countdown == 0) {
+      flag = true;
+      obj.text("{$Think.lang.Sendverif}");
+      countdown = 60;
+      return;
+    } else {
+      flag = false;
+      obj.text(countdown + "s");
+      countdown--;
+    }
+    setTimeout(function () { time_down(obj) }, 1000);
+  }
+
+  /*获取验证码*/
+  $("#code").on('click', function () {
+    if (check_phone() && flag) {
+      $.ajax({
+        url: '/index/send/sendsms',
+        data: { 'tel': $("input[name=tel]").val(), 'type': 2 },
+        type: 'POST',
+        success: function (data) {
+          if (data.code == 0) {
+            $(document).dialog({ infoText: data.info });
+            time_down($("#code"));
+          } else {
+            $(document).dialog({ infoText: data.msg });
+          }
+        }
+      });
+    }
+  })
+
+  /*提交*/
+  $(".submit").on('click', function () {
+    if (check()) {
+      $.ajax({
+        url: "{:url('do_forget')}",
+        data: $("#forgetpwd-form").serialize(),
+        type: 'POST',
+        beforeSend: function () {
+          loading = $(document).dialog({
+            type: 'notice',
+            infoIcon: '/static_new/img/loading.gif',
+            infoText: '{$Think.lang.z_Loading}',
+            autoClose: 0
+          });
+        },
+        success: function (data) {
+
+          if (data.code == 0) {
+            $(document).dialog({ infoText: '{$Think.lang.edit_succes}' });
+            setTimeout(function () {
+              location.href = "{:url('user/login')}"
+            }, 1500);
+          } else {
+            loading.close();
+            $(document).dialog({ infoText: data.info });
+          }
+        }
+      });
+    }
+
+    return false;
+  })
+</script>
 
 </html>
