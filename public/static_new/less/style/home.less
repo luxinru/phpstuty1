@@ -1,0 +1,49 @@
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  background-color: rgba(245, 247, 255, 1);
+  padding: 0 .8125rem;
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1E253C;
+
+    img {
+      position: absolute;
+      width: 1.375rem;
+      height: 1.8125rem;
+      right: 1rem;
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 9.75rem;
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
