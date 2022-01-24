@@ -138,3 +138,7 @@
 
 [2022-01-24T12:30:54+09:00] 127.0.0.1 POST localhost/index/send/sendsms
 [ error ] [0]method param miss:mobile[D:\phpstudy_pro\WWW\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2022-01-24T16:14:47+09:00] 127.0.0.1 GET localhost/index/my/style/index.less
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\application\index\view\my\style.html[D:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]

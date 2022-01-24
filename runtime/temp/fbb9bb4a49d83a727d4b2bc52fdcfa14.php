@@ -1,4 +1,4 @@
-<?php /*a:2:{s:58:"D:\phpstudy_pro\WWW\application\index\view\index\home.html";i:1616067948;s:60:"D:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1615775208;}*/ ?>
+<?php /*a:2:{s:58:"D:\phpstudy_pro\WWW\application\index\view\index\home.html";i:1616067948;s:60:"D:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1643007585;}*/ ?>
 <!DOCTYPE html><!-- saved from url=(0038)http://qiang6-www.baomiche.com/#/Index --><html data-dpr="1" style="font-size: 37.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><title><?php echo htmlentities(app('lang')->get('home')); ?></title><!--<link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css" rel="stylesheet">--><link href="/static_new6/css/app.3227f3b635185d55fe635aae11c7880e.css" rel="stylesheet"><script charset="utf-8" src="/static_new/js/jquery.min.js"></script><script charset="utf-8" src="/static_new/js/common.js"></script><link rel="stylesheet" href="/public/css/swiper.min.css"><style type="text/css" title="fading circle style">a{
     color:#000;
 }
@@ -371,90 +371,38 @@ background-color: #FCB28E;
                
             //   console.log(arr);
             },2500);
-        </script><div data-v-eebac136="" class="nomore"><p data-v-eebac136=""><?php echo htmlentities(app('lang')->get('Nomorecontent')); ?></p></div><div data-v-8755e8fe="" data-v-eebac136="" class="footer"  style="background: none;width: 100%;height: 1.7rem;background-color: white;"><ul data-v-8755e8fe=""><li onclick="window.location.href='<?php echo url('index/home'); ?>'" data-v-8755e8fe=""><?php
-                if(cookie('lang') == 'th-th' ){
-            ?><img data-v-8755e8fe=""
-                 src="/image/571.png"
-                 alt=""><img data-v-8755e8fe=""
-                 src="/image/638651.png"
-                 alt=""><?php }else{ ?><!--if(cookie('lang') == 'en-us' )home--><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/home_before.png','home'); ?>"
-                 alt="" style="margin-top: -0.3rem;"><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/home_after.png','home'); ?>"
-                 alt="" style="margin-top: -0.3rem;"><span style="display: block;margin: 0 27%;" class="activeText"><?php echo lang('Home'); ?></span><?php
-                }
-            ?><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h',[1]); ?>"--><!--     alt="">--><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_l',[1]); ?>"--><!--     alt="">--></li><li onclick="window.location.href='<?php echo url('order/index'); ?>'" data-v-8755e8fe=""><?php
-                if(cookie('lang') == 'th-th' ){
-            ?><img data-v-8755e8fe=""
-                 src="/image/6561.png"
-                 alt=""><img data-v-8755e8fe=""
-                 src="/image/881.png"
-                 alt=""><?php }else{ ?><!--if(cookie('lang') == 'en-us' )--><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/order_before.png','order'); ?>"
-                 alt="" style="margin-top: -0.3rem;"><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/order_after.png','order'); ?>"
-                 alt="" style="margin-top: -0.3rem;"><span style="display: block;margin: 0 20%;"><?php echo lang('Historic'); ?></span><?php
-                }
-            ?><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h',[2]); ?>"--><!--     alt="">--><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h',[2]); ?>"--><!--     alt="">--></li><?php
+        </script><div data-v-eebac136="" class="nomore"><p data-v-eebac136=""><?php echo htmlentities(app('lang')->get('Nomorecontent')); ?></p></div><div data-v-8755e8fe=""
+     data-v-eebac136=""
+     class="footer"><ul data-v-8755e8fe=""><li onclick="window.location.href='<?php echo url('index/home'); ?>'"
+        data-v-8755e8fe=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/home_before.png','home'); ?>"
+           alt=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/home_after.png','home'); ?>"
+           alt=""><span class="activeText"><?php echo lang('Home'); ?></span></li><li onclick="window.location.href='<?php echo url('order/index'); ?>'"
+        data-v-8755e8fe=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/order_before.png','order'); ?>"
+           alt=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/order_after.png','order'); ?>"
+           alt=""><span><?php echo lang('Historic'); ?></span></li><?php
             $level = session('level') ? session('level') : 0;
             $level = $level + 1;
             $url = '/index/ctrl/team';
-        ?><li onclick="window.location.href='<?=$url?>'" data-v-8755e8fe=""><?php
-                if(cookie('lang') == 'th-th' ){
-            ?><img data-v-8755e8fe=""
-                 src="/image/5425445-1.png"
-                 alt="" style="border-radius:30px;"><img data-v-8755e8fe=""
-                 src="/image/5425445-1.png"
-                 alt=""  style="border-radius:30px;"><?php }else{ ?><!--if(cookie('lang') == 'en-us' )--><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/team_before.png',[3]); ?> "
-                 alt="" style="border-radius:30px;
-                               margin-top: -0.3rem;
-                               width: auto;
-                               height: .933333rem;
-                               display: block;
-                               margin-bottom: .066667rem;"><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/team_before.png',[3]); ?>"
-                 alt=""  style="border-radius:30px;"><span style="display: block;margin: 0 23%;text-align: center;"><?php echo lang('Team'); ?></span><?php
-                }
-            ?><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h1'); ?>"--><!--     alt="" style="border-radius:30px;">--><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h1'); ?>"--><!--     alt=""  style="border-radius:30px;">--></li><li onclick="window.location.href='<?php echo url('ctrl/lixibao'); ?>'" data-v-8755e8fe=""><?php
-                if(cookie('lang') == 'th-th' ){
-            ?><img data-v-8755e8fe=""
-                 src="/image/61.png"
-                 alt=""><img data-v-8755e8fe=""
-                 src="/image/6361.png"
-                 alt=""><?php }else{ ?><!--if(cookie('lang') == 'en-us' )--><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/jr_before.png',[4]); ?>"
-                 alt="" style="margin-top: -0.3rem;"><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/jr_before.png',[4]); ?>"
-                 alt="" style="margin-top: -0.3rem;"><span style="display: block;margin: 0 16%;"><?php echo lang('Financial'); ?></span><?php
-                }
-            ?><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h',[4]); ?>"--><!--     alt="">--><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_l',[4]); ?>"--><!--     alt="">--></li><li onclick="window.location.href='<?php echo url('my/index'); ?>'" data-v-8755e8fe=""><?php
-                if(cookie('lang') == 'th-th' ){
-            ?><img data-v-8755e8fe=""
-                 src="/image/9681.png"
-                 alt="" style="margin-top: -0.3rem;"><img data-v-8755e8fe=""
-                 src="/image/6541.png"
-                 alt="" style="margin-top: -0.3rem;"><?php }else{ ?><!--if(cookie('lang') == 'en-us' )--><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/person_before.png',[5]); ?>"
-                 alt="" style="margin-top: -0.3rem;"><img data-v-8755e8fe=""
-                 src="<?php echo lang('/img/person_after.png',[5]); ?>"
-                 alt="" style="margin-top: -0.3rem;"><span style="display: block;margin: 0 17%;"><?php echo lang('Personal'); ?></span><?php
-                }
-            ?><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_h',[5]); ?>"--><!--     alt="">--><!--<img data-v-8755e8fe=""--><!--     src="<?php echo lang('img_bar_l',[5]); ?>"--><!--     alt="">--></li></ul></div><style>   /* .footer li.activeText{
-      color: #347DFF;
-  } */
-    .footer ui li {
-        float: none;
-        width: auto;
-    }
-    .footer ul img {
-        height: 0.733rem !important;
-    }
-    .footer span {
-        text-align: center;
-    }
-
-</style></div></div><script type="text/javascript" src="/static_new6/js/manifest.3ad1d5771e9b13dbdad2.js"></script><script type="text/javascript" src=""></script><!--<script type="text/javascript" src="./首页_files/vendor.832c1df07e64f8264dc6.js.下载"></script>--><!--<script type="text/javascript" src="./首页_files/app.1ef0c51eb4b45b9f8d06.js.下载"></script>--><link rel="stylesheet" href="/static_new/css/swiper.min.css"><script charset="utf-8" src="/static_new/js/swiper.min.js"></script><script>    $(function() {
+        ?><li onclick="window.location.href='<?=$url?>'"
+        data-v-8755e8fe=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/team_before.png',[3]); ?> "
+           alt=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/team_after.png',[3]); ?>"
+           alt=""><span><?php echo lang('Team'); ?></span></li><li onclick="window.location.href='<?php echo url('ctrl/lixibao'); ?>'"
+        data-v-8755e8fe=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/jr_before.png',[4]); ?>"
+           alt=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/jr_after.png',[4]); ?>"
+           alt=""><span><?php echo lang('Financial'); ?></span></li><li onclick="window.location.href='<?php echo url('my/index'); ?>'"
+        data-v-8755e8fe=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/person_before.png',[5]); ?>"
+           alt=""><img data-v-8755e8fe=""
+           src="<?php echo lang('/img/person_after.png',[5]); ?>"
+           alt=""><span><?php echo lang('Personal'); ?></span></li></ul></div></div></div><script type="text/javascript" src="/static_new6/js/manifest.3ad1d5771e9b13dbdad2.js"></script><script type="text/javascript" src=""></script><!--<script type="text/javascript" src="./首页_files/vendor.832c1df07e64f8264dc6.js.下载"></script>--><!--<script type="text/javascript" src="./首页_files/app.1ef0c51eb4b45b9f8d06.js.下载"></script>--><link rel="stylesheet" href="/static_new/css/swiper.min.css"><script charset="utf-8" src="/static_new/js/swiper.min.js"></script><script>    $(function() {
         var tankuang_status = "<?php echo config('tankuang_status'); ?>";
         if (tankuang_status != 1) {
             $('#tanchuang').hide();
