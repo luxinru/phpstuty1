@@ -1,5 +1,5 @@
-<?php /*a:2:{s:60:"E:\phpstudy_pro\WWW\application\index\view\ctrl\lixibao.html";i:1642511671;s:60:"E:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1643022066;}*/ ?>
-<!DOCTYPE html><!-- saved from url=(0038)http://qiang6-www.baomiche.com/#/YuBao --><html data-dpr="1" style="font-size: 37.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><title><?php echo lang('余额宝'); ?></title><link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css" rel="stylesheet"><link rel="stylesheet" href="/static_new/css/public.css"><script charset="utf-8" src="/static_new/js/jquery.min.js"></script><script charset="utf-8" src="/static_new/js/dialog.min.js"></script><script charset="utf-8" src="/static_new/js/common.js"></script><style type="text/css" title="fading circle style">        .circle-color-8 > div::before {
+<?php /*a:2:{s:60:"E:\phpstudy_pro\WWW\application\index\view\index\notice.html";i:1642511671;s:60:"E:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1643022066;}*/ ?>
+<!DOCTYPE html><!-- saved from url=(0038)http://qiang6-www.baomiche.com/#/YuBao --><html data-dpr="1" style="font-size: 37.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><title><?php echo lang('Announcement'); ?></title><link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css" rel="stylesheet"><link rel="stylesheet" href="/static_new/css/public.css"><script charset="utf-8" src="/static_new/js/jquery.min.js"></script><script charset="utf-8" src="/static_new/js/dialog.min.js"></script><script charset="utf-8" src="/static_new/js/common.js"></script><style type="text/css" title="fading circle style">        .circle-color-8 > div::before {
             background-color: #ccc;
         }
         body {
@@ -142,9 +142,46 @@
         .save-btn {
             background: #75A2F2 !important;
         }
+        .gonggao ul li{
+             width: 45%;
+            height: 50%;
+            padding: 28% 0rem;
+            /* text-indent: 19px; */
+            border-bottom: 1px solid;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            background-color: #BBCEFD;
+            font-size: 18px;
+            color: white;
+            font-weight: bolder;
+            float: left;
+            margin-left: 0.3rem;
+            margin-top: 0.2rem;
+            text-align: center;
+        }
+       .gonggao ul li:n-th(){
+           
+       }
+        .annBox{
+            margin-top: 0.4rem;
+        }
+        .gonggao .a1{
+            background-image: url('/image-self/ctrl_team/vip_bg.png');
+        }
+        .gonggao .a2{
+            background-image: url('/image-self/ctrl_team/vip_bg3.png');
+        }
+        .gonggao .a3{
+            background-image: url('/image-self/ctrl_team/vip_bg2.png');
+        }
+        .gonggao .a4{
+            background-image: url('/image-self/ctrl_team/vip_bg1.png');
+        }
+        
     </style></head><body style="font-size: 12px;"><div id="app"><div data-v-792dab99="" class="main"><div data-v-792dab99="" class="header"><div class="left_btn" onclick="window.history.back(-1)"><img
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMC0wMi0wNFQyMDoyNToxMCswODowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjAtMDItMDVUMDY6Mzk6MDkrMDg6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjAtMDItMDVUMDY6Mzk6MDkrMDg6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTRjY2JmNDktYjRlOC04ODRjLWI1ZTUtM2FkYjVkMDViM2VkIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgwNTVCRkZCNjI3NzExRTlBNDkxREZFMzIwMkZEMUZEIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ODA1NUJGRkI2Mjc3MTFFOUE0OTFERkUzMjAyRkQxRkQiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MDU1QkZGODYyNzcxMUU5QTQ5MURGRTMyMDJGRDFGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MDU1QkZGOTYyNzcxMUU5QTQ5MURGRTMyMDJGRDFGRCIvPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NGNjYmY0OS1iNGU4LTg4NGMtYjVlNS0zYWRiNWQwNWIzZWQiIHN0RXZ0OndoZW49IjIwMjAtMDItMDVUMDY6Mzk6MDkrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4QXxioAAABwklEQVRIia3Wy4uOcRQH8M+4JcqlJCmilJqFIgsWQuTrlgUphaKUv0pZWExRGrkdclcWElkoZSELSXKtSaKxeH82vDPemfc99ezO6dPveX7nPGdofHxcP5FkHkawEZuq6k23vFl9IvNxBVsxjkXoCs3oA1mA6w35hVNV9Xyi/GmdKMlCXMPmhpyoqnOT1UwZSrIYN3S+yU8cr6qR/9VNCUqypCHr8QNHq+pCL7U9Q0mW4ibWNeRwVV3qtb4nKMky3MIwvuNQVV3tFekJSrIct7EWYzhYVTUV5L9QkhUNWdOQ/VV1Z6rIpFCSVQ1ZjW/YV1UPpoMwQcMmGcb9hnzBnn4QGPp71iVZi7tYhs/YVVWP+0HofqJf7YEhzO4X6QpV1SvswGssxPUkW/qF/nl1fyLJSp3e6fvGMcn0bv+VrXiJebicZNfAoYa9xTa8aNhokr0Dhxr2DtvxHHNxMcmBgUMNe69zQZ5iDs4nOTRwqGEfGvakYSNJjgwcatinhj3SGV/nkhwbONSwL9iNh5iJs0lODhxq2NeG3WvYmSSnJ6uZsGF7ibbTjWKnzrq1oaqedcud9roFVTWGA7ios899nCj3N99UoTDBVxt6AAAAAElFTkSuQmCC"
-                        alt="" class="return"></div><div data-v-792dab99="" class="Maintitle"><h3 data-v-792dab99=""><?php echo lang('余额宝'); ?></h3></div></div><div data-v-792dab99="" class="report"><div class="assets-wrapper"><div data-v-792dab99="" class="cen red"><div class="num-wrapper"><span><?php echo htmlentities($ubalance); ?></span></div><div class="text-wrapper"><p data-v-792dab99=""><?php echo lang('总资产'); ?>（<?php echo lang('元'); ?>）</p></div></div></div><div class="lev_box"><div class="lev_box_item"><div data-v-792dab99="" class="lf" style="font-size: 13px"><span>+<?php echo htmlentities($balance); ?></span><p data-v-792dab99=""><?php echo lang('余额宝'); ?>（<?php echo lang('元'); ?>）</p></div></div><div class="lev_box_item"><div data-v-792dab99="" class="rg red"><span>+<?php echo htmlentities($balance_shouru); ?></span><p data-v-792dab99=""><?php echo lang('总收益'); ?></p></div></div><div class="lev_box_item"><div data-v-792dab99="" class="rg red"><span>+<?php echo htmlentities($yes_shouyi); ?></span><p data-v-792dab99=""><?php echo lang('昨日收益'); ?></p></div></div></div></div><div data-v-792dab99="" class="Cash_num"><div class="wdal-box"><h3 data-v-792dab99=""><?php echo lang('余额转入'); ?></h3><div data-v-792dab99="" class="Cash_num_money"><span data-v-792dab99="">$</span><input data-v-792dab99="" type="text" name="price" id="price" placeholder="<?php echo lang('请输入转入金额'); ?>"></div></div><div class="wdal-box" ><div data-v-792dab99="" class="Cash_num_money"><span data-v-792dab99=""><?php echo lang('预计收益'); ?></span><input data-v-792dab99="" type="text" name="yuji" id="yjsy" disabled value="" style="padding-left: 30px"></div></div><h4 data-v-792dab99=""><?php echo lang('收益标准'); ?></h4><div data-v-792dab99="" class="Cash_num_password"><?php if($lixibao): if(is_array($lixibao) || $lixibao instanceof \think\Collection || $lixibao instanceof \think\Paginator): $i = 0; $__LIST__ = $lixibao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><span data-v-792dab99="" data-id="<?php echo htmlentities($v['id']); ?>"  class="col-xs-3 ch5" style="width: 45%"><p data-v-792dab99="" class="c2"><?php echo htmlentities($v['name']); ?></p><p data-v-792dab99="" class="c2">+<?php echo htmlentities($v['bili']*100); ?>&nbsp;<small data-v-792dab99="">%</small></p><p data-v-792dab99="" class="c1">[<?php echo lang('定'); ?>] <?php echo htmlentities($v['day']); ?>&nbsp;<small data-v-792dab99=""><?php echo lang('天'); ?></small></p></span><?php endforeach; endif; else: echo "" ;endif; else: ?><?php endif; ?></div></div><div data-v-792dab99="" class="postForm"><!--<button data-v-792dab99="" class="auto" onclick="window.location.href=`/index/ctrl/lixibao_chu`"><?php echo lang('转出'); ?></button>--><button data-v-792dab99="" class="auto"><?php echo lang('转出'); ?></button><button data-v-792dab99="" class="save-btn"><?php echo lang('转入'); ?></button></div><div style="height: 1.33rem;"></div><div data-v-8755e8fe=""
+                        alt="" class="return"></div><div data-v-792dab99="" class="Maintitle"><h3 data-v-792dab99=""><?php echo lang('Announcement'); ?></h3></div></div><!-- 公告列表 --><div class="gonggao"><ul class="annBox"><a href="javascript:void(0)" onclick="window.location.href=`/index/my/detail.html?id=<?php echo lang('平台'); ?>`"><li class="a1"><?php echo lang('平台简介'); ?></li></a><a href="javascript:void(0)" onclick="window.location.href=`/index/my/detail.html?id=<?php echo lang('规则'); ?>`"><li class="a2"><?php echo lang('规则说明'); ?></li></a><a href="javascript:void(0)" onclick="window.location.href=`/index/my/detail.html?id=<?php echo lang('代理'); ?>`"><li  class="a3"><?php echo lang('代理合作'); ?></li></a><a href="javascript:void(0)" onclick="window.location.href=`/index/my/detail.html?id=<?php echo lang('公司'); ?>`"><li class="a4"><?php echo lang('公司资质'); ?></li></a></ul></div><div data-v-8755e8fe=""
      data-v-eebac136=""
      class="footer"><ul data-v-8755e8fe=""><li onclick="window.location.href='<?php echo url('index/home'); ?>'"
         data-v-8755e8fe=""><img data-v-8755e8fe=""
@@ -183,7 +220,7 @@
         return true;
     }
     $(function () {
-        $('.Cash_num_password>span').eq(0).trigger("click")
+        $('.Cash_num_password>span').eq(0).trigger("click");;
 
 
     });
@@ -241,19 +278,19 @@
                 url: "<?php echo url('lixibao_ru'); ?>",
                 data: {price:price,cid:cid},
                 type: 'POST',
-                // beforeSend: function () {
-                //     loading = $(document).dialog({
-                //         type: 'notice',
-                //         infoIcon: '/static_new/img/loading.gif',
-                //         infoText: <?php echo lang('正在加载中'); ?>,
-                //         autoClose: 0
-                //     });
-                // },
+                beforeSend: function () {
+                    loading = $(document).dialog({
+                        type: 'notice',
+                        infoIcon: '/static_new/img/loading.gif',
+                        infoText: <?php echo lang('正在加载中'); ?>,
+                        autoClose: 0
+                    });
+                },
                 success: function (data) {
                     if (data.code == 0) {
                         $(document).dialog({infoText: data.info});
                         setTimeout(function () {
-                           // loading.close();
+                            loading.close();
                             window.location.href = '/index/ctrl/lixibao';
                         }, 2000);
 
