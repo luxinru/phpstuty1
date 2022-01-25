@@ -28,48 +28,55 @@
 
 <body>
   <div id="app">
-    <div data-v-d5f15326=""
-         class="main">
-      <div data-v-d5f15326=""
-           class="header">
-        <!-- <div data-v-d5f15326=""
+    <div class="main">
+      <div class="header">
+        <!-- <div 
              class="img">
-          <a data-v-d5f15326=""
+          <a 
              href=""
              class="">
-            <img data-v-d5f15326=""
+            <img 
                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAP1BMVEVHcExCQkJCQkJDQ0NCQkJCQkJCQkJDQ0NCQkJCQkJCQkJCQkJCQkJFRUVCQkJDQ0NCQkJCQkJCQkJCQkJDQ0NLP8oPAAAAFHRSTlMAzyoRvkD5X+/eGrJyCYM4T5Ok5lh/mIcAAAE3SURBVHhezZTHjsQwDEPd4hK3lPf/37qLxWLg8SjJdd6R4kGkBatvxZScvD9d68/WzAu93XubZ8TZa6t1ADkYW812RCCZK2/VgHuN7Q7EK3cG2igsEdIqegsQprgRsuRdI7RZXDxInRygP9UdktCEhy7IJ2zSxlpsXtraQRCjgK+z6EEuScMySX0MMkcskxTgEJzypEGTzctn8jzmmxPGSUrQlUyco5uhIKHUMgtZXVAgru/10K/M9QRdxyUo6pLux/E+LSHdjfCiMnUsJIJVd+gh0gnrk9lI5/l4pgXOuz0yuJdgI6Sw/LKFN7Y/zfFWwMYDuxrYIjf46XptOZxzGkgvPKRfMTdz2f42/Dr3b7VD7P9eDVrdYU/we6/VtAh+UbeYIakP6oHV8U9a1DN919GnI6hv5QcUoxqZt07UFQAAAABJRU5ErkJggg=="
-                 alt="">
+                 >
           </a>
-          <a data-v-d5f15326=""
+          <a 
              href="javascript:void(0)"
              onclick="window.location.href=`/index/ctrl/set`"
              class="">
-            <img data-v-d5f15326=""
+            <img 
                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAALVBMVEVHcEw+Pj5CQkJCQkJCQkJDQ0NDQ0NCQkJCQkJCQkJCQkJDQ0NDQ0NDQ0NEREQBqyziAAAAD3RSTlMAFJHuc/9P2yq/1khttlZE4SfSAAAA00lEQVR42s2V2xLEEAxAN0RLi///3EW3DbOadHhpXtrh4LjF570BSmsFz1jUJoXGB+iyml+si4Bal7Ft37f8dZaVLQI+//sic6+OVE8tkZENtnIKpN6VbUv76iRbB6n/sQruJt3SupGFiBihUdcVnNo2dedUqboPe3OFZ2BinVKu0DxsM2qvtbQsHBJ7FiY6cDAcvdEowMDx6Ji6jgyMxqhmq3AUljXmJygvnbwp09stH6TRIyof/sFrJV/YoVQgJ5m59CUnRjnlTiZz+ZmQH6DXxhfGzQxZusjycwAAAABJRU5ErkJggg=="
-                 alt="">
+                 >
           </a>
         </div> -->
-        <div data-v-d5f15326=""
-             class="info">
-          <div data-v-d5f15326=""
-               class="name">
-            <strong data-v-d5f15326="">{$info.username}</strong>
-            <!-- <em data-v-d5f15326="">LV{$info.level + 1}</em> -->
-            <small data-v-d5f15326="">Invitation Code: {$info.invite_code}</small>
+        <div class="info">
+          <div class="name">
+            <strong>{$info.username}</strong>
+            <!-- <em >LV{$info.level + 1}</em> -->
+            <small>Invitation Code: {$info.invite_code}</small>
           </div>
-          <img data-v-d5f15326=""
-               src="{$info.headpic}"
+          <img src="{$info.headpic}"
                onerror="this.src='/public/img/head.png'"
                onclick="location.href='/index/my/headimg.html';"
-               alt=""
                class="headerImg">
         </div>
-        <div data-v-d5f15326=""
-             class="balance">
-          <p data-v-d5f15326="">
-            <span data-v-d5f15326="">{$Think.lang.Account_balance}</span>
-            <small data-v-d5f15326="">{$info.balance}</small>
+        <div class="info_data">
+          <div class="item">
+            <span>0.00</span>
+            <span>Commission</span>
+          </div>
+          <div class="item">
+            <span>0.00</span>
+            <span>Skypay balance</span>
+          </div>
+          <div class="item">
+            <span>0.00</span>
+            <span>Skypay income</span>
+          </div>
+        </div>
+        <div class="balance">
+          <p>
+            <span>{$Think.lang.Account_balance}</span>
+            <small>{$info.balance}</small>
           </p>
           <div class="button-wrapper">
             <div onclick="window.location.href=`/index/ctrl/deposit`">
@@ -81,78 +88,50 @@
           </div>
         </div>
       </div>
-      <ul data-v-d5f15326=""
-          class="login_nav">
+      <ul class="login_nav">
         <div class="title"><span></span>Service Center</div>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/ctrl/set`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/person.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Personalinformation}</p>
+        <li onclick="window.location.href=`/index/ctrl/set`">
+          <img src="/image-self/my_index/person.png">
+          <p>{$Think.lang.Personalinformation}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/order/index`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/report.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Graborderrecord}</p>
+        <li onclick="window.location.href=`/index/order/index`">
+          <img src="/image-self/my_index/report.png">
+          <p>{$Think.lang.Graborderrecord}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/my/caiwu`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/accountbook.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Accountdetails}</p>
+        <li onclick="window.location.href=`/index/my/caiwu`">
+          <img src="/image-self/my_index/accountbook.png">
+          <p>{$Think.lang.Accountdetails}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/ctrl/recharge_admin`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/recharge.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Rechargerecord}</p>
+        <li onclick="window.location.href=`/index/ctrl/recharge_admin`">
+          <img src="/image-self/my_index/recharge.png">
+          <p>{$Think.lang.Rechargerecord}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/ctrl/deposit_admin`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/withdrawal.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Withdrawalsrecord}</p>
+        <li onclick="window.location.href=`/index/ctrl/deposit_admin`">
+          <img src="/image-self/my_index/withdrawal.png">
+          <p>{$Think.lang.Withdrawalsrecord}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/my/invite`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/share.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Accountdetails22}</p>
+        <li onclick="window.location.href=`/index/my/invite`">
+          <img src="/image-self/my_index/share.png">
+          <p>{$Think.lang.Accountdetails22}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/my/msg`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/notice.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.systeminformation}</p>
+        <li onclick="window.location.href=`/index/my/msg`">
+          <img src="/image-self/my_index/notice.png">
+          <p>{$Think.lang.systeminformation}</p>
         </li>
-        <li data-v-d5f15326=""
-            onclick="window.location.href=`/index/ctrl/junior`">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/report.png"
-               alt="">
-          <p data-v-d5f15326="">{$Think.lang.Startorders22}</p>
+        <li onclick="window.location.href=`/index/ctrl/junior`">
+          <img src="/image-self/my_index/report.png">
+          <p>{$Think.lang.Startorders22}</p>
         </li>
-        <!-- <li data-v-d5f15326=""
+        <!-- <li 
             onclick="window.location.href=`/index/my/downsoft`">
-          <img data-v-d5f15326=""
+          <img 
                src="/image-self/download/ef6d275d92bcf3fa916d7645c859301.png"
-               alt="">
-          <p data-v-d5f15326="">{:lang('download App')}</p>
+               >
+          <p >{:lang('download App')}</p>
         </li> -->
-        <li data-v-d5f15326=""
-            class="LoginOut">
-          <img data-v-d5f15326=""
-               src="/image-self/my_index/icon_set up.png"
-               alt="">
-          <p data-v-d5f15326="">Set Up</p>
+        <li class="LoginOut">
+          <img src="/image-self/my_index/icon_set up.png">
+          <p>Set Up</p>
 
         </li>
       </ul>
@@ -165,28 +144,7 @@
   <script>
     $(function () {
       $('.footer li').eq(4).addClass("on");
-      $(".qwerty").val("pxx");
-      $('#qwerty').change(function () {
-        var lang = $('#qwerty').val();
-        $.ajax({
-          url: '/index/index/lang',
-          type: 'post',
-          data: { type: lang },
-          success: function (data) {
-            // settimeout(function(){
-            location.reload();
-            // },500);
-          }
-        });
-      }
-
-
-      );
     });
-    $(function () {
-      $('.footer li').eq(4).addClass("on");
-
-    })
 
     $('.tabs_btn1').click(function () {
       $(document).dialog({

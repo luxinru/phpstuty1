@@ -1,0 +1,99 @@
+.main {
+  flex: 1 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1E253C;
+
+    img {
+      position: absolute;
+      left: .75rem;
+      transform: rotate(180deg);
+    }
+  }
+
+  .report {
+    width: calc(100% - 2.5rem);
+    padding: 2.1875rem 1.375rem .9375rem;
+    background-image: url('/static_new/img/图层 5 拷贝.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .assets-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: .9375rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(254, 255, 255, 0.5);
+      }
+
+      span {
+        font-size: 1.625rem;
+        font-family: Arial;
+        font-weight: 400;
+        color: #FEFFFF;
+        margin-top: 1rem;
+      }
+    }
+
+    .lev_box {
+      width: 100%;
+      display: flex;
+
+      .lev_box_item {
+        flex: 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          width: 100%;
+          height: 1.875rem;
+          font-size: .9375rem;
+          font-family: PingFang SC;
+          font-weight: 600;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        span {
+          width: 95px;
+          height: 29px;
+          background: rgba(255, 249, 249, 0.15);
+          border-radius: .4375rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: .9375rem;
+          font-family: PingFang SC;
+          font-weight: 600;
+          color: #FFFFFF;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

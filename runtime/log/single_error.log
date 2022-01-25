@@ -150,3 +150,7 @@
 
 [2022-01-24T23:02:09+09:00] 127.0.0.1 GET localhost/index/index/public/img/home_slices/balance.png
 [ error ] [0]模板文件不存在:E:\phpstudy_pro\WWW\application\index\view\index\public.html[E:\phpstudy_pro\WWW\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+
+[2022-01-25T18:45:51+09:00] 127.0.0.1 GET localhost/index/ctrl/lixibao.html
+[ error ] [8]Undefined variable: url[D:\phpstudy_pro\WWW\runtime\temp\c53eae91c93d32f0bd16cf1da9200bb6.php:25]

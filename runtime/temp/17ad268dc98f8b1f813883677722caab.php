@@ -1,4 +1,4 @@
-<?php /*a:2:{s:59:"D:\phpstudy_pro\WWW\application\index\view\order\index.html";i:1615775792;s:60:"D:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1643007585;}*/ ?>
+<?php /*a:2:{s:59:"D:\phpstudy_pro\WWW\application\index\view\order\index.html";i:1615775792;s:60:"D:\phpstudy_pro\WWW\application\index\view\public\floor.html";i:1643103954;}*/ ?>
 <!DOCTYPE html><!-- saved from url=(0043)http://qiang6-www.baomiche.com/#/GrabRecord --><html data-dpr="1" style="font-size: 37.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><title><?php echo htmlentities(app('lang')->get('Orderrecord')); ?></title><link href="/static_new6/css/app.7b22fa66c2af28f12bf32977d4b82694.css" rel="stylesheet"><link rel="stylesheet" href="/static_new/css/public.css"><script charset="utf-8" src="/static_new/js/jquery.min.js"></script><script charset="utf-8" src="/static_new/js/dialog.min.js"></script><script charset="utf-8" src="/static_new/js/common.js"></script><link rel="stylesheet" href="/public/js/layer_mobile/need/layer.css"><script src="/public/js/layer_mobile/layer.js"></script><style type="text/css" title="fading circle style">        .circle-color-9 > div::before {
             background-color: #ccc;
         }
@@ -94,37 +94,20 @@
     background: white;color:#000;" ><?php echo htmlentities(app('lang')->get('Notsubmit')); ?></div><div data-v-4c2dcb20="" class="tabs_btn2" style="background: white;
     color: #347dfe;"><?php echo htmlentities(app('lang')->get('Submitnow')); ?></div></div></div><img data-v-4c2dcb20=""
                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAP1BMVEVHcEz///////////////////////////////////////////////////////////////////////////////9KjZoYAAAAFXRSTlMAEFN/o8rX6/sxkf9z88Q9XSlotgUhojDzAAABp0lEQVR4AaSSVwKzIBgEkfYBS1vN/a/690oitnlK1Bmq2mPRxjovIYh31uhFXSImjwGf4ll7yR5AqSnr1mJsTedUCwCflzO6EUBsj/yP2K0AYg4TXQC38iOrA6RPdVbAde7SHVC57+sCyZySBUXv+QnYIg+IG5A+6i+LYHgCE2BfH/wNpfMUvWB7L1iI5km0wL6vv2ieRpdxHzRC5wV6gP7XZ4HhJQwK/wlUbLzIhqr+0CGRF4mCP7d6EWReJkMW9RMDxxs4mD8T6LxB/z2FDMdbOGT1HY91vCfOrxxYvdPjI/jvfoS8pxHysGUB7xMVxB+X2HLA43th9OE5YJF+rKBzYA0/CoMfVg7072tYUP5cokHI49+RWLAojUpOChOfrNDKIHFSmPpMMMoic1qY+DSwykFzVpj51HDKo3FWmPls8ErQOCvMfDaICoicFiY+I8LjwOMlPN7EZ8fY4Z5dpAz7/Cp/Lb0OBAAAABiE+VsPYhB/tWPqOe+h9KX1qe6tN1gebQ/Xx/sLxivOS9Zr3ovmq+7L9uv+B8cnz0fXZ9+HZ6ZvxHfkP9pUwubvmZnSAAAAAElFTkSuQmCC"
-                     alt="" class="close"></div></div><div data-v-8755e8fe=""
-     data-v-eebac136=""
-     class="footer"><ul data-v-8755e8fe=""><li onclick="window.location.href='<?php echo url('index/home'); ?>'"
-        data-v-8755e8fe=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/home_before.png','home'); ?>"
-           alt=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/home_after.png','home'); ?>"
-           alt=""><span class="activeText"><?php echo lang('Home'); ?></span></li><li onclick="window.location.href='<?php echo url('order/index'); ?>'"
-        data-v-8755e8fe=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/order_before.png','order'); ?>"
-           alt=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/order_after.png','order'); ?>"
+                     alt="" class="close"></div></div><div class="footer"><ul><li onclick="window.location.href='<?php echo url('index/home'); ?>'"><img src="<?php echo lang('/img/home_before.png','home'); ?>"
+           alt=""><img src="<?php echo lang('/img/home_after.png','home'); ?>"
+           alt=""><span class="activeText"><?php echo lang('Home'); ?></span></li><li onclick="window.location.href='<?php echo url('order/index'); ?>'"><img src="<?php echo lang('/img/order_before.png','order'); ?>"
+           alt=""><img src="<?php echo lang('/img/order_after.png','order'); ?>"
            alt=""><span><?php echo lang('Historic'); ?></span></li><?php
             $level = session('level') ? session('level') : 0;
             $level = $level + 1;
             $url = '/index/ctrl/team';
-        ?><li onclick="window.location.href='<?=$url?>'"
-        data-v-8755e8fe=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/team_before.png',[3]); ?> "
-           alt=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/team_after.png',[3]); ?>"
-           alt=""><span><?php echo lang('Team'); ?></span></li><li onclick="window.location.href='<?php echo url('ctrl/lixibao'); ?>'"
-        data-v-8755e8fe=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/jr_before.png',[4]); ?>"
-           alt=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/jr_after.png',[4]); ?>"
-           alt=""><span><?php echo lang('Financial'); ?></span></li><li onclick="window.location.href='<?php echo url('my/index'); ?>'"
-        data-v-8755e8fe=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/person_before.png',[5]); ?>"
-           alt=""><img data-v-8755e8fe=""
-           src="<?php echo lang('/img/person_after.png',[5]); ?>"
+        ?><li onclick="window.location.href='<?=$url?>'"><img src="<?php echo lang('/img/team_before.png',[3]); ?> "
+           alt=""><img src="<?php echo lang('/img/team_after.png',[3]); ?>"
+           alt=""><span><?php echo lang('Team'); ?></span></li><li onclick="window.location.href='<?php echo url('ctrl/lixibao'); ?>'"><img src="<?php echo lang('/img/jr_before.png',[4]); ?>"
+           alt=""><img src="<?php echo lang('/img/jr_after.png',[4]); ?>"
+           alt=""><span><?php echo lang('Financial'); ?></span></li><li onclick="window.location.href='<?php echo url('my/index'); ?>'"><img src="<?php echo lang('/img/person_before.png',[5]); ?>"
+           alt=""><img src="<?php echo lang('/img/person_after.png',[5]); ?>"
            alt=""><span><?php echo lang('Personal'); ?></span></li></ul></div></div></div><script type="text/javascript" src="/static_new6/js/manifest.3ad1d5771e9b13dbdad2.js"></script><!--<script type="text/javascript" src="/static_new6/js/vendor.832c1df07e64f8264dc6.js"></script>--><!--<script type="text/javascript" src="/static_new6/js/app.1ef0c51eb4b45b9f8d06.js"></script>--><script>    var oid,add_id='';
     $(function () {
         $('#load').hide();
